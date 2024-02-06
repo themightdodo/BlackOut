@@ -29,6 +29,14 @@ public class Beuverie_Drink : Beuverie_Character_StateMachine
         base.Idle_state();
         pm.drinked = false;
     }
+    protected override void Drink_transition()
+    {
+        if (input.Check.Pressed() && pm.NearDrink && !pm.TauxAlcool.ToMuch())
+        {
+            Delay.CurrentValue = currentDrink.GetComponent<Beuverie_Boisson>().drink.TimeToDrink;
+        }
+        base.Drink_transition();
+    }
     protected override void Drink_state()
     {
         base.Drink_state();
@@ -36,6 +44,8 @@ public class Beuverie_Drink : Beuverie_Character_StateMachine
         if (Delay.Done())
         {
             //code de récup de boisson
+            Drink drink = currentDrink.GetComponent<Beuverie_Boisson>().drink;
+            pm.TauxAlcool.add(drink.TauxAlcoolPlus,drink.type_);
             Destroy(currentDrink);
             currentDrink = null;
             pm.drinked = true;

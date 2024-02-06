@@ -10,6 +10,8 @@ public class Beuverie_PlayerManager : MonoBehaviour
 
     public float MaxtauxAlcool;
 
+    public int MaxBoisson;
+
     public Taux_Alcool TauxAlcool { get; set; }
     public bool Addiction_timer_done { get; set; }
     public bool drinked { get; set; }
@@ -27,7 +29,7 @@ public class Beuverie_PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        TauxAlcool = new Taux_Alcool(MaxtauxAlcool);
+        TauxAlcool = new Taux_Alcool(MaxtauxAlcool,MaxBoisson);
         agent = GetComponent<NavMeshAgent>();
     }
     private void Update()
