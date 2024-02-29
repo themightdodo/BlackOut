@@ -8,6 +8,7 @@ public class Drink : ScriptableObject
 {
     public float TauxAlcoolPlus;
     public float TimeToDrink;
+    public int Quantity;
 
     public enum Type
     {

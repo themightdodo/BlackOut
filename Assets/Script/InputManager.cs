@@ -30,8 +30,8 @@ public class InputManager : MonoBehaviour
     private void Update()
     {
 
-        var Rstick_untrad = new Vector3(RstickHorizontal.getAxis(),0, RstickVertical.getAxis()).normalized;
-        var Lstick_untrad = new Vector3(LstickHorizontal.getAxis(),0, LstickVertical.getAxis()).normalized;
+        var Rstick_untrad = new Vector3(RstickHorizontal.getAxisRaw(),0, RstickVertical.getAxisRaw()).normalized;
+        var Lstick_untrad = new Vector3(LstickHorizontal.getAxisRaw(),0, LstickVertical.getAxisRaw()).normalized;
 
         Lstick = Lstick_untrad;
         Rstick = Rstick_untrad;

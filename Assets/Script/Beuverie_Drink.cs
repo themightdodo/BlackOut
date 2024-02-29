@@ -45,7 +45,7 @@ public class Beuverie_Drink : Beuverie_Character_StateMachine
         {
             //code de récup de boisson
             Drink drink = currentDrink.GetComponent<Beuverie_Boisson>().drink;
-            pm.TauxAlcool.add(drink.TauxAlcoolPlus,drink.type_);
+            pm.TauxAlcool.add(drink.TauxAlcoolPlus,drink.type_,drink.Quantity);
             Destroy(currentDrink);
             currentDrink = null;
             pm.drinked = true;

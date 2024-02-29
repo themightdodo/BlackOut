@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Addiction : Beuverie_Character_StateMachine
 {
@@ -13,6 +14,7 @@ public class Addiction : Beuverie_Character_StateMachine
         base.Start();
         Addiction_timer = new Timer(AddictionStartTime);
         pm.Addiction_timer_done = Addiction_timer.Done();
+        pm.leaveActivity.AddListener(ActivityLeave);
     }
     protected override void Update()
     {
@@ -20,6 +22,20 @@ public class Addiction : Beuverie_Character_StateMachine
         Addiction_timer.Refresh();
         pm.Addiction_timer_done = Addiction_timer.Done();
 
+        if (pm.inActivity)
+        {
+            ActivityStatus();
+        }
+    }
+    void ActivityStatus()
+    {
+        Debug.Log("Activity");
+        Addiction_timer.CurrentValue = pm.currentActivityData.currentValue.CurrentValue;
+    }
+    public void ActivityLeave()
+    {
+        Debug.Log("leave");
+        Addiction_timer.Reset();
     }
     protected override void Addiction_state()
     {
@@ -72,4 +88,6 @@ public class Addiction : Beuverie_Character_StateMachine
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, AddictionDrinkDetectionRadius);
     }
+
+
 }

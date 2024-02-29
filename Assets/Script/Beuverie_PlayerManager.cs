@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.AI;
 
 public class Beuverie_PlayerManager : MonoBehaviour
@@ -17,8 +18,13 @@ public class Beuverie_PlayerManager : MonoBehaviour
     public bool drinked { get; set; }
     public bool MouseDestination { get; set; }
     public bool NearDrink { get; set; }
+    public bool inActivity;
 
+    public UnityEvent leaveActivity;
+    public Activité currentActivityData { get; set; }
     public LayerMask drinkLayer { get; set; }
+    public LayerMask ActivityLayer;
+
     public Vector3 MouseDestinationVec { get; set; }
 
 
@@ -34,12 +40,38 @@ public class Beuverie_PlayerManager : MonoBehaviour
     }
     private void Update()
     {
-
+        if (inActivity)
+        {
+            currentActivityData.currentValue.Refresh();
+            Debug.Log(currentActivityData.currentValue.CurrentValue);
+        }
+        if (TauxAlcool.ToMuch())
+        {
+            Beuverie_GameManager.GM_instance.LoadNextScene();
+        }
     }
     public void StopMouseControl()
     {
         MouseDestination = false;
         agent.isStopped = true;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("trigger");
+        if (other.gameObject.CompareTag("Activity"))
+        {
+            inActivity = true;
+            currentActivityData = other.gameObject.GetComponent<Activité>();
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Activity"))
+        {
+            inActivity = false;
+            leaveActivity.Invoke();
+        }
     }
 
 }

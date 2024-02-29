@@ -34,19 +34,19 @@ public class Beuverie_Character_StateMachine : MonoBehaviour
         {
             case State.STATE_IDLE:
                 Idle_state();
-                Debug.Log("Idle");
+       
                 break;
             case State.STATE_WALK:
                 Walk_state();
-                Debug.Log("Walk");
+           
                 break;
             case State.STATE_DRINK:
                 Drink_state();
-                Debug.Log("Drink");
+              
                 break;
             case State.STATE_ADDICTION:
                 Addiction_state();
-                Debug.Log("Addiction");
+              
                 break;
             case State.STATE_BLACKOUT:
                 Blackout_state();
@@ -135,7 +135,7 @@ public class Beuverie_Character_StateMachine : MonoBehaviour
     }
     protected virtual void Addiction_transition()
     {
-        if(pm.Addiction_timer_done&&!pm.NearDrink)
+        if(pm.Addiction_timer_done&&!pm.NearDrink&&state_ != State.STATE_BLACKOUT)
         {
             state_ = State.STATE_ADDICTION;
         }

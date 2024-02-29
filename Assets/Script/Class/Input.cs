@@ -31,10 +31,15 @@ public class Input
 public class Axis
 {
     public string name;
+    public string alternate;
  
 
     public float getAxis()
     {
         return UnityEngine.Input.GetAxis(name);
+    }
+    public float getAxisRaw()
+    {
+        return UnityEngine.Input.GetAxisRaw(name);
     }
 }

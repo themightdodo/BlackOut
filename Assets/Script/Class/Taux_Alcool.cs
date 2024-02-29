@@ -20,18 +20,18 @@ public class Taux_Alcool {
         MaxTaux = MaxValue;
         MaxBoisson = maxBoisson;
     }
-    public void add(float value, Drink.Type type)
+    public void add(float value, Drink.Type type,int quantity)
     {
         switch (type)
         {
             case Drink.Type.BLUE:
-                Boisson_bleu += 1;
+                Boisson_bleu += quantity;
                 break;
             case Drink.Type.YELLOW:
-                Boisson_Jaune += 1;
+                Boisson_Jaune += quantity;
                 break;
             case Drink.Type.RED:
-                Boisson_Rouge += 1;
+                Boisson_Rouge += quantity;
                 break;
         }
         Taux += value;
