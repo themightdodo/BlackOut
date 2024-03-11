@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Activité : MonoBehaviour
 {
-   public Activity activity;
+    public Activity activity;
     public Timer currentValue;
 
     private void Start()

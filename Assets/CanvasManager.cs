@@ -30,7 +30,6 @@ public class CanvasManager : Invest_Character_State_Machine
         base.Phone_state();
         BasePanel.SetActive(false);
         FocusPanel.SetActive(false);
-        DialoguePanel.SetActive(false);
     }
     protected override void Examin_state()
     {

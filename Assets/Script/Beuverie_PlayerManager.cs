@@ -13,6 +13,7 @@ public class Beuverie_PlayerManager : MonoBehaviour
 
     public int MaxBoisson;
 
+    public float Taux;
     public Taux_Alcool TauxAlcool { get; set; }
     public bool Addiction_timer_done { get; set; }
     public bool drinked { get; set; }
@@ -40,6 +41,7 @@ public class Beuverie_PlayerManager : MonoBehaviour
     }
     private void Update()
     {
+        Taux = TauxAlcool.Taux;
         if (inActivity)
         {
             currentActivityData.currentValue.Refresh();

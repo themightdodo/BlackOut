@@ -80,7 +80,6 @@ public class Invest_Character_State_Machine : MonoBehaviour
     }
     protected virtual void Focus()
     {
-        Debug.Log("focus");
        
         if(pm.Interaction_cooldown.Done())
         {
@@ -179,6 +178,10 @@ public class Invest_Character_State_Machine : MonoBehaviour
     }
     protected virtual void FinInteraction()
     {
-        state_ = State.STATE_IDLE;
+        if(state_ != State.STATE_PHONE)
+        {
+            state_ = State.STATE_IDLE;
+        }
+        
     }
 }

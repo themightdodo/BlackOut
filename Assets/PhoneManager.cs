@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using System.Linq;
 
 public class PhoneManager : Invest_Character_State_Machine
@@ -20,6 +21,15 @@ public class PhoneManager : Invest_Character_State_Machine
 
     }
     public Phone_State phone_State_;
+    CanvasManager cm;
+    DialogueManager dm;
+
+    protected override void Start()
+    {
+        base.Start();
+        cm = Invest_GameManager.GM_instance.CanvasManager;
+        dm = Invest_GameManager.GM_instance.DialogueManager;
+    }
 
     protected override void Update()
     {
@@ -77,6 +87,21 @@ public class PhoneManager : Invest_Character_State_Machine
                 Archive_state();
                 break;
         }
+        if(phone_State_ != Phone_State.STATE_CALLING && phone_State_ != Phone_State.STATE_CALLED)
+        {
+            cm.DialoguePanel.SetActive(false);
+        }
+        else
+        {
+            cm.DialoguePanel.SetActive(true);
+        }
+    }
+
+    protected override void FinInteraction()
+    {
+        base.FinInteraction();
+        phone_State_ = Phone_State.STATE_CONTACT;
+        ActiveScreen("Contact");
     }
     void Home_state()
     {
@@ -92,7 +117,7 @@ public class PhoneManager : Invest_Character_State_Machine
     }
     void Calling_state()
     {
-
+        cm.DialoguePanel.SetActive(true);
     }
     void Historic_state()
     {
@@ -129,9 +154,12 @@ public class PhoneManager : Invest_Character_State_Machine
         phone_State_ = Phone_State.STATE_MESSAGE;
         ActiveScreen("Message");
     }
-    public void Calling_transition()
+    public void Calling_transition(Chara_dialogue chara_Dialogue)
     {
+        //FAIRE PASSER LE CHARA DIALOGUE PAR LA, IL FAUDRA VOIR APRES POUR METTRE LES INFOS DES ONCLICK EN PROG POUR POUVOIR FAIRE DES PREFABS ET NE PAS PERDRE DE LA SANITE
         phone_State_ = Phone_State.STATE_CALLING;
+
+        dm.StartDialogueOut(chara_Dialogue);
         ActiveScreen("Calling");
     }
     public void Historic_transition()
@@ -159,6 +187,7 @@ public class PhoneManager : Invest_Character_State_Machine
         phone_State_ = Phone_State.STATE_ARCHIVE;
         ActiveScreen("Archive");
     }
+    
     GameObject GetScreen(string name)
     {
         foreach (var item in Screens)

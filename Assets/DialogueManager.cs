@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using XNode;
+using UnityEngine.Events;
 
 public class DialogueManager : Invest_Character_State_Machine
 {
@@ -20,6 +21,8 @@ public class DialogueManager : Invest_Character_State_Machine
     public GameObject ButtonPanel;
 
     public List<GameObject> currentsButtons;
+
+
 
     public enum Dialogue_State
     {
@@ -52,7 +55,23 @@ public class DialogueManager : Invest_Character_State_Machine
         }     
     }
     
-
+    public void StartDialogueOut(Chara_dialogue chara_Dialogue)
+    {
+        ActiveDialogue = chara_Dialogue;
+        Dialogue item;
+        FindDialogue(Dialogue.startType.Talk, out item);
+        CurrentDialogue = item;
+        StartDialogue(CurrentDialogue);
+        
+    }
+    protected override void Phone_state()
+    {
+        if (input.Cancel.Pressed())
+        {
+            state_ = stateBuffer_;
+            closeDialogue();
+        }
+    }
     protected override void Talk_transition()
     {
         if (input.Talk.Pressed())
@@ -107,6 +126,7 @@ public class DialogueManager : Invest_Character_State_Machine
         {
             GiveIndice();
             GiveItem();
+            SpawnEvent();
             EndDialogue();
             return;
         }
@@ -155,14 +175,17 @@ public class DialogueManager : Invest_Character_State_Machine
         }
         else if ((input.Check.PressedDown() || input.Talk.Pressed()) && CurrentDialogue.choices.Count == 0)
         {
-            
-            sentences.Clear();
-            CurrentDialogue = null;
-            ActiveDialogue = null;
-            pm.FinInteraction.Invoke();
-            pm.Interaction_cooldown.CurrentValue = pm.Interaction_cooldown.StartValue;
-
+            closeDialogue();
         }
+
+    }
+    void closeDialogue()
+    {
+        sentences.Clear();
+        CurrentDialogue = null;
+        ActiveDialogue = null;
+        pm.FinInteraction.Invoke();
+        pm.Interaction_cooldown.CurrentValue = pm.Interaction_cooldown.StartValue;
     }
     void GiveIndice()
     {
@@ -184,6 +207,14 @@ public class DialogueManager : Invest_Character_State_Machine
             Destroy(pm.Current_Focus_Object);
         }
     }
+    void SpawnEvent()
+    {
+        if(CurrentDialogue.EventToCreate == null)
+        {
+            return;
+        }
+        Instantiate(CurrentDialogue.EventToCreate);
+    }
     void clearButtons()
     {
         foreach (var item in currentsButtons)
@@ -192,4 +223,5 @@ public class DialogueManager : Invest_Character_State_Machine
         }
         currentsButtons.Clear();
     }
+
 }
