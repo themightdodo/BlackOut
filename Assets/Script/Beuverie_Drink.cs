@@ -19,10 +19,15 @@ public class Beuverie_Drink : Beuverie_Character_StateMachine
     {
 
         base.Update();
-        if (input.Check.PressedDown() && state_ != State.STATE_ADDICTION)
+        if ((input.Check.PressedDown() && state_ != State.STATE_ADDICTION)||pm.Addiction_timer_done)
         {
             pm.NearDrink = Near_Drink(transform.position, out currentDrink);
         }
+    }
+    protected override void Walk_state()
+    {
+        base.Walk_state(); 
+
     }
     protected override void Idle_state()
     {

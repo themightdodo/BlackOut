@@ -22,22 +22,49 @@ public class Beuverie_Dialogue : MonoBehaviour
 
     bool launchDialogue;
 
+    Beuverie_GameManager gm;
+
+    int InteractCount;
+
+    bool leaveNoEnd;
+
 
     private void Start()
     {
         sentences = new Queue<string>();
         FindDialogue(Dialogue.startType.Talk, out CurrentDialogue);
-        
+        gm = Beuverie_GameManager.GM_instance;
+    }
+
+    private void Update()
+    {
+        if(CurrentChatBox == null||CurrentDialogue == null)
+        {
+            return;
+        }
+        if (CurrentDialogue.PersonTalking == gm.PlayerInfo)
+        {
+            CurrentChatBox.transform.position = gm.playerManager.transform.position + ChatBoxOffset;
+        }
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
         sentences.Clear();
-        foreach (string sentence in dialogue.sentences)
+        if (CurrentDialogue == null)
         {
-            sentences.Enqueue(sentence);
+            sentences.Enqueue("...");
         }
+        else
+        {
+           
+            foreach (string sentence in dialogue.sentences)
+            {
+                sentences.Enqueue(sentence);
+            }
 
+            
+        }
         DisplayNextSentence();
     }
 
@@ -45,7 +72,7 @@ public class Beuverie_Dialogue : MonoBehaviour
     {
         Destroy(CurrentChatBox);
 
-        if (sentences.Count == 0)
+        if (sentences.Count == 0&&!leaveNoEnd)
         {
             randomPos = new Vector3(Random.Range(-2, 2), 0, Random.Range(-2, 2));
             EndDialogue();
@@ -53,8 +80,13 @@ public class Beuverie_Dialogue : MonoBehaviour
         }
       
         string sentence = (string)sentences.Dequeue();
-        
-        CurrentChatBox = Instantiate(Text,transform.position + ChatBoxOffset+ randomPos, transform.rotation);
+
+        Vector3 RandomPos = transform.position + ChatBoxOffset + randomPos;
+        if (CurrentDialogue != null&&CurrentDialogue.PersonTalking == gm.PlayerInfo)
+        {
+            RandomPos = gm.playerManager.transform.position + ChatBoxOffset;
+        }
+        CurrentChatBox = Instantiate(Text,RandomPos, transform.rotation);
         CurrentChatBox.GetComponentInChildren<TextMeshPro>().text = sentence;
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
@@ -62,7 +94,11 @@ public class Beuverie_Dialogue : MonoBehaviour
 
     void EndDialogue()
     {
-        if(CurrentDialogue.choices.Count > 0)
+        if (leaveNoEnd)
+        {
+            return;
+        }
+        if(CurrentDialogue != null && CurrentDialogue.choices.Count > 0)
         {
             Choix choix = CurrentDialogue.choices[0];
             CurrentDialogue = (Dialogue)CurrentDialogue.GetOutputPort("choices" + " " + 0).Connection.node;
@@ -70,11 +106,30 @@ public class Beuverie_Dialogue : MonoBehaviour
         }
         else
         {
+            InteractCount++;
+            if(InteractCount > 0)
+            {
+                FindDialogue(Dialogue.startType.Talk2, out CurrentDialogue);
+            }
             sentences.Clear();
-            CurrentDialogue = null;
             launchDialogue = false;
         }
        
+    }
+    void ResetDialogue()
+    {
+        Debug.Log("OUT");
+        if(CurrentDialogue == null)
+        {
+            return;
+        }
+        if(sentences.Count != 0|| CurrentDialogue.choices.Count > 0)
+        {
+            leaveNoEnd = true;
+        }
+        sentences.Clear();
+        launchDialogue = false;
+        CurrentDialogue = null;
     }
     IEnumerator TypeSentence(string sentence)
     {
@@ -86,7 +141,7 @@ public class Beuverie_Dialogue : MonoBehaviour
             CurrentChatBox.GetComponentInChildren<TextMeshPro>().text += letter;
             if (i == sentence.ToCharArray().Length)
             {
-               Invoke("DisplayNextSentence",1);
+               Invoke("DisplayNextSentence",1.5f);
             }
             i++;
             yield return null;
@@ -109,9 +164,27 @@ public class Beuverie_Dialogue : MonoBehaviour
     {
         if (other.CompareTag("Player")&&!launchDialogue)
         {
+            Debug.Log(InteractCount);
+            if(InteractCount == 0)
+            {
+                FindDialogue(Dialogue.startType.Talk, out CurrentDialogue);
+            }
             StartDialogue(CurrentDialogue);
             launchDialogue = true;
+            leaveNoEnd = false;
         }       
+    }
+    private void OnTriggerExit(Collider other)
+    {
+       
+        if (other.CompareTag("Player"))
+        {
+/*            if(CurrentChatBox != null)
+            {
+                Destroy(CurrentChatBox);
+            }    */     
+            ResetDialogue();
+        }
     }
 
 }

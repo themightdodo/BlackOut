@@ -10,6 +10,7 @@ public class Beuverie_GameManager : MonoBehaviour
     public Beuverie_PlayerManager playerManager;
     public Camera camera;
     public string NextScene;
+    public Character PlayerInfo;
 
     private void Awake()
     {

@@ -9,6 +9,7 @@ public class Invest_GameManager : MonoBehaviour
     public Invest_PlayerManager playerManager;
     public CanvasManager CanvasManager;
     public DialogueManager DialogueManager;
+    public PhoneManager PhoneManager;
     public UnityEvent InvestigationDone;
 
     private void Awake()

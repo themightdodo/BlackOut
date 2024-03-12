@@ -7,6 +7,7 @@ public class Addiction : Beuverie_Character_StateMachine
 {
     public float AddictionStartTime;
     public float AddictionDrinkDetectionRadius;
+    public float currentAddictionTime;
     public Timer Addiction_timer { get; set; }
 
     protected override void Start()
@@ -20,7 +21,9 @@ public class Addiction : Beuverie_Character_StateMachine
     {
         base.Update();
         Addiction_timer.Refresh();
+        Debug.Log(Addiction_timer.Done());
         pm.Addiction_timer_done = Addiction_timer.Done();
+        currentAddictionTime = Addiction_timer.CurrentValue;
 
         if (pm.inActivity)
         {
@@ -31,6 +34,7 @@ public class Addiction : Beuverie_Character_StateMachine
     {
         Debug.Log("Activity");
         Addiction_timer.CurrentValue = pm.currentActivityData.currentValue.CurrentValue;
+        pm.currentActivityData.desaturate( Addiction_timer.CurrentValue/ pm.currentActivityData.currentValue.StartValue);
     }
     public void ActivityLeave()
     {

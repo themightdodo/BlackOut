@@ -18,7 +18,7 @@ public class Beuverie_PlayerManager : MonoBehaviour
     public bool Addiction_timer_done { get; set; }
     public bool drinked { get; set; }
     public bool MouseDestination { get; set; }
-    public bool NearDrink { get; set; }
+    public bool NearDrink;
     public bool inActivity;
 
     public UnityEvent leaveActivity;
@@ -45,7 +45,7 @@ public class Beuverie_PlayerManager : MonoBehaviour
         if (inActivity)
         {
             currentActivityData.currentValue.Refresh();
-            Debug.Log(currentActivityData.currentValue.CurrentValue);
+       
         }
         if (TauxAlcool.ToMuch())
         {
@@ -65,6 +65,7 @@ public class Beuverie_PlayerManager : MonoBehaviour
         {
             inActivity = true;
             currentActivityData = other.gameObject.GetComponent<Activité>();
+
         }
     }
     private void OnTriggerExit(Collider other)

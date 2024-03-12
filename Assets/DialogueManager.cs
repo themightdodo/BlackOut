@@ -22,7 +22,11 @@ public class DialogueManager : Invest_Character_State_Machine
 
     public List<GameObject> currentsButtons;
 
+    public List<Choix> ClickedChoix;
 
+    public List<GameObject> Events;
+
+    int InteractCount;
 
     public enum Dialogue_State
     {
@@ -44,6 +48,7 @@ public class DialogueManager : Invest_Character_State_Machine
         if (pm.Current_Focus_Object != null)
         {
             ActiveDialogue = pm.Current_Focus_Object.GetComponent<Interactible>().chara_Dialogue;
+            InteractCount = pm.Current_Focus_Object.GetComponent<Interactible>().interactCount;
         }
         
         if(dialogue_State == Dialogue_State.STATE_SHOWING)
@@ -55,12 +60,18 @@ public class DialogueManager : Invest_Character_State_Machine
         }     
     }
     
-    public void StartDialogueOut(Chara_dialogue chara_Dialogue)
+    public void StartDialogueOut(Chara_dialogue chara_Dialogue,int interactCount)
     {
         ActiveDialogue = chara_Dialogue;
-        Dialogue item;
-        FindDialogue(Dialogue.startType.Talk, out item);
-        CurrentDialogue = item;
+        if (interactCount > 0)
+        {
+            Debug.Log("OUI");
+            FindDialogue(Dialogue.startType.Talk2, out CurrentDialogue);
+        }
+        else
+        {
+            FindDialogue(Dialogue.startType.Talk, out CurrentDialogue);
+        }
         StartDialogue(CurrentDialogue);
         
     }
@@ -69,6 +80,7 @@ public class DialogueManager : Invest_Character_State_Machine
         if (input.Cancel.Pressed())
         {
             state_ = stateBuffer_;
+            Debug.Log("FINFIN2");
             closeDialogue();
         }
     }
@@ -76,11 +88,18 @@ public class DialogueManager : Invest_Character_State_Machine
     {
         if (input.Talk.Pressed())
         {
-            Dialogue item;
-            FindDialogue(Dialogue.startType.Talk,out item);
-            CurrentDialogue = item;
+            
+            if (InteractCount > 0)
+            {
+                Debug.Log("OUI");
+                FindDialogue(Dialogue.startType.Talk2, out CurrentDialogue);
+            }
+            else
+            {
+                FindDialogue(Dialogue.startType.Talk, out CurrentDialogue);
+            }
             StartDialogue(CurrentDialogue);
-
+            pm.Current_Focus_Object.GetComponent<Interactible>().interactCount++;
             state_ = State.STATE_TALK;
         }
     }
@@ -112,21 +131,34 @@ public class DialogueManager : Invest_Character_State_Machine
         dialogue_State = Dialogue_State.STATE_SHOWING;
         sentences.Clear();
         clearButtons();
-        foreach (string sentence in dialogue.sentences)
+        if (CurrentDialogue == null)
         {
-            sentences.Enqueue(sentence);
+            sentences.Enqueue("...");
         }
+        else
+        {
+            foreach (string sentence in dialogue.sentences)
+            {
+                sentences.Enqueue(sentence);
+            }
+        }
+
 
         DisplayNextSentence();
     }
 
     public void DisplayNextSentence()
     {
-        if(sentences.Count == 0)
+        if(sentences.Count == 0&&CurrentDialogue!=null)
         {
             GiveIndice();
             GiveItem();
             SpawnEvent();
+            EndDialogue();
+            return;
+        }
+        else if (sentences.Count == 0&&CurrentDialogue == null)
+        {
             EndDialogue();
             return;
         }
@@ -150,20 +182,26 @@ public class DialogueManager : Invest_Character_State_Machine
     void EndDialogue()
     {
         dialogue_State = Dialogue_State.STATE_END;
-        if(CurrentDialogue.choices.Count > 0)
+        if(CurrentDialogue != null &&CurrentDialogue.choices.Count > 0)
         {
             for (int i = 0; i < CurrentDialogue.choices.Count; i++)
             {
-                Choix choix = CurrentDialogue.choices[i];
-                var button = Instantiate(ButtonPrefab, ButtonPanel.transform);
-                button.GetComponentInChildren<TextMeshProUGUI>().text = choix.text;
-                button.GetComponent<ChoixButton>().dialogue = (Dialogue)CurrentDialogue.GetOutputPort("choices" + " " + i).Connection.node;
-                currentsButtons.Add(button);
+                if (!ClickedChoix.Contains(CurrentDialogue.choices[i]))
+                {
+                    Choix choix = CurrentDialogue.choices[i];
+                    var button = Instantiate(ButtonPrefab, ButtonPanel.transform);
+                    button.GetComponentInChildren<TextMeshProUGUI>().text = choix.text;
+                    button.GetComponent<ChoixButton>().dialogue = (Dialogue)CurrentDialogue.GetOutputPort("choices" + " " + i).Connection.node;
+                    button.GetComponent<ChoixButton>().choix = CurrentDialogue.choices[i];
+                    currentsButtons.Add(button);
+                }
+
             }
 
         }
-        if (pm.ItemInHand != null&& pm.ItemInHand.GetComponent<Item_Manager>().itemType == CurrentDialogue.ItemToHaveInHand)
+        if (CurrentDialogue != null && pm.ItemInHand != null&& pm.ItemInHand.GetComponent<Item_Manager>().itemType == CurrentDialogue.ItemToHaveInHand)
         {
+            
             for (int i = 0; i < CurrentDialogue.choixHand.Count; i++)
             {
                 Choix choix = CurrentDialogue.choixHand[i];
@@ -173,8 +211,21 @@ public class DialogueManager : Invest_Character_State_Machine
                 currentsButtons.Add(button);
             }
         }
-        else if ((input.Check.PressedDown() || input.Talk.Pressed()) && CurrentDialogue.choices.Count == 0)
+        if (CurrentDialogue != null && pm.GetComponent<Invest_Inventory>().CurrentIndices.Count !=0 && pm.GetComponent<Invest_Inventory>().CurrentIndices.Contains(CurrentDialogue.IndiceToHave))
         {
+            for (int i = 0; i < CurrentDialogue.choixIndice.Count; i++)
+            {
+                Choix choix = CurrentDialogue.choixIndice[i];
+                var button = Instantiate(ButtonPrefab, ButtonPanel.transform);
+                button.GetComponentInChildren<TextMeshProUGUI>().text = choix.text;
+                button.GetComponent<ChoixButton>().dialogue = (Dialogue)CurrentDialogue.GetOutputPort("choixIndice" + " " + i).Connection.node;
+                currentsButtons.Add(button);
+            }
+        }
+        else if ((input.Check.PressedDown() || input.Talk.Pressed()) && (CurrentDialogue == null||CurrentDialogue.choices.Count == 0) &&
+            pm.ItemInHand != null && pm.ItemInHand.GetComponent<Item_Manager>().itemType != CurrentDialogue.ItemToHaveInHand)
+        {
+           
             closeDialogue();
         }
 
@@ -186,6 +237,9 @@ public class DialogueManager : Invest_Character_State_Machine
         ActiveDialogue = null;
         pm.FinInteraction.Invoke();
         pm.Interaction_cooldown.CurrentValue = pm.Interaction_cooldown.StartValue;
+        
+        Debug.Log("FINFIN");
+
     }
     void GiveIndice()
     {
@@ -209,11 +263,12 @@ public class DialogueManager : Invest_Character_State_Machine
     }
     void SpawnEvent()
     {
-        if(CurrentDialogue.EventToCreate == null)
+        if(CurrentDialogue.EventToCreate == null||Events.Contains(CurrentDialogue.EventToCreate))
         {
             return;
         }
         Instantiate(CurrentDialogue.EventToCreate);
+        Events.Add(CurrentDialogue.EventToCreate);
     }
     void clearButtons()
     {

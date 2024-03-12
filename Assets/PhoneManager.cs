@@ -154,12 +154,12 @@ public class PhoneManager : Invest_Character_State_Machine
         phone_State_ = Phone_State.STATE_MESSAGE;
         ActiveScreen("Message");
     }
-    public void Calling_transition(Chara_dialogue chara_Dialogue)
+    public void Calling_transition(Chara_dialogue chara_Dialogue,int interactCount)
     {
         //FAIRE PASSER LE CHARA DIALOGUE PAR LA, IL FAUDRA VOIR APRES POUR METTRE LES INFOS DES ONCLICK EN PROG POUR POUVOIR FAIRE DES PREFABS ET NE PAS PERDRE DE LA SANITE
         phone_State_ = Phone_State.STATE_CALLING;
 
-        dm.StartDialogueOut(chara_Dialogue);
+        dm.StartDialogueOut(chara_Dialogue,interactCount);
         ActiveScreen("Calling");
     }
     public void Historic_transition()

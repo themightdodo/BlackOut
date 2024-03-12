@@ -22,7 +22,8 @@ MonoBehaviour:
     - choices
     - choices 0
     - choices 1
-    - choices 2
+    - choixIndice
+    - choixIndice 0
     values:
     - _fieldName: choix
       _node: {fileID: -8114368652995197679}
@@ -72,7 +73,7 @@ MonoBehaviour:
         PublicKeyToken=null
       connections:
       - fieldName: choix
-        node: {fileID: 1446562763566585352}
+        node: {fileID: 1642015228631389235}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -90,13 +91,23 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
-    - _fieldName: choices 2
+    - _fieldName: choixIndice
+      _node: {fileID: -8114368652995197679}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice 0
       _node: {fileID: -8114368652995197679}
       _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
       - fieldName: choix
-        node: {fileID: 1642015228631389235}
+        node: {fileID: 1446562763566585352}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -108,6 +119,9 @@ MonoBehaviour:
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
   choixHand: []
+  IndiceToHave: {fileID: 11400000, guid: 7729c1e2532d74345886878469443c2a, type: 2}
+  choixIndice:
+  - text: Ici
   sentences:
   - 't''es ou ? '
   indicesToShow: []
@@ -116,7 +130,6 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: Ici
   - text: "Je s\xE9 pa"
   - text: ngngngngng
 --- !u!114 &-3235666514087734742
@@ -139,6 +152,7 @@ MonoBehaviour:
     - choixHand
     - indicesToShow
     - choices
+    - choixIndice
     values:
     - _fieldName: choix
       _node: {fileID: -3235666514087734742}
@@ -182,12 +196,24 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: -3235666514087734742}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   choix:
     text: 
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
   choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
   sentences:
   - qui????
   indicesToShow: []
@@ -219,6 +245,7 @@ MonoBehaviour:
     - choices 0
     - choices 1
     - choices 2
+    - choixIndice
     values:
     - _fieldName: choix
       _node: {fileID: -127945777889587051}
@@ -295,12 +322,24 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
+    - _fieldName: choixIndice
+      _node: {fileID: -127945777889587051}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   choix:
     text: 
   startType_: 2
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
   choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
   sentences:
   - 'Allo? c''est qui ? '
   indicesToShow: []
@@ -344,20 +383,21 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1512, y: 1144}
+  position: {x: 1592, y: 1256}
   ports:
     keys:
     - choix
     - choixHand
     - indicesToShow
     - choices
+    - choixIndice
     values:
     - _fieldName: choix
       _node: {fileID: 1446562763566585352}
       _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
-      - fieldName: choices 0
+      - fieldName: choixIndice 0
         node: {fileID: -8114368652995197679}
         reroutePoints: []
       _direction: 0
@@ -394,12 +434,24 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: 1446562763566585352}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   choix:
     text: 
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
   choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
   sentences:
   - Ok J'arrive
   indicesToShow: []
@@ -429,6 +481,7 @@ MonoBehaviour:
     - choixHand
     - indicesToShow
     - choices
+    - choixIndice
     values:
     - _fieldName: choix
       _node: {fileID: 1642015228631389235}
@@ -438,10 +491,10 @@ MonoBehaviour:
       - fieldName: choices 2
         node: {fileID: -127945777889587051}
         reroutePoints: []
-      - fieldName: choices 1
+      - fieldName: choices 0
         node: {fileID: -8114368652995197679}
         reroutePoints: []
-      - fieldName: choices 2
+      - fieldName: choices 1
         node: {fileID: -8114368652995197679}
         reroutePoints: []
       _direction: 0
@@ -478,12 +531,24 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: 1642015228631389235}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   choix:
     text: 
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
   choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
   sentences:
   - pardon?
   indicesToShow: []
@@ -513,6 +578,7 @@ MonoBehaviour:
     - indicesToShow
     - choices
     - choices 0
+    - choixIndice
     values:
     - _fieldName: choix
       _node: {fileID: 2137590108940434402}
@@ -568,12 +634,24 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
+    - _fieldName: choixIndice
+      _node: {fileID: 2137590108940434402}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   choix:
     text: 
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
   choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
   sentences:
   - uh?
   indicesToShow: []

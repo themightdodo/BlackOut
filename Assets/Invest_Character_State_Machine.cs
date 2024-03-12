@@ -93,10 +93,7 @@ public class Invest_Character_State_Machine : MonoBehaviour
     }
     protected virtual void Talk_state()
     {
-        if (input.Cancel.Pressed())
-        {
-            state_ = State.STATE_IDLE;
-        }
+
     }
     protected virtual void Examin_state()
     {

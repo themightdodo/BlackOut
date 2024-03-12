@@ -14,6 +14,7 @@ public class Dialogue : Node
         none,
         Examin,
         Talk,
+        Talk2,
         Inventory_Show,
     }
     public startType startType_;
@@ -23,6 +24,10 @@ public class Dialogue : Node
     public Item_Manager.ItemType ItemToHaveInHand;
     [Output(dynamicPortList = true)]
     public List<Choix> choixHand;
+
+    public IndiceItem IndiceToHave;
+    [Output(dynamicPortList = true)]
+    public List<Choix> choixIndice;
 
     [TextArea(5,20)]
     public List<string> sentences;
