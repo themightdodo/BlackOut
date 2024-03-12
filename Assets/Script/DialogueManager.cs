@@ -223,7 +223,7 @@ public class DialogueManager : Invest_Character_State_Machine
             }
         }
         else if ((input.Check.PressedDown() || input.Talk.Pressed()) && (CurrentDialogue == null||CurrentDialogue.choices.Count == 0) &&
-            pm.ItemInHand != null && pm.ItemInHand.GetComponent<Item_Manager>().itemType != CurrentDialogue.ItemToHaveInHand)
+            (pm.ItemInHand == null || pm.ItemInHand.GetComponent<Item_Manager>().itemType != CurrentDialogue.ItemToHaveInHand))
         {
            
             closeDialogue();

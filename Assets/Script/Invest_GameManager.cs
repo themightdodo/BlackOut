@@ -10,16 +10,11 @@ public class Invest_GameManager : MonoBehaviour
     public CanvasManager CanvasManager;
     public DialogueManager DialogueManager;
     public PhoneManager PhoneManager;
-    public UnityEvent InvestigationDone;
+    public UnityEvent<Sprite,string> InvestigationDone;
+    public PauseMenu menuManager;
 
     private void Awake()
     {
         GM_instance = this;
-        InvestigationDone.AddListener(EndGame);
-    }
-
-    void EndGame()
-    {
-        Debug.Log("End!");
     }
 }

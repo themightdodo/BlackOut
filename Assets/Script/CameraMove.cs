@@ -18,21 +18,7 @@ public class CameraMove : Invest_Character_State_Machine
     }
     protected override void Update()
     {
-        if(state_ == State.STATE_IDLE)
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-        else if (state_ == State.STATE_WALK)
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-        else
-        {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.Confined;
-        }
+
         
 
         base.Update();

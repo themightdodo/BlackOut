@@ -12,14 +12,14 @@ public class Invest_Character_State_Machine : MonoBehaviour
         STATE_TALK,
         STATE_EXAMIN,
         STATE_SHOW,
-        STATE_PHONE,       
+        STATE_PHONE,
         STATE_MINIGAME,
     }
 
     public State state_;
     public State stateBuffer_;
 
-    Invest_GameManager gm;
+    public Invest_GameManager gm {get; set;}
     public Invest_PlayerManager pm { get; set; }
     public InputManager input { get; set; }
 
