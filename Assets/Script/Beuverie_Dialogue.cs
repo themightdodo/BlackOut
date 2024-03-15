@@ -127,6 +127,7 @@ public class Beuverie_Dialogue : MonoBehaviour
         {
             leaveNoEnd = true;
         }
+        StopAllCoroutines();
         sentences.Clear();
         launchDialogue = false;
         CurrentDialogue = null;

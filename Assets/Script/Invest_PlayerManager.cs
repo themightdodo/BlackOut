@@ -11,6 +11,7 @@ public class Invest_PlayerManager : MonoBehaviour
     public UnityEvent FinInteraction;
     public UnityEvent<IndiceItem> AddItemToInventory;
     public UnityEvent<GameObject> AddItemToHand;
+    public Timer throwingItem;
     public Timer Interaction_cooldown;
     public GameObject Current_Focus_Object;
     public GameObject ItemInHand;
@@ -20,6 +21,7 @@ public class Invest_PlayerManager : MonoBehaviour
     private void Start()
     {
         Interaction_cooldown = new Timer(0.5f);
+        throwingItem = new Timer(0.5f);
     }
     private void Update()
     {

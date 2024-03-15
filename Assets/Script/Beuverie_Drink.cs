@@ -8,6 +8,7 @@ public class Beuverie_Drink : Beuverie_Character_StateMachine
     public float drinkDetectionRadius;
     public LayerMask drinkLayer;
     GameObject currentDrink;
+    public GameObject Hand;
     Timer Delay;
     protected override void Start()
     {
@@ -46,17 +47,25 @@ public class Beuverie_Drink : Beuverie_Character_StateMachine
     {
         base.Drink_state();
         Delay.Refresh();
-        if (Delay.Done())
+        if (currentDrink != null)
         {
-            //code de récup de boisson
-            Drink drink = currentDrink.GetComponent<Beuverie_Boisson>().drink;
-            pm.TauxAlcool.add(drink.TauxAlcoolPlus,drink.type_,drink.Quantity);
-            Destroy(currentDrink);
-            currentDrink = null;
-            pm.drinked = true;
-            pm.NearDrink = false;
-            Delay.Reset();
+            currentDrink.transform.position = Hand.transform.position;
+            currentDrink.transform.rotation = Hand.transform.rotation;
+
+            if (Delay.Done())
+            {
+                //code de récup de boisson
+                Drink drink = currentDrink.GetComponent<Beuverie_Boisson>().drink;
+                pm.TauxAlcool.add(drink.TauxAlcoolPlus, drink.type_, drink.Quantity);
+                Destroy(currentDrink);
+                currentDrink = null;
+                pm.drinked = true;
+                pm.NearDrink = false;
+                Delay.Reset();
+            }
         }
+  
+
 
 
     }

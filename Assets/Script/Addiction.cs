@@ -8,6 +8,7 @@ public class Addiction : Beuverie_Character_StateMachine
     public float AddictionStartTime;
     public float AddictionDrinkDetectionRadius;
     public float currentAddictionTime;
+    public Animator AddictionPersoAnim;
     public Timer Addiction_timer { get; set; }
 
     protected override void Start()
@@ -25,6 +26,11 @@ public class Addiction : Beuverie_Character_StateMachine
         pm.Addiction_timer_done = Addiction_timer.Done();
         currentAddictionTime = Addiction_timer.CurrentValue;
 
+        if (state_!=State.STATE_DRINK)
+        {
+            AddictionPersoAnim.Play("Addiction",-1,1 - (Addiction_timer.CurrentValue / Addiction_timer.StartValue));
+        }
+        AddictionPersoAnim.speed = 1 * Addiction_timer.StartValue / 3f;
         if (pm.inActivity)
         {
             ActivityStatus();
@@ -35,6 +41,7 @@ public class Addiction : Beuverie_Character_StateMachine
         Debug.Log("Activity");
         Addiction_timer.CurrentValue = pm.currentActivityData.currentValue.CurrentValue;
         pm.currentActivityData.desaturate( Addiction_timer.CurrentValue/ pm.currentActivityData.currentValue.StartValue);
+        AddictionPersoAnim.Play("Addiction", -1, 1 - (Addiction_timer.CurrentValue / pm.currentActivityData.currentValue.StartValue));
     }
     public void ActivityLeave()
     {
@@ -59,6 +66,7 @@ public class Addiction : Beuverie_Character_StateMachine
     {
         Addiction_timer.Reset();
         pm.agent.isStopped = true;
+        AddictionPersoAnim.Play("Idle");
         base.Drink_state();
         
     }

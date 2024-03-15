@@ -15,7 +15,7 @@ public class SpotLightManager : Beuverie_Character_StateMachine
     }
     protected override void Update()
     {
-        spot.spotAngle = StartSpot - (pm.Taux*ChangeMultiplier);
-        spot.innerSpotAngle = StartSpot - (pm.Taux * ChangeMultiplier);
+        spot.spotAngle = ((StartSpot - (pm.Taux*ChangeMultiplier))*179)/ StartSpot;
+        spot.innerSpotAngle = ((StartSpot - (pm.Taux * ChangeMultiplier))*179)/ StartSpot;
     }
 }

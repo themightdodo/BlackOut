@@ -8,11 +8,25 @@ public class EndZone : MonoBehaviour
     public Sprite Image;
     [TextArea(10, 3)]
     public string Description;
+
+    public Item_Manager.ItemType ItemToHaveInHand;
+    public Sprite AltImage;
+    [TextArea(10, 3)]
+    public string AltDescription;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Invest_GameManager.GM_instance.InvestigationDone.Invoke(Image,Description);
+            if(Invest_GameManager.GM_instance.playerManager.ItemInHand!=null&&
+                Invest_GameManager.GM_instance.playerManager.ItemInHand.GetComponent<Item_Manager>().itemType == ItemToHaveInHand)
+            {
+                Invest_GameManager.GM_instance.InvestigationDone.Invoke(AltImage, AltDescription);
+            }
+            else
+            {
+                Invest_GameManager.GM_instance.InvestigationDone.Invoke(Image, Description);
+            }
+                
         }
         
     }

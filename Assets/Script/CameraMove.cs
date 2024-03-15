@@ -7,8 +7,8 @@ public class CameraMove : Invest_Character_State_Machine
     public float Sensitivity;
     float JoyX;
     float JoyY;
-    private const float Y_ANGLE_MIN = -50.0f;
-    private const float Y_ANGLE_MAX = 10f;
+    private const float Y_ANGLE_MIN = -70.0f;
+    private const float Y_ANGLE_MAX = 50f;
     GameObject player;
     protected override void Start()
     {
@@ -58,6 +58,10 @@ public class CameraMove : Invest_Character_State_Machine
         {
             pm.Current_Focus_Object = hit.transform.gameObject;
             pm.Focus.Invoke();
+        }
+        else
+        {
+            pm.Current_Focus_Object = null;
         }
     }
     public void CheckInteractible_NoDialogue()

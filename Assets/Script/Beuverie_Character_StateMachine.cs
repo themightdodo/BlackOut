@@ -96,14 +96,13 @@ public class Beuverie_Character_StateMachine : MonoBehaviour
         
         if (!pm.agent.pathPending)
         {
-            if (pm.agent.remainingDistance <= pm.agent.stoppingDistance)
-            {
-                if (!pm.agent.hasPath || pm.agent.velocity.sqrMagnitude <= 0)
-                {
+           
+                if (!pm.agent.hasPath)
+                {                  
                     pm.StopMouseControl();
                     state_ = State.STATE_IDLE;
                 }
-            }
+            
         }
     }
 
@@ -135,7 +134,11 @@ public class Beuverie_Character_StateMachine : MonoBehaviour
     }
     protected virtual void Addiction_transition()
     {
-        if(pm.Addiction_timer_done&&!pm.NearDrink&&state_ != State.STATE_BLACKOUT)
+        if(pm.Addiction_timer_done&&!pm.NearDrink&&state_ != State.STATE_BLACKOUT&&state_!=State.STATE_DRINK)
+        {
+            state_ = State.STATE_ADDICTION;
+        }
+        else if (pm.Addiction_timer_done&&pm.NearDrink && state_ != State.STATE_BLACKOUT && state_ != State.STATE_DRINK)
         {
             state_ = State.STATE_ADDICTION;
         }

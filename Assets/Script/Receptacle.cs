@@ -8,6 +8,7 @@ public class Receptacle : Item
     public bool HaveWater;
     Invest_GameManager gm;
     Invest_PlayerManager pm;
+    public GameObject water;
     public LayerMask Liquids;
 
     protected override void Start()
@@ -25,6 +26,7 @@ public class Receptacle : Item
         Debug.Log(InteractLayer);
         if(InteractLayer == Liquids)
         {
+            water.SetActive(true);
             Debug.Log("takeWater");
             HaveWater = true;
             manager.itemType = Item_Manager.ItemType.Filled_Resceptacle;

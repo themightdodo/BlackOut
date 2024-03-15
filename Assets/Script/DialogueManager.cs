@@ -28,6 +28,8 @@ public class DialogueManager : Invest_Character_State_Machine
 
     int InteractCount;
 
+    GameObject CurrentButton;
+
     public enum Dialogue_State
     {
         STATE_SHOWING,
@@ -60,17 +62,22 @@ public class DialogueManager : Invest_Character_State_Machine
         }     
     }
     
-    public void StartDialogueOut(Chara_dialogue chara_Dialogue,int interactCount)
+    public void StartDialogueOut(Chara_dialogue chara_Dialogue,int interactCount,GameObject button)
     {
         ActiveDialogue = chara_Dialogue;
-        if (interactCount > 0)
+        CurrentButton = button;
+        if (interactCount > 0&&!CurrentButton.GetComponent<PhoneInteractible>().Success)
         {
             Debug.Log("OUI");
             FindDialogue(Dialogue.startType.Talk2, out CurrentDialogue);
         }
-        else
+        else if (!CurrentButton.GetComponent<PhoneInteractible>().Success)
         {
             FindDialogue(Dialogue.startType.Talk, out CurrentDialogue);
+        }
+        else
+        {
+            FindDialogue(Dialogue.startType.Success, out CurrentDialogue);
         }
         StartDialogue(CurrentDialogue);
         
@@ -89,14 +96,18 @@ public class DialogueManager : Invest_Character_State_Machine
         if (input.Talk.Pressed())
         {
             
-            if (InteractCount > 0)
+            if (InteractCount > 0&& !pm.Current_Focus_Object.GetComponent<Interactible>().Success)
             {
                 Debug.Log("OUI");
                 FindDialogue(Dialogue.startType.Talk2, out CurrentDialogue);
             }
-            else
+            else if(!pm.Current_Focus_Object.GetComponent<Interactible>().Success)
             {
                 FindDialogue(Dialogue.startType.Talk, out CurrentDialogue);
+            }
+            else
+            {
+                FindDialogue(Dialogue.startType.Success, out CurrentDialogue);
             }
             StartDialogue(CurrentDialogue);
             pm.Current_Focus_Object.GetComponent<Interactible>().interactCount++;
@@ -151,10 +162,11 @@ public class DialogueManager : Invest_Character_State_Machine
     {
         if(sentences.Count == 0&&CurrentDialogue!=null)
         {
+            GiveSuccess();
             GiveIndice();
             GiveItem();
             SpawnEvent();
-            EndDialogue();
+            EndDialogue();          
             return;
         }
         else if (sentences.Count == 0&&CurrentDialogue == null)
@@ -222,13 +234,41 @@ public class DialogueManager : Invest_Character_State_Machine
                 currentsButtons.Add(button);
             }
         }
-        else if ((input.Check.PressedDown() || input.Talk.Pressed()) && (CurrentDialogue == null||CurrentDialogue.choices.Count == 0) &&
-            (pm.ItemInHand == null || pm.ItemInHand.GetComponent<Item_Manager>().itemType != CurrentDialogue.ItemToHaveInHand))
+        else if (input.Check.PressedDown() || input.Talk.Pressed())
         {
-           
-            closeDialogue();
+            if(CurrentDialogue != null && pm.ItemInHand != null&& CurrentDialogue.choices.Count == 0
+                && pm.ItemInHand.GetComponent<Item_Manager>().itemType != CurrentDialogue.ItemToHaveInHand)
+            {
+                closeDialogue();
+            }
+            else if (CurrentDialogue != null&& pm.ItemInHand == null && CurrentDialogue.choices.Count == 0)
+            {
+                closeDialogue();
+            }
+            if (CurrentDialogue == null)
+            {
+                closeDialogue();
+            }
         }
 
+    }
+    void GiveSuccess()
+    {
+        if (CurrentDialogue.SuccessPoint)
+        {
+            if(pm.Current_Focus_Object != null &&CurrentButton != null)
+            {
+                pm.Current_Focus_Object = null;
+            }
+            if(pm.Current_Focus_Object != null)
+            {
+                pm.Current_Focus_Object.GetComponent<Interactible>().Success = true;
+            }
+            if(CurrentButton != null)
+            {
+                CurrentButton.GetComponent<PhoneInteractible>().Success = true;
+            }
+        }
     }
     void closeDialogue()
     {

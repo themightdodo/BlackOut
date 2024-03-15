@@ -81,7 +81,7 @@ public class Invest_Character_State_Machine : MonoBehaviour
     protected virtual void Focus()
     {
        
-        if(pm.Interaction_cooldown.Done())
+        if(pm.Interaction_cooldown.Done()&&pm.throwingItem.Done())
         {
             Show_transition();
             Talk_transition();
@@ -129,6 +129,10 @@ public class Invest_Character_State_Machine : MonoBehaviour
     }
     protected virtual void Phone_transition()
     {
+        if (state_ == State.STATE_PHONE)
+        {
+            return;
+        }
         if (input.Phone.PressedDown())
         {
             stateBuffer_ = state_;      

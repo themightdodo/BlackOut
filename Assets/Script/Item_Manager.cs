@@ -12,6 +12,9 @@ public class Item_Manager : MonoBehaviour
         Weapon,
         Resceptacle,
         Filled_Resceptacle,
+        Person,
     }
     public ItemType itemType;
+
+    public GameObject BaseItem;
 }

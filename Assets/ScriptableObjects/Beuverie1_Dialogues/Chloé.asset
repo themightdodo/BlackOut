@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 520, y: 56}
+  position: {x: 520, y: 24}
   ports:
     keys:
     - choix
@@ -21,6 +21,7 @@ MonoBehaviour:
     - indicesToShow
     - choices
     - choices 0
+    - choixIndice
     values:
     - _fieldName: choix
       _node: {fileID: -5325443207708761885}
@@ -76,12 +77,24 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
+    - _fieldName: choixIndice
+      _node: {fileID: -5325443207708761885}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   choix:
     text: 
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
   sentences:
   - HAHA nan, je suis nouveau
   - "mais tu m\u2019avais l\u2019air\u2026 sympa ahah."
@@ -122,13 +135,14 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 856, y: 72}
+  position: {x: 856, y: 24}
   ports:
     keys:
     - choix
     - choixHand
     - indicesToShow
     - choices
+    - choixIndice
     values:
     - _fieldName: choix
       _node: {fileID: 2915335607356589205}
@@ -172,12 +186,24 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: 2915335607356589205}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   choix:
     text: 
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
   choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
   sentences:
   - "Oooh un premi\xE8re ann\xE9e"
   - trop mignon
@@ -209,6 +235,7 @@ MonoBehaviour:
     - indicesToShow
     - choices
     - choices 0
+    - choixIndice
     values:
     - _fieldName: choix
       _node: {fileID: 3175831328251620680}
@@ -261,12 +288,24 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
+    - _fieldName: choixIndice
+      _node: {fileID: 3175831328251620680}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   choix:
     text: 
   startType_: 2
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
   sentences:
   - "Salut toi ! \n"
   - "Qu\u2019est-ce que tu fais toute seule \xE0 la table ?\r\n"
@@ -290,7 +329,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 200, y: 40}
+  position: {x: 200, y: 24}
   ports:
     keys:
     - choix
@@ -298,6 +337,7 @@ MonoBehaviour:
     - indicesToShow
     - choices
     - choices 0
+    - choixIndice
     values:
     - _fieldName: choix
       _node: {fileID: 3508953903459518430}
@@ -353,12 +393,24 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
+    - _fieldName: choixIndice
+      _node: {fileID: 3508953903459518430}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
   choix:
     text: 
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
   choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
   sentences:
   - "Hey, j\u2019\xE9tais avec des potes, mais ils viennent de partir"
   - 'on se connait ?

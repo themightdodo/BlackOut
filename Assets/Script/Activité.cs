@@ -19,7 +19,7 @@ public class Activité : MonoBehaviour
         {
             Material mat = transform.GetChild(i).GetComponent<MeshRenderer>().material;
 
-            mat.color = gradient.Evaluate(Time);
+            mat.SetColor("_Color", gradient.Evaluate(Time));
         }
     }
 }

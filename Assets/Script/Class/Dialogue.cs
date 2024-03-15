@@ -9,12 +9,15 @@ public class Dialogue : Node
     [Input]
     public Choix choix;
 
+    public bool SuccessPoint;
+
     public enum startType
     {
         none,
         Examin,
         Talk,
         Talk2,
+        Success,
         Inventory_Show,
     }
     public startType startType_;

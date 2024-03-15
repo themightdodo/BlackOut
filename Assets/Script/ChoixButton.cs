@@ -14,15 +14,24 @@ public class ChoixButton : MonoBehaviour
     }
     public void TriggerDialogue()
     {
+        choixBuffer();
+        dm.CurrentDialogue = dialogue;
+        dm.StartDialogue(dialogue);
+     
+    }
+    void choixBuffer()
+    {
+        if (dm.state_ != Invest_Character_State_Machine.State.STATE_TALK
+            && dm.state_ != Invest_Character_State_Machine.State.STATE_PHONE)
+        {
+            return;
+        }
         foreach (var item in dm.CurrentDialogue.choices)
         {
             if (item != choix)
             {
                 dm.ClickedChoix.Add(item);
-            }          
+            }
         }
-        dm.CurrentDialogue = dialogue;
-        dm.StartDialogue(dialogue);
-     
     }
 }
