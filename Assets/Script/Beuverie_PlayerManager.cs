@@ -29,7 +29,6 @@ public class Beuverie_PlayerManager : MonoBehaviour
     public Vector3 MouseDestinationVec { get; set; }
 
 
-
     public NavMeshAgent agent { get; set; }
 
    

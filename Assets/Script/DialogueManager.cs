@@ -29,6 +29,7 @@ public class DialogueManager : Invest_Character_State_Machine
     int InteractCount;
 
     GameObject CurrentButton;
+    AudioManager audioManager;
 
     public enum Dialogue_State
     {
@@ -41,6 +42,7 @@ public class DialogueManager : Invest_Character_State_Machine
     {
         base.Start();
         sentences = new Queue<string>();
+        audioManager = gm.GetComponent<AudioManager>();
     }
 
 
@@ -176,11 +178,82 @@ public class DialogueManager : Invest_Character_State_Machine
         }
 
         string sentence = (string)sentences.Dequeue();
+        DialogueSound(sentence.Length);
         text.text = sentence;
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
-    
+    void DialogueSound(int wordCount)
+    {
+        Debug.Log(wordCount);
+        if (CurrentDialogue.PersonTalking != null)
+        {
+            switch (CurrentDialogue.PersonTalking.genre)
+            {
+                case Character.Genre.Femme:
+                    if (wordCount < 15)
+                    {
+                        audioManager.Play("FemmeCourt");
+                        audioManager.Stop("FemmeLong");
+                        audioManager.Stop("FemmeMid");
+                    }
+                    else if (wordCount > 35)
+                    {
+                        audioManager.Play("FemmeLong");
+                        audioManager.Stop("FemmeCourt");
+                        audioManager.Stop("FemmeMid");
+                    }
+                    else
+                    {
+                        audioManager.Play("FemmeMid");
+                        audioManager.Stop("FemmeCourt");
+                        audioManager.Stop("FemmeLong");
+                    }
+                    break;
+                case Character.Genre.Homme:
+                    if (wordCount < 15)
+                    {
+                        audioManager.Play("HommeCourt");
+                        audioManager.Stop("HommeLong");
+                        audioManager.Stop("HommeMid");
+                    }
+                    else if (wordCount > 35)
+                    {
+                        audioManager.Play("HommeLong");
+                        audioManager.Stop("HommeCourt");
+                        audioManager.Stop("HommeMid");
+                    }
+                    else
+                    {
+                        audioManager.Play("HommeMid");
+                        audioManager.Stop("HommeCourt");
+                        audioManager.Stop("HommeLong");
+                    }
+                    break;
+            }
+        }
+        else
+        {
+            if (wordCount < 15)
+            {
+                audioManager.Play("HommeCourt");
+                audioManager.Stop("HommeLong");
+                audioManager.Stop("HommeMid");
+            }
+            else if (wordCount > 35)
+            {
+                audioManager.Play("HommeLong");
+                audioManager.Stop("HommeCourt");
+                audioManager.Stop("HommeMid");
+            }
+            else
+            {
+                audioManager.Play("HommeMid");
+                audioManager.Stop("HommeCourt");
+                audioManager.Stop("HommeLong");
+            }
+        }
+    }
     IEnumerator TypeSentence(string sentence)
     {
         text.text = "";
@@ -272,6 +345,12 @@ public class DialogueManager : Invest_Character_State_Machine
     }
     void closeDialogue()
     {
+        audioManager.Stop("FemmeLong");
+        audioManager.Stop("FemmeCourt");
+        audioManager.Stop("FemmeMid");
+        audioManager.Stop("HommeLong");
+        audioManager.Stop("HommeMid");
+        audioManager.Stop("HommeCourt");
         sentences.Clear();
         CurrentDialogue = null;
         ActiveDialogue = null;

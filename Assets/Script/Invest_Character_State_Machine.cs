@@ -40,31 +40,31 @@ public class Invest_Character_State_Machine : MonoBehaviour
         switch (state_)
         {
             case State.STATE_IDLE:
-                Debug.Log("Idle");
+                
                 Idle_state();
                 break;
             case State.STATE_WALK:
-                Debug.Log("Walk");
+             
                 Walk_state();
                 break;
             case State.STATE_TALK:
-                Debug.Log("Talk");
+               
                 Talk_state();
                 break;
             case State.STATE_EXAMIN:
-                Debug.Log("Examin");
+               
                 Examin_state();
                 break;
             case State.STATE_SHOW:
-                Debug.Log("Show");
+         
                 Show_state();
                 break;
             case State.STATE_PHONE:
-                Debug.Log("Phone");
+        
                 Phone_state();
                 break;
             case State.STATE_MINIGAME:
-                Debug.Log("Minigame");
+           
                 MiniGame_state();
                 break;
         }

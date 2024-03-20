@@ -50,7 +50,7 @@ public class Beuverie_Character_StateMachine : MonoBehaviour
                 break;
             case State.STATE_BLACKOUT:
                 Blackout_state();
-                Debug.Log("Blackout");
+          
                 break;
             case State.STATE_FOLLOWCLICK:
                 FollowClick_state();

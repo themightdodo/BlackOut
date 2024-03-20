@@ -10,4 +10,10 @@ public class Character : ScriptableObject
     public Sprite ProfilePicture;
     [TextArea(10,3)]
     public string Desc;
+    public enum Genre
+    {
+        Homme,
+        Femme,
+    }
+    public Genre genre;
 }

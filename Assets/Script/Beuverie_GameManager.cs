@@ -11,6 +11,7 @@ public class Beuverie_GameManager : MonoBehaviour
     public Camera camera;
     public string NextScene;
     public Character PlayerInfo;
+    public float TimeBtwDialogues;
 
     private void Awake()
     {

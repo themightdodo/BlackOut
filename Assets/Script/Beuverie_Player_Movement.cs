@@ -26,21 +26,32 @@ public class Beuverie_Player_Movement : Beuverie_Character_StateMachine
     protected override void Walk_state()
     {
         base.Walk_state();
-
-        if (pm.TauxAlcool.Mid())
+        Rotate(gameObject, input.Lstick);
+        rb.velocity = input.Lstick * currentSpeed;
+/*        if (pm.TauxAlcool.Mid())
         {
             currentSpeed = DrunkedSpeed;
             rb.AddForce(input.Lstick * currentSpeed * Time.deltaTime);
         }
         else
         {
-            rb.velocity = input.Lstick * currentSpeed;
-        }
+            
+        }*/
     }
     protected override void FollowClick_state()
     {
         pm.agent.SetDestination(pm.MouseDestinationVec);
         base.FollowClick_state();
         
+    }
+
+    public void Rotate(GameObject gameObject, Vector3 direction)
+    {
+        Quaternion targetRotation = Quaternion.FromToRotation(gameObject.transform.forward, direction) * gameObject.transform.rotation;
+        gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, targetRotation, 1000 * Time.deltaTime);
+
+       gameObject.transform.rotation = new Quaternion(0, gameObject.transform.rotation.y, 0, gameObject.transform.rotation.w);
+/*        Quaternion targetUp = Quaternion.FromToRotation(gameObject.transform.up, Vector3.up) * gameObject.transform.rotation;
+        gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, targetUp, 1000 * Time.deltaTime);*/
     }
 }

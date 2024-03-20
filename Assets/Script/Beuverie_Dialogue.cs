@@ -28,12 +28,15 @@ public class Beuverie_Dialogue : MonoBehaviour
 
     bool leaveNoEnd;
 
+    AudioManager audioManager;
 
     private void Start()
     {
         sentences = new Queue<string>();
         FindDialogue(Dialogue.startType.Talk, out CurrentDialogue);
+        
         gm = Beuverie_GameManager.GM_instance;
+        audioManager = gm.GetComponent<AudioManager>();
     }
 
     private void Update()
@@ -71,7 +74,7 @@ public class Beuverie_Dialogue : MonoBehaviour
     void DisplayNextSentence()
     {
         Destroy(CurrentChatBox);
-
+       
         if (sentences.Count == 0&&!leaveNoEnd)
         {
             randomPos = new Vector3(Random.Range(-2, 2), 0, Random.Range(-2, 2));
@@ -80,7 +83,7 @@ public class Beuverie_Dialogue : MonoBehaviour
         }
       
         string sentence = (string)sentences.Dequeue();
-
+        DialogueSound(sentence.Length);
         Vector3 RandomPos = transform.position + ChatBoxOffset + randomPos;
         if (CurrentDialogue != null&&CurrentDialogue.PersonTalking == gm.PlayerInfo)
         {
@@ -90,6 +93,78 @@ public class Beuverie_Dialogue : MonoBehaviour
         CurrentChatBox.GetComponentInChildren<TextMeshPro>().text = sentence;
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
+    }
+    
+    void DialogueSound(int wordCount)
+    {
+        Debug.Log(wordCount);
+        if(CurrentDialogue.PersonTalking != null)
+        {
+            switch (CurrentDialogue.PersonTalking.genre)
+            {
+                case Character.Genre.Femme:
+                    if (wordCount < 15)
+                    {
+                        audioManager.Play("FemmeCourt");
+                        audioManager.Stop("FemmeLong");
+                        audioManager.Stop("FemmeMid");
+                    }
+                    else if (wordCount > 35)
+                    {
+                        audioManager.Play("FemmeLong");
+                        audioManager.Stop("FemmeCourt");
+                        audioManager.Stop("FemmeMid");
+                    }
+                    else
+                    {
+                        audioManager.Play("FemmeMid");
+                        audioManager.Stop("FemmeCourt");
+                        audioManager.Stop("FemmeLong");
+                    }
+                    break;
+                case Character.Genre.Homme:
+                    if (wordCount < 15)
+                    {
+                        audioManager.Play("HommeCourt");
+                        audioManager.Stop("HommeLong");
+                        audioManager.Stop("HommeMid");
+                    }
+                    else if (wordCount > 35)
+                    {
+                        audioManager.Play("HommeLong");
+                        audioManager.Stop("HommeCourt");
+                        audioManager.Stop("HommeMid");
+                    }
+                    else
+                    {
+                        audioManager.Play("HommeMid");
+                        audioManager.Stop("HommeCourt");
+                        audioManager.Stop("HommeLong");
+                    }
+                    break;
+            }
+        }
+        else
+        {
+            if (wordCount < 15)
+            {
+                audioManager.Play("HommeCourt");
+                audioManager.Stop("HommeLong");
+                audioManager.Stop("HommeMid");
+            }
+            else if (wordCount > 35)
+            {
+                audioManager.Play("HommeLong");
+                audioManager.Stop("HommeCourt");
+                audioManager.Stop("HommeMid");
+            }
+            else
+            {
+                audioManager.Play("HommeMid");
+                audioManager.Stop("HommeCourt");
+                audioManager.Stop("HommeLong");
+            }
+        }
     }
 
     void EndDialogue()
@@ -142,7 +217,7 @@ public class Beuverie_Dialogue : MonoBehaviour
             CurrentChatBox.GetComponentInChildren<TextMeshPro>().text += letter;
             if (i == sentence.ToCharArray().Length)
             {
-               Invoke("DisplayNextSentence",1.5f);
+               Invoke("DisplayNextSentence",gm.TimeBtwDialogues);
             }
             i++;
             yield return null;
@@ -186,6 +261,12 @@ public class Beuverie_Dialogue : MonoBehaviour
             }    */     
             ResetDialogue();
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawSphere(transform.position + ChatBoxOffset, 0.5f);
     }
 
 }

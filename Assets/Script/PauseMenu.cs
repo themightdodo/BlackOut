@@ -18,15 +18,18 @@ public class PauseMenu : Invest_Character_State_Machine
     public TextMeshProUGUI TextEndMenu;
     public GameObject Winscreen;
     public GameObject GameOverUI;
+    public GameObject OeilPanel;
     public float winRadius;
     public LayerMask Player;
     public float Timer = 1.5f;
-    bool Endbool;
+    bool Endbool = false;
+    Timer Oeil;
     // Update is called once per frame
 
     protected override void Start()
     {
         base.Start();
+        Oeil = new Timer(5f);
         GameIsPaused = false;
         Time.timeScale = 1f;
         AnimPause = pauseMenuUI.GetComponent<Animator>();
@@ -36,6 +39,11 @@ public class PauseMenu : Invest_Character_State_Machine
     protected override void Update()
     {
         base.Update();
+        Oeil.Refresh();
+        if (Oeil.Done())
+        {
+            OeilPanel.SetActive(false);
+        }
         if (state_ == State.STATE_IDLE&&!GameIsPaused)
         {
             Cursor.visible = false;

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 using UnityEngine.Events;
 using System.Linq;
 
@@ -23,6 +25,8 @@ public class PhoneManager : Invest_Character_State_Machine
     public Phone_State phone_State_;
     CanvasManager cm;
     DialogueManager dm;
+    public GameObject Phone;
+    public TextMeshProUGUI ArchiveDesc;
 
     protected override void Start()
     {
@@ -52,6 +56,7 @@ public class PhoneManager : Invest_Character_State_Machine
         }
         if (input.Phone.Pressed())
         {
+            Phone.SetActive(true);
             ActiveScreen("Home");
             state_ = State.STATE_PHONE;
         }
@@ -203,6 +208,16 @@ public class PhoneManager : Invest_Character_State_Machine
         }
         return null;
     }
+    void ActiveBaseScreen(string name)
+    {
+        foreach (var item in Screens)
+        {
+            if (item.name == name)
+            {
+                item.SetActive(true);
+            }
+        }
+    }
     void ActiveScreen(string name)
     {
         foreach (var item in Screens)
@@ -219,7 +234,8 @@ public class PhoneManager : Invest_Character_State_Machine
     }
     void CloseAll()
     {
-        foreach(var item in Screens)
+        Phone.SetActive(false);
+        foreach (var item in Screens)
         {
             item.SetActive(false);
         }

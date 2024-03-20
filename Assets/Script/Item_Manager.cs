@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class Item_Manager : MonoBehaviour
 {
     public UnityEvent<string> Action;
+    public string PickSound;
+    public string ThrowSound;
     public enum ItemType
     {
         None,

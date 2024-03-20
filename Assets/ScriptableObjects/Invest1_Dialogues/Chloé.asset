@@ -91,7 +91,7 @@ MonoBehaviour:
     text: 
   SuccessPoint: 0
   startType_: 0
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -187,7 +187,7 @@ MonoBehaviour:
     text: 
   SuccessPoint: 0
   startType_: 0
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -224,6 +224,7 @@ MonoBehaviour:
     - indicesToShow
     - choices
     - choices 0
+    - choixIndice 0
     values:
     - _fieldName: choix
       _node: {fileID: -7954479349185312199}
@@ -289,15 +290,25 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
+    - _fieldName: choixIndice 0
+      _node: {fileID: -7954479349185312199}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
   choix:
     text: 
   SuccessPoint: 0
   startType_: 0
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
-  choixIndice: []
+  choixIndice:
+  - text: 
   sentences:
   - 'Si un peu.. '
   - " j\u2019ai mal \xE0 la t\xEAte"
@@ -387,7 +398,7 @@ MonoBehaviour:
     text: 
   SuccessPoint: 0
   startType_: 0
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -491,7 +502,7 @@ MonoBehaviour:
     text: 
   SuccessPoint: 0
   startType_: 0
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -598,7 +609,7 @@ MonoBehaviour:
     text: 
   SuccessPoint: 0
   startType_: 0
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -703,7 +714,7 @@ MonoBehaviour:
     text: 
   SuccessPoint: 0
   startType_: 0
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -795,7 +806,7 @@ MonoBehaviour:
     text: 
   SuccessPoint: 0
   startType_: 0
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -914,7 +925,7 @@ MonoBehaviour:
     text: 
   SuccessPoint: 0
   startType_: 0
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1021,7 +1032,7 @@ MonoBehaviour:
     text: 
   SuccessPoint: 0
   startType_: 0
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1114,7 +1125,7 @@ MonoBehaviour:
     text: 
   SuccessPoint: 0
   startType_: 0
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1232,7 +1243,7 @@ MonoBehaviour:
     text: 
   SuccessPoint: 0
   startType_: 0
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1354,7 +1365,7 @@ MonoBehaviour:
     text: 
   SuccessPoint: 0
   startType_: 0
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1467,7 +1478,7 @@ MonoBehaviour:
     text: 
   SuccessPoint: 0
   startType_: 0
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1587,7 +1598,7 @@ MonoBehaviour:
     text: 
   SuccessPoint: 0
   startType_: 0
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1720,7 +1731,7 @@ MonoBehaviour:
     text: 
   SuccessPoint: 1
   startType_: 0
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1811,7 +1822,7 @@ MonoBehaviour:
     text: 
   SuccessPoint: 0
   startType_: 0
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1915,7 +1926,7 @@ MonoBehaviour:
     text: 
   SuccessPoint: 0
   startType_: 0
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -2034,7 +2045,7 @@ MonoBehaviour:
     text: 
   SuccessPoint: 0
   startType_: 0
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -2151,12 +2162,12 @@ MonoBehaviour:
     text: 
   SuccessPoint: 0
   startType_: 4
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 11400000, guid: f1e700f9a1a1c0c4ca47725e212d62be, type: 2}
   choixIndice:
-  - text: "C\u2019est bonj\u2019ai trouv\xE9 ma position, je suis \xE0 Nord House
+  - text: "C\u2019est bon j\u2019ai trouv\xE9 ma position, je suis \xE0 Nord House
       Ridge Lake\u2026 ou quelque chose comme \xE7a. D\xE9p\xEAche-toi ! Je suis
       avec Matthew, mais il a besoin d\u2019aller \xE0 l\u2019h\xF4pital ! "
   sentences:
@@ -2282,7 +2293,7 @@ MonoBehaviour:
     text: 
   SuccessPoint: 0
   startType_: 2
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -2400,7 +2411,7 @@ MonoBehaviour:
     text: 
   SuccessPoint: 0
   startType_: 0
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -2508,7 +2519,7 @@ MonoBehaviour:
     text: 
   SuccessPoint: 0
   startType_: 0
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}

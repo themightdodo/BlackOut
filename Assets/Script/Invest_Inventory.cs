@@ -26,6 +26,10 @@ public class Invest_Inventory : Invest_Character_State_Machine
 
     public void AddToInventory(IndiceItem indice)
     {
+        if (CurrentIndices.Contains(indice))
+        {
+            return;
+        }
         CurrentIndices.Add(indice);
         UpdateInventory();
     }
