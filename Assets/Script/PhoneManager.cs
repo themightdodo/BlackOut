@@ -28,10 +28,12 @@ public class PhoneManager : Invest_Character_State_Machine
     public GameObject Phone;
     public TextMeshProUGUI ArchiveDesc;
     public Image ArchiveImage;
+    public Historic_manager historic;
 
     protected override void Start()
     {
         base.Start();
+   
         cm = Invest_GameManager.GM_instance.CanvasManager;
         dm = Invest_GameManager.GM_instance.DialogueManager;
     }
@@ -42,6 +44,10 @@ public class PhoneManager : Invest_Character_State_Machine
         if(state_!= State.STATE_PHONE)
         {
             CloseAll();
+        }
+        if(phone_State_ != Phone_State.STATE_HISTORIC)
+        {
+            historic.CloseHistoricWindow();
         }
     }
 
@@ -172,9 +178,10 @@ public class PhoneManager : Invest_Character_State_Machine
         dm.StartDialogueOut(chara_Dialogue,interactCount,button);
         ActiveScreen("Calling");
     }
-    public void Historic_transition()
+    public void Historic_transition(Character character)
     {
         phone_State_ = Phone_State.STATE_HISTORIC;
+        historic.ShowHistoric(character);
         ActiveScreen("Historic");
     }
     public void Called_transition()

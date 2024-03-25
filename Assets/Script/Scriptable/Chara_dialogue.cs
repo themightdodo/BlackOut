@@ -7,5 +7,5 @@ using XNode;
 [System.Serializable]
 public class Chara_dialogue : NodeGraph
 {
-
+   public Character PersonInteractedWith;
 }

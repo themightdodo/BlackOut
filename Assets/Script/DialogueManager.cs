@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using XNode;
 using UnityEngine.Events;
 
+
 public class DialogueManager : Invest_Character_State_Machine
 {
     public TextMeshProUGUI text;
@@ -20,11 +21,15 @@ public class DialogueManager : Invest_Character_State_Machine
 
     public GameObject ButtonPanel;
 
+    public TextMeshProUGUI PersonTalking;
+
     public List<GameObject> currentsButtons;
 
     public List<Choix> ClickedChoix;
 
     public List<GameObject> Events;
+
+    Historic_manager historic;
 
     int InteractCount;
 
@@ -42,6 +47,7 @@ public class DialogueManager : Invest_Character_State_Machine
     {
         base.Start();
         sentences = new Queue<string>();
+        historic = gm.PhoneManager.historic;
         audioManager = gm.GetComponent<AudioManager>();
     }
 
@@ -144,18 +150,29 @@ public class DialogueManager : Invest_Character_State_Machine
         dialogue_State = Dialogue_State.STATE_SHOWING;
         sentences.Clear();
         clearButtons();
+       
         if (CurrentDialogue == null)
         {
             sentences.Enqueue("...");
         }
         else
         {
+            if(CurrentDialogue.PersonTalking != null)
+            {
+                PersonTalking.text = CurrentDialogue.PersonTalking.name;
+            }
+            else
+            {
+                PersonTalking.text = "Arthur";
+            }
             foreach (string sentence in dialogue.sentences)
             {
                 sentences.Enqueue(sentence);
             }
-        }
+            historic.AddToBuffer(CurrentDialogue);
 
+        }
+      
 
         DisplayNextSentence();
     }
@@ -267,6 +284,13 @@ public class DialogueManager : Invest_Character_State_Machine
     void EndDialogue()
     {
         dialogue_State = Dialogue_State.STATE_END;
+        if(CurrentDialogue.startType_ == Dialogue.startType.Answer)
+        {
+            CurrentDialogue = (Dialogue)CurrentDialogue.GetOutputPort("choices" + " " + 0).Connection.node;
+            StartDialogue(CurrentDialogue);
+            Debug.Log("EEEFSDJPEFI");
+            return;
+        }
         if(CurrentDialogue != null &&CurrentDialogue.choices.Count > 0)
         {
             for (int i = 0; i < CurrentDialogue.choices.Count; i++)
@@ -352,6 +376,11 @@ public class DialogueManager : Invest_Character_State_Machine
         audioManager.Stop("HommeMid");
         audioManager.Stop("HommeCourt");
         sentences.Clear();
+        if(ActiveDialogue.PersonInteractedWith != null)
+        {
+            historic.SaveHistoric(ActiveDialogue.PersonInteractedWith);
+        }
+        
         CurrentDialogue = null;
         ActiveDialogue = null;
         pm.FinInteraction.Invoke();

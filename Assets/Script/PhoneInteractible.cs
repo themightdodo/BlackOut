@@ -18,4 +18,9 @@ public class PhoneInteractible : MonoBehaviour
         InteractCount++;
         phoneManager.Calling_transition(chara_Dialogue, InteractCount,gameObject);
     }
+
+    public void Historic(Character character)
+    {
+        phoneManager.Historic_transition(character);
+    }
 }

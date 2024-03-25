@@ -19,6 +19,7 @@ public class Dialogue : Node
         Talk2,
         Success,
         Inventory_Show,
+        Answer,
     }
     public startType startType_;
 

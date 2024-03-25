@@ -10,6 +10,8 @@ public class CanvasManager : Invest_Character_State_Machine
     public GameObject ItemInfo;
     public GameObject Panelinfo;
 
+    public bool thinking;
+
     protected override void Idle_state()
     {
         base.Idle_state();
@@ -61,7 +63,10 @@ public class CanvasManager : Invest_Character_State_Machine
     {
         BasePanel.SetActive(false);
         FocusPanel.SetActive(true);
-        DialoguePanel.SetActive(false);
+        if (!thinking)
+        {
+            DialoguePanel.SetActive(false);
+        }
         ItemInfo.SetActive(false);
         Panelinfo.SetActive(false);
     }
@@ -69,7 +74,11 @@ public class CanvasManager : Invest_Character_State_Machine
     {
         BasePanel.SetActive(true);
         FocusPanel.SetActive(false);
-        DialoguePanel.SetActive(false);
+        if (!thinking)
+        {
+             DialoguePanel.SetActive(false);
+        }
+       
         Panelinfo.SetActive(false);
     }
     void ItemUI()
