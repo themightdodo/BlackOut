@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Invest_Inventory : Invest_Character_State_Machine
 {
     public List<IndiceItem> CurrentIndices;
-    public GameObject InventoryContainer;
+    public List<GameObject> InventoryContainer;
     public GameObject ButtonPrefab;
 
     protected override void Start()
@@ -16,12 +16,15 @@ public class Invest_Inventory : Invest_Character_State_Machine
     }
     public void UpdateInventory()
     {
-        foreach (var item in CurrentIndices)
-        {
-            GameObject Button = Instantiate(ButtonPrefab, InventoryContainer.transform);
-            Button.GetComponent<Image>().sprite = item.Image;
-            Button.GetComponent<Inventory_element>().infos = item;
-        }
+
+            foreach (var Inventoryitem in InventoryContainer)
+            {
+                GameObject Button = Instantiate(ButtonPrefab, Inventoryitem.transform);
+                Button.GetComponent<Image>().sprite = CurrentIndices[CurrentIndices.Count-1].Image;
+                Button.GetComponent<Inventory_element>().infos = CurrentIndices[CurrentIndices.Count-1];
+            }
+
+        
     }
 
     public void AddToInventory(IndiceItem indice)

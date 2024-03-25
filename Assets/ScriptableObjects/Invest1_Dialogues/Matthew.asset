@@ -110,17 +110,16 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "Non non, l\u2019alcool \xE7a me fait vomir. "
-  - "Mais je me suis pris quelque chose dans la t\xEAte, il faudrait que je vois
-    un m\xE9decin\u2026\r\n"
+  - 'No, no, alcohol makes me vomit. '
+  - But I got hit in the head, I need to see a doctor..
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: " On va partir d\u2019ici, je te le promets"
-  - text: "J\u2019vais te sortir de la mais est-ce que tu sais o\xF9 on est ? "
+  - text: We're leaving here, I promise you.
+  - text: I'm going to get you out of here but do you know where we are?
 --- !u!114 &-2800862363360741543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,14 +220,14 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "Qu\u2019est-ce qu\u2019il se passe ? A\xEFe a\xEFe ma t\xEAte."
+  - What's going on ? Ouch, my head.
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Toi aussi, tu as d\xFB beaucoup boire pour te retrouver dans cet \xE9tat\u2026 "
+  - text: You too, you must have drunk a lot to end up like this..
 --- !u!114 &-690447691929958983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,7 +312,7 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - Il vraiment pas l'air bien
+  - He really doesn't seem to be okay
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 7993212494869446776, guid: 26c14e8883b8c7b42b53c0be509e35c5,
@@ -429,7 +428,7 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "J\xE9sus ? "
+  - Jesus?
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
@@ -546,16 +545,15 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "Je me sens pas bien, je crois que je vais m\u2019\xE9vanouir\u2026\r\n"
+  - I'm not feeling well, I think I'm going to faint..
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: " \xC7a va bien se passer, tu es avec moi. "
-  - text: "\xC9coute, j\u2019ai vraiment besoin de savoir o\xF9 on est pour pouvoir
-      nous sortir de l\xE0. "
+  - text: It's going to be okay, you're with me.
+  - text: Listen, I really need to know where we are so I can get us out of here.
 --- !u!114 &879042834346414810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,7 +638,7 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "Nord\u2026 House\u2026 Ridge\u2026 Laaaa\u2026"
+  - "North... House... Ridge... Laaa... \r\n"
   indicesToShow: []
   indicesGiven:
   - item: {fileID: 11400000, guid: f1e700f9a1a1c0c4ca47725e212d62be, type: 2}
@@ -732,7 +730,7 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "On est\u2026 je crois que\u2026 c\u2019est Nord House Ridge Lake ?\r\n"
+  - We are... I think... it's North House Ridge Lake?
   indicesToShow: []
   indicesGiven:
   - item: {fileID: 11400000, guid: f1e700f9a1a1c0c4ca47725e212d62be, type: 2}
@@ -824,8 +822,8 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "Je crois qu\u2019on est au Nord de House Ridge Lake. "
-  - "C\u2019est ce que les gars disaient hier soir.\r\n"
+  - I think we're at the North of House Ridge Lake.
+  - That's what the guys were saying last night.
   indicesToShow: []
   indicesGiven:
   - item: {fileID: 11400000, guid: f1e700f9a1a1c0c4ca47725e212d62be, type: 2}
@@ -937,18 +935,20 @@ MonoBehaviour:
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 3
   choixHand:
-  - text: L'arroser
+  - text: Water him
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "Il a l'air assom\xE9"
+  - '...He seems completely knocked out...
+
+'
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: Le prendre dans tes bras
+  - text: Take him in your arms
 --- !u!114 &6589171440371812875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1059,15 +1059,15 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "Je\u2026 Je vois de la lumi\xE8re\u2026\r\n"
+  - I... I see light..
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Garde les yeux ouverts, regarde-moi, j\u2019ai besoin de toi. "
-  - text: "Dis-moi o\xF9 on est ! Vite ! "
+  - text: 'Keep your eyes open, look at me, I need you. '
+  - text: 'Tell me where we are! Quickly!  '
 --- !u!114 &8195552077573191742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1159,7 +1159,7 @@ MonoBehaviour:
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 3
   choixHand:
-  - text: L'arroser
+  - text: Water him
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:

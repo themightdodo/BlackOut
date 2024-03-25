@@ -97,7 +97,7 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - 'Oui ? Mais pourquoi ?
+  - 'Yes ? But why ?
 
 '
   indicesToShow: []
@@ -106,9 +106,9 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Tu vois\u2026 j\u2019\xE9tais tellement en forme que je suis parti faire
-      un footing en for\xEAt, mais je me suis perdu et je suis trop \xE9puis\xE9
-      pour rentrer tout seul, est-ce que tu pourrais venir me chercher ? "
+  - text: 'You see... I was feeling so great that I went for a run in the forest,
+      but I got lost and I''m too exhausted to make it back alone. Could you come
+      pick me up ? '
 --- !u!114 &-8492140776241957525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,9 +193,7 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - 'On se retiendra mutuellement alors.
-
-'
+  - "We'll hold each other back then. \r\n"
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
@@ -310,16 +308,15 @@ MonoBehaviour:
   choixIndice:
   - text: 
   sentences:
-  - 'Si un peu.. '
-  - " j\u2019ai mal \xE0 la t\xEAte"
+  - Yeah, a bit... I have a headache.
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Moi aussi en plus de ne pas me souvenir de grand chose\u2026 La prochaine
-      fois, il faudra me retenir !"
+  - text: 'Me too, and I don''t remember much... Next time, you''ll have to hold
+      me back ! '
 --- !u!114 &-7029065691274207940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,7 +401,7 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - a+
+  - Later.
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
@@ -508,16 +505,16 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "Aarrf t\u2019abuses un peu l\xE0\u2026 "
-  - " Si t\u2019es all\xE9 jusque-l\xE0 bas tout seul, tu dois bien pouvoir rentrer
-    non\u202F?"
+  - 'Ugh, you''re pushing it... '
+  - If you went all the way there alone, you should be able to make it back, right
+    ?
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Oui, ouais, t\u2019as pas tort\u2026 "
+  - text: 'Yeah, you''re right... '
 --- !u!114 &-5846820054363467070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -615,14 +612,16 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "AAAH bon si c\u2019est \xE0 cause d\u2019un pote alors.\r\n"
+  - 'Oh well, if it''s because of a friend then.
+
+'
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "J\u2019te jure ! jamais, j'aurais dit \xE7a sinon !"
+  - text: I swear ! I would never have said that otherwise !
 --- !u!114 &-5549760811763802352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -812,9 +811,8 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "Attends vraiment ?? J\u2019ai peut-\xEAtre trop bu, car je m\u2019en souviens
-    pas. \n"
-  - "Oublie \xE7a tu veux ?\r"
+  - 'Wait, really ? I might have had too much to drink because I don''t remember. '
+  - Forget about it, okay ?
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
@@ -931,16 +929,18 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "Un peu mal \xE0 la t\xEAte"
-  - "mais \xE7a va et toi ? Arthur, c'\xE9tait bien \xE7a ?"
+  - A bit of a headache
+  - 'but I''m okay. And you ? Arthur, was it?
+
+'
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Oui, c'est \xE7a, en fait j\u2019aurai une petite faveur \xE0 te demander\u2026"
-  - text: "C\u2019est bien moi, je t\u2019avoue que le r\xE9veil est\u2026 compliqu\xE9 "
+  - text: Yes, that's right. Actually, I have a small favor to ask you...
+  - text: Yes It's me, I admit waking up is... quite difficult.
 --- !u!114 &-2431609785224144831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1038,15 +1038,17 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "Ah je me disais bien aussi t\u2019avais l\u2019air d\u2019avoir beaucoup bu\r\n"
+  - 'Ah, I thought so, you seemed like you had a lot to drink.
+
+'
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Oui en fait je me suis r\xE9veill\xE9 en for\xEAt et je ne sais pas ce
-      que je fais ici."
+  - text: Yeah, actually, I woke up in the forest, and I don't know what I'm doing
+      here.
 --- !u!114 &-1498284117585610748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1131,7 +1133,9 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "Ok, je devrais trouver avec \xE7a, j\u2019arrive."
+  - 'Okay, I should be able to find it with that, I''m on my way.
+
+'
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
@@ -1249,18 +1253,19 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "Aaah moi je crois que j\u2019ai trop bu !"
-  - "j\u2019ai mal \xE0 la t\xEAte et je me souviens pas de tout\u2026\r\n"
+  - Aaah, I think I drank too much!
+  - 'I have a headache, and I don''t remember everything...
+
+'
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 'Ah mince, et par hasard est-ce que tu serais suffisamment en forme pour
-      conduire ? '
-  - text: "J\u2019esp\xE8re que \xE7a va vite passer, en fait, je t\u2019ai un peu
-      menti, moi non plus je ne me souviens pas de la soir\xE9e\u2026 "
+  - text: Ah, darn. And by any chance, are you feeling well enough to drive ?
+  - text: 'I hope this passes quickly. Actually, I lied to you too; I don''t remember
+      the party either... '
 --- !u!114 &-1372076319407896148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1371,19 +1376,20 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "Arthur, c'est \xE7a ?"
-  - "\xC9coute, c'est pas parce que j\u2019\xE9tais sympa avec toi vu que tu es un
-    premi\xE8re ann\xE9e qu\u2019il faut se faire des id\xE9es."
+  - 'Arthur, right ? '
+  - ' Listen, I was nice to you since you''re a freshman but it doesn''t mean you
+    should get ideas.
+
+'
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Pour \xEAtre honn\xEAte, je me souviens pas tr\xE8s bien de la soir\xE9e,
-      c'est un pote qui m\u2019a fait croire qu\u2019il s\u2019\xE9tait pass\xE9
-      des choses\u2026 Je me suis fait avoir ahah. "
-  - text: "Pourtant hier t\u2019\xE9tais plut\xF4t tactile"
+  - text: 'To be honest, I don''t remember much from the party, a friend made me
+      believe that things happened... I got fooled '
+  - text: 'Yet yesterday you were quite tactile. '
 --- !u!114 &-1075129524560159223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1484,16 +1490,18 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - Hein ?
-  - " mais qu\u2019est-ce que tu fais en for\xEAt ? "
-  - " \u2026Bon dis-moi o\xF9 tu es, et j\u2019arrive."
+  - 'Huh ? '
+  - ' What are you doing in the woods ?'
+  - '...Just tell me where you are, and I''ll be right there.
+
+'
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Je te rappelle quand j\u2019aurai trouv\xE9 ma localisation."
+  - text: I'll call you back
 --- !u!114 &-114589371964756442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1604,19 +1612,17 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - Oui bon je te crois
-  - ' tu voulais autre chose sinon ?
-
-'
+  - ' Okay, I believe you.'
+  - Did you want something else ?
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Nan, j\u2019appelais juste pour prendre des nouvelles. Pas trop dur le
-      r\xE9veil d\u2019ailleurs ? "
-  - text: "Oui, j\u2019aurai une faveur \xE0 te demander\u2026 "
+  - text: 'No, I was just calling to check on you. Not too much trouble getting up
+      this morning ? '
+  - text: 'Yeah, I have a favor to ask you... '
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1737,7 +1743,7 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - ok!
+  - okay!
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
@@ -1828,7 +1834,7 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - Rappelle moi quand tu sais
+  - Call me back when you know
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
@@ -1932,15 +1938,16 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "C\u2019est une blague j\u2019esp\xE8re ?"
+  - 'This is a joke, right?
+
+'
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Est ce que \xE7a serait possible de me ramener ? j\u2019avoue que je suis
-      un peu d\xE9sesp\xE9r\xE9.. "
+  - text: 'Is it possible for you to pick me up? I admit I''m a bit desperate... '
 --- !u!114 &4886684288031267115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2051,16 +2058,16 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - Oui Arthur !
-  - "Pas trop difficile le r\xE9veil ?\r\n"
+  - "Yes, Arthur! \n"
+  - "Wasn't it too hard to wake up ?\r"
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Alors justement, j'aurai une petite faveur \xE0 te demander.. "
-  - text: "Je me sens super bien ! \xE9tonnamment. Et toi ?"
+  - text: Indeed.. I actually have a small favor to ask you...
+  - text: I'm feeling great ! Surprisingly. And you ?
 --- !u!114 &5757726012123575565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2167,18 +2174,18 @@ MonoBehaviour:
   choixHand: []
   IndiceToHave: {fileID: 11400000, guid: f1e700f9a1a1c0c4ca47725e212d62be, type: 2}
   choixIndice:
-  - text: "C\u2019est bon j\u2019ai trouv\xE9 ma position, je suis \xE0 Nord House
-      Ridge Lake\u2026 ou quelque chose comme \xE7a. D\xE9p\xEAche-toi ! Je suis
-      avec Matthew, mais il a besoin d\u2019aller \xE0 l\u2019h\xF4pital ! "
+  - text: 'It''s alright, I found my location, I''m at North House Ridge Lake...
+      or something like that. Hurry up ! I''m with Matthew, but he needs to go to
+      the hospital ! '
   sentences:
-  - 'Du coup t''es ou ? '
+  - 'So, where are you ? '
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: Je sais toujours pas
+  - text: I still don't know
 --- !u!114 &6011139505175487716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2306,11 +2313,10 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Salut Chlo\xE9, tu vas bien depuis hier soir\u202F? "
-  - text: "Salut Chlo\xE9, par rapport \xE0 hier, je crois que \xE7a va un peu trop
-      vite entre nous. "
-  - text: "Hey, Chlo\xE9, c'est bien \xE7a ? On s\u2019est vu \xE0 la soir\xE9e,
-      il me semble"
+  - text: "Hi Chlo\xE9, how are you feeling since last night ?"
+  - text: "Hi Chlo\xE9, about yesterday, I think things are moving a bit too fast
+      between us"
+  - text: "Hey, Chlo\xE9, was it ? We met at the party, I think so."
 --- !u!114 &7568209469941520266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2417,7 +2423,7 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - 'Dis-moi, je vais voir ce que je peux faire.
+  - 'Sure, tell me what you need.
 
 '
   indicesToShow: []
@@ -2426,8 +2432,8 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Alors, en fait, la vie a fait que je me suis perdu en for\xEAt et j\u2019aurais
-      besoin de quelqu\u2019un pour me ramener. "
+  - text: 'Well, life got me lost in the woods and I''d need someone to bring me
+      back in town. '
 --- !u!114 &8306346216212958095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2525,11 +2531,11 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "Moi aussi j\u2019ai bien mal \xE0 la t\xEAte."
+  - "I\u2019ve got a hell of a headache too."
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Oui, c'est \xE7a, en fait j\u2019aurai une petite faveur \xE0 te demander\u2026"
+  - text: Actually, I have a small favor to ask you...

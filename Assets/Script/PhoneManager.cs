@@ -27,6 +27,7 @@ public class PhoneManager : Invest_Character_State_Machine
     DialogueManager dm;
     public GameObject Phone;
     public TextMeshProUGUI ArchiveDesc;
+    public Image ArchiveImage;
 
     protected override void Start()
     {
@@ -196,7 +197,15 @@ public class PhoneManager : Invest_Character_State_Machine
         phone_State_ = Phone_State.STATE_ARCHIVE;
         ActiveScreen("Archive");
     }
+    public void ItemDetail_transition()
+    {
     
+        List<string> list = new List<string>();
+        list.Add("ItemDetail");
+        list.Add("InventoryInfo");
+        ActiveScreenMultiple(list);
+
+    }
     GameObject GetScreen(string name)
     {
         foreach (var item in Screens)
@@ -229,6 +238,24 @@ public class PhoneManager : Invest_Character_State_Machine
             else
             {
                 item.SetActive(false);
+            }
+        }
+    }
+    void ActiveScreenMultiple(List<string> names)
+    {
+        foreach (var item in names)
+        {
+            foreach (var screen in Screens)
+            {
+                if (names.Contains(screen.name))
+                {
+                    Debug.Log(screen.name);
+                    screen.SetActive(true);
+                }
+                else
+                {
+                    screen.SetActive(false);
+                }
             }
         }
     }

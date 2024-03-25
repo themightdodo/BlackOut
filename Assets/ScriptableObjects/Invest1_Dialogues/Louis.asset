@@ -102,6 +102,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+  SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -109,8 +110,10 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "Mais oui, comment elle s\u2019appelait d\xE9j\xE0 ?"
-  - " j\u2019ai oubli\xE9 son pr\xE9nom."
+  - 'Yes, what was her name again ?.
+
+'
+  - I forgot
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
@@ -198,6 +201,7 @@ MonoBehaviour:
       _dynamic: 0
   choix:
     text: 
+  SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -205,10 +209,11 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - Tu sais le combat !
-  - " C\u2019est dommage qu\u2019elle ait fini \xE0 l\u2019h\xF4pital, mais ta prise
-    finale en valait le co\xFBt."
-  - "Attends, je t\u2019envoie les photos."
+  - 'You know, the fight ! '
+  - It's a shame she ended up in the hospital, but your final move was worth it.
+  - 'Wait, I''ll send you the photos.
+
+'
   indicesToShow: []
   indicesGiven:
   - item: {fileID: 11400000, guid: 7729c1e2532d74345886878469443c2a, type: 2}
@@ -302,6 +307,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+  SuccessPoint: 0
   startType_: 2
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -316,7 +322,7 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Salut Louis, je t\u2019appelle par rapport \xE0 hier soir "
+  - text: 'Hi Louis, I''m calling you about last night. '
 --- !u!114 &-4773022500715937481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,6 +399,7 @@ MonoBehaviour:
       _dynamic: 0
   choix:
     text: 
+  SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -509,6 +516,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+  SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -516,18 +524,18 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "Non non pas Chlo\xE9\n"
-  - "celle qui est venue avec nous\u2026\r"
-  - "Je crois que \xE7a commen\xE7ait par un \u201CI\u201D ou un \u201CC\u201D."
-  - En tout cas, tu nous as bien fait rire.
+  - "No, not Chlo\xE9,\n"
+  - "the one who came with us\u2026\r"
+  - 'I think it started with an ''I'' or a ''C''. '
+  - Anyway, you really made us laugh.
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Je suis content que \xE7a t\u2019ait plu."
-  - text: "\u2026J\u2019ai fait quoi au juste ?"
+  - text: 'Glad you liked it. '
+  - text: 'What did I do exactly ? '
 --- !u!114 &-4124110756906517295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -617,6 +625,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+  SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -624,16 +633,20 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "J\u2019ai la photo de ton Ultra Suplex !"
-  - "La prochaine fois, il faudra trouver un adversaire \xE0 ta taille !\r\n"
+  - 'I have a photo of your Ultra Suplex!
+
+'
+  - ' Next time, we''ll have to find an opponent your size!
+
+'
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Ouais, on en reparle plus tard Louis\u2026 ou pas d\u2019ailleurs, au
-      passage si tu peux supprimer la photo\u2026 "
+  - text: Yeah, we'll talk about that later, Louis... or maybe not, by the way, if
+      you could delete the photo...
 --- !u!114 &-3953405645352042137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -736,6 +749,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+  SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -743,16 +757,18 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "T\u2019a trop g\xE9r\xE9 avec l\u2019autre fille !"
-  - Champion !
+  - You totally nailed it with the other girl !
+  - 'Champ !
+
+'
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: L'autre fille?
-  - text: "C\u2019\xE9tait si soudain"
+  - text: 'The other girl ? '
+  - text: It was so sudden
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -855,6 +871,7 @@ MonoBehaviour:
       _dynamic: 0
   choix:
     text: 
+  SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -862,9 +879,9 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "T\u2019es toujours l\xE0-bas ? \n"
-  - "D\xE9sol\xE9 mais je suis parti en week-end\n"
-  - "d\u2019ailleurs il faut que j\u2019y aille, Bye !\r"
+  - 'You''re still out there? '
+  - "Sorry, but I'm away for the week-end. \n"
+  - Anyway, I gotta go. Bye!
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
@@ -960,6 +977,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+  SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -967,16 +985,16 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - Attends me dit pas que tu te souviens plus ?
-  - "Votre combat \xE9tait MA-GIQUE"
-  - "Je savais pas que tu \xE9tais fort en catch comme \xE7a !\r\n"
+  - Wait, don't tell me you don't remember?
+  - Your fight was AWESOME.
+  - I didn't know you were that good at wrestling!
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Oui ! Le combat\u2026 Bien s\xFBr !"
+  - text: Yeah, the fight... of course!
 --- !u!114 &6319556209682393713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1079,6 +1097,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+  SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -1086,17 +1105,17 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "Lisa ? jamais entendu parler\u2026"
-  - "Je crois que \xE7a commen\xE7ait par un \u201CI\u201D ou un \u201CC\u201D."
-  - ' En tout cas, tu nous as bien fait rire.'
+  - "Lisa ? Never heard of her\u2026"
+  - " think it started with an 'I' or a 'C'. \n"
+  - Anyway, you really made us laugh.
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Je suis content que \xE7a t\u2019ait plu."
-  - text: ...J'ai fais quoi au juste ?
+  - text: I'm glad you enjoyed it.
+  - text: 'What did I do exactly ? '
 --- !u!114 &7346271709654515909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1189,6 +1208,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+  SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -1196,18 +1216,16 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "Il faudra qu\u2019on remette \xE7a\n"
-  - 'sinon tu voulais quelque chose ?
-
-'
+  - "We'll have to do it again. \n"
+  - "So, did you want something ?\r"
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Oui ! En fait je suis perdu en for\xEAt et je me demandais si tu pouvais
-      me ramener ? "
+  - text: 'Yes ! Actually, I''m lost in the forest, and I was wondering if you could
+      pick me up? '
 --- !u!114 &8860138260335636156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1310,6 +1328,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+  SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -1317,16 +1336,16 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "Tu m\u2019\xE9tonnes\n"
-  - "personnes s\u2019attendait \xE0 ce que tu la soul\xE8ves comme \xE7a !\r"
+  - No kidding
+  - ' no one expected you to lift her like that !'
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Je l\u2019ai soulev\xE9 carr\xE9ment ? Devant tout le monde ?"
-  - text: "Si tu pouvais \xE9viter de parler de choses priv\xE9es comme \xE7a\u2026"
+  - text: Did I lift her straight up ? In front of everyone ?
+  - text: If you could avoid talking about private stuff like that..
 --- !u!114 &8934160023228867117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1403,6 +1422,7 @@ MonoBehaviour:
       _dynamic: 0
   choix:
     text: 
+  SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -1410,9 +1430,9 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "Priv\xE9 ? "
-  - "on \xE9tait au 5 autour ARTHUR"
-  - "j\u2019ai m\xEAme la photo du meilleur moment."
+  - 'Private? '
+  - We were all Around, Arthur
+  - I even have the photo of the best moment.
   indicesToShow: []
   indicesGiven:
   - item: {fileID: 11400000, guid: 7729c1e2532d74345886878469443c2a, type: 2}

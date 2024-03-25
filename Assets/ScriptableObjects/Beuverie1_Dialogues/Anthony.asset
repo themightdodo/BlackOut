@@ -106,6 +106,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+  SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
   ItemToHaveInHand: 0
@@ -113,10 +114,12 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - 'Aaah ! '
-  - "avec plaisir\u2026 moi, c'est ARTHUR"
-  - "C\u2019est super bon comme cocktail"
-  - il y a quoi dedans ?
+  - Of course !
+  - "\u2026and my name is ARTHUR.\r\n"
+  - It's a great cocktail
+  - 'what''s in it?
+
+'
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
@@ -200,6 +203,7 @@ MonoBehaviour:
       _dynamic: 0
   choix:
     text: 
+  SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -207,13 +211,18 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "D\xE9j\xE0 fini ?"
-  - "\xC7a s'appelle le Mill\xE9nium Supra"
-  - Allez file maintenant
-  - " tu devrais faire connaissance avec d\u2019autres \xE9tudiants"
-  - "Si tu veux, il y a un groupe d\u2019habitu\xE9s derri\xE8re"
-  - ils sont super sympa
-  - "Dis-leur que c\u2019est ANTHONY qui t\u2019am\xE8ne.\r\n"
+  - Finished already?
+  - It's called the Millenium Supra
+  - 'here, I can''t leave you high and dry.
+
+'
+  - "tu devrais faire connaissance avec d\u2019autres \xE9tudiants"
+  - Go on now, you should meet some of the other students
+  - If you want, there's a group of regulars back there, they are really nice
+  - 'Tell them ANTHONY sent you.
+
+
+'
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
@@ -309,6 +318,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+  SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -316,11 +326,11 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "Salut, tu peux m\u2019appeler ANTHONY"
-  - 'ce soir le premier verre est pour la maison
+  - Hi, you can call me ANTHONY
+  - tonight the first drink is on the house
+  - 'shall I serve you our specialty?
 
 '
-  - "je te sers notre sp\xE9cialit\xE9 ?\r\n"
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
@@ -414,6 +424,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+  SuccessPoint: 0
   startType_: 2
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
   ItemToHaveInHand: 0
@@ -421,7 +432,8 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - ' Salut, est-ce que je peux commander ?
+  - 'Hi, can I place an order?
+
 
 '
   indicesToShow: []
