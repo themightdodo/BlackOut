@@ -12,27 +12,61 @@ public class Historic_manager : MonoBehaviour
     public GameObject HistoricAnswer;
     public List<GameObject> ShowedText;
     public TextMeshProUGUI CurrentProfilText;
+    public List<Chara_dialogue> MessagesVocales;
+    PhoneManager phoneManager;
+
+
 
     void Start()
     {
+        phoneManager = Invest_GameManager.GM_instance.PhoneManager;
         Data = new Hashtable();
         dialogueBuffer = new List<Dialogue>();
+        foreach (Chara_dialogue item in MessagesVocales)
+        {
+
+                FindDialogue(Dialogue.startType.Talk, item, out Dialogue dialogue);
+                while (dialogue.choices.Count != 0)
+                {
+                    AddToBuffer(dialogue);
+                    Dialogue CurrentDialogue = (Dialogue)dialogue.GetOutputPort("choices" + " " + 0).Connection.node;
+                    dialogue = CurrentDialogue;
+                }
+            Debug.Log(item.PersonInteractedWith);
+            SaveHistoric(item.PersonInteractedWith);
+                phoneManager.notification_Manager.AddNotif(item.PersonInteractedWith);
+            
+            
+           
+        }
     }
 
 
     public void AddToBuffer(Dialogue dialogue)
     {
+        Debug.Log("HISTORICBUFFER");
         dialogueBuffer.Add(dialogue);
     }
 
     public void SaveHistoric(Character character)
     {
+        Debug.Log("HISTORICSAVE");
         if (Data.ContainsKey(character))
         {
-   
+            List<Dialogue> dialoguesExistant = (List<Dialogue>)Data[character];
+            foreach (var item in dialogueBuffer)
+            {
+                if (!dialoguesExistant.Contains(item))
+                {
+                    dialoguesExistant.Add(item);
+                }
+            }
+            Data.Remove(character);
+            Data.Add(character, dialoguesExistant);
             dialogueBuffer.Clear();
             return;
         }
+
         List<Dialogue> dialogues = new List<Dialogue>();
         foreach (var item in dialogueBuffer)
         {
@@ -46,6 +80,7 @@ public class Historic_manager : MonoBehaviour
 
     public void ShowHistoric(Character character)
     {
+        Debug.Log("HISTORICSHOW");
         if (!Data.ContainsKey(character))
         {
             return;
@@ -77,7 +112,7 @@ public class Historic_manager : MonoBehaviour
                 }
             }
         }
-
+        phoneManager.notification_Manager.RemoveNotif(character);
     }
     public void CloseHistoricWindow()
     {
@@ -86,5 +121,18 @@ public class Historic_manager : MonoBehaviour
             Destroy(item);
         }
         ShowedText.Clear();
+    }
+
+    public void FindDialogue(Dialogue.startType startType, Chara_dialogue ActiveDialogue , out Dialogue outitem)
+    {
+        outitem = null;
+        foreach (Dialogue item in ActiveDialogue.nodes)
+        {
+            if (item.startType_ == startType)
+            {
+                outitem = item;
+                return;
+            }
+        }
     }
 }

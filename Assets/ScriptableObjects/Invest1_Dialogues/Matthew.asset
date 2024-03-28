@@ -102,6 +102,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: c97146d22da27334fbdf66d5772e0f9e, type: 2}
@@ -119,7 +120,9 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: We're leaving here, I promise you.
+    InterrogatoireValue: 0
   - text: I'm going to get you out of here but do you know where we are?
+    InterrogatoireValue: 0
 --- !u!114 &-2800862363360741543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +215,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: c97146d22da27334fbdf66d5772e0f9e, type: 2}
@@ -228,6 +232,7 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: You too, you must have drunk a lot to end up like this..
+    InterrogatoireValue: 0
 --- !u!114 &-690447691929958983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,9 +309,10 @@ MonoBehaviour:
       _dynamic: 0
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -344,8 +350,101 @@ MonoBehaviour:
   - {fileID: 2639540672762141195}
   - {fileID: 4112171823763332593}
   - {fileID: -690447691929958983}
+  - {fileID: 548757595833092515}
   PersonInteractedWith: {fileID: 11400000, guid: c97146d22da27334fbdf66d5772e0f9e,
     type: 2}
+--- !u!114 &548757595833092515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -632, y: 648}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    values:
+    - _fieldName: choix
+      _node: {fileID: 548757595833092515}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 1
+        node: {fileID: 5550433900544758491}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: 548757595833092515}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: 548757595833092515}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: 548757595833092515}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: 548757595833092515}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  choix:
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  startType_: 0
+  PersonTalking: {fileID: 0}
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - ...
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  EventToCreate: {fileID: 0}
+  choices: []
 --- !u!114 &661758029941713342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,6 +521,7 @@ MonoBehaviour:
       _dynamic: 0
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: c97146d22da27334fbdf66d5772e0f9e, type: 2}
@@ -539,6 +639,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: c97146d22da27334fbdf66d5772e0f9e, type: 2}
@@ -555,7 +656,9 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: It's going to be okay, you're with me.
+    InterrogatoireValue: 0
   - text: Listen, I really need to know where we are so I can get us out of here.
+    InterrogatoireValue: 0
 --- !u!114 &879042834346414810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -632,6 +735,7 @@ MonoBehaviour:
       _dynamic: 0
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: c97146d22da27334fbdf66d5772e0f9e, type: 2}
@@ -724,6 +828,7 @@ MonoBehaviour:
       _dynamic: 0
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: c97146d22da27334fbdf66d5772e0f9e, type: 2}
@@ -816,6 +921,7 @@ MonoBehaviour:
       _dynamic: 0
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: c97146d22da27334fbdf66d5772e0f9e, type: 2}
@@ -846,7 +952,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -504, y: -120}
+  position: {x: -1016, y: -88}
   ports:
     keys:
     - choix
@@ -856,6 +962,7 @@ MonoBehaviour:
     - choices
     - choixHand 0
     - choices 0
+    - choices 1
     values:
     - _fieldName: choix
       _node: {fileID: 5550433900544758491}
@@ -930,14 +1037,28 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
+    - _fieldName: choices 1
+      _node: {fileID: 5550433900544758491}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: 548757595833092515}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 1
-  PersonTalking: {fileID: 0}
+  PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
   ItemToHaveInHand: 3
   choixHand:
   - text: Water him
+    InterrogatoireValue: 0
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
@@ -951,6 +1072,9 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: Take him in your arms
+    InterrogatoireValue: 0
+  - text: Do nothing
+    InterrogatoireValue: 0
 --- !u!114 &6589171440371812875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1053,6 +1177,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: c97146d22da27334fbdf66d5772e0f9e, type: 2}
@@ -1069,7 +1194,9 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: 'Keep your eyes open, look at me, I need you. '
+    InterrogatoireValue: 0
   - text: 'Tell me where we are! Quickly!  '
+    InterrogatoireValue: 0
 --- !u!114 &8195552077573191742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1083,7 +1210,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -120, y: 968}
+  position: {x: -232, y: 1000}
   ports:
     keys:
     - choix
@@ -1156,12 +1283,14 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 2
   PersonTalking: {fileID: 11400000, guid: c97146d22da27334fbdf66d5772e0f9e, type: 2}
   ItemToHaveInHand: 3
   choixHand:
   - text: Water him
+    InterrogatoireValue: 0
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:

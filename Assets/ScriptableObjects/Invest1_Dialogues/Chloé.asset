@@ -89,6 +89,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -109,6 +110,7 @@ MonoBehaviour:
   - text: 'You see... I was feeling so great that I went for a run in the forest,
       but I got lost and I''m too exhausted to make it back alone. Could you come
       pick me up ? '
+    InterrogatoireValue: 0
 --- !u!114 &-8492140776241957525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,6 +187,7 @@ MonoBehaviour:
       _dynamic: 0
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -299,6 +302,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -307,6 +311,7 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice:
   - text: 
+    InterrogatoireValue: 0
   sentences:
   - Yeah, a bit... I have a headache.
   indicesToShow: []
@@ -317,6 +322,7 @@ MonoBehaviour:
   choices:
   - text: 'Me too, and I don''t remember much... Next time, you''ll have to hold
       me back ! '
+    InterrogatoireValue: 0
 --- !u!114 &-7029065691274207940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,6 +399,7 @@ MonoBehaviour:
       _dynamic: 0
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -497,6 +504,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -515,6 +523,7 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: 'Yeah, you''re right... '
+    InterrogatoireValue: 0
 --- !u!114 &-5846820054363467070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,6 +613,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -622,6 +632,7 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: I swear ! I would never have said that otherwise !
+    InterrogatoireValue: 0
 --- !u!114 &-5549760811763802352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -711,6 +722,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -727,6 +739,7 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: ...
+    InterrogatoireValue: 0
 --- !u!114 &-4584514156047138861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,6 +816,7 @@ MonoBehaviour:
       _dynamic: 0
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -921,6 +935,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -940,7 +955,9 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: Yes, that's right. Actually, I have a small favor to ask you...
+    InterrogatoireValue: 0
   - text: Yes It's me, I admit waking up is... quite difficult.
+    InterrogatoireValue: 0
 --- !u!114 &-2431609785224144831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1030,6 +1047,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -1049,6 +1067,7 @@ MonoBehaviour:
   choices:
   - text: Yeah, actually, I woke up in the forest, and I don't know what I'm doing
       here.
+    InterrogatoireValue: 0
 --- !u!114 &-1498284117585610748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1125,6 +1144,7 @@ MonoBehaviour:
       _dynamic: 0
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -1245,6 +1265,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -1264,8 +1285,10 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: Ah, darn. And by any chance, are you feeling well enough to drive ?
+    InterrogatoireValue: 0
   - text: 'I hope this passes quickly. Actually, I lied to you too; I don''t remember
       the party either... '
+    InterrogatoireValue: 0
 --- !u!114 &-1372076319407896148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1368,6 +1391,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -1389,7 +1413,9 @@ MonoBehaviour:
   choices:
   - text: 'To be honest, I don''t remember much from the party, a friend made me
       believe that things happened... I got fooled '
+    InterrogatoireValue: 0
   - text: 'Yet yesterday you were quite tactile. '
+    InterrogatoireValue: 0
 --- !u!114 &-1182011657248441848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1479,6 +1505,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
@@ -1496,6 +1523,7 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: 
+    InterrogatoireValue: 0
 --- !u!114 &-1075129524560159223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1588,6 +1616,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -1608,6 +1637,7 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: I'll call you back
+    InterrogatoireValue: 0
 --- !u!114 &-114589371964756442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1710,6 +1740,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -1728,7 +1759,9 @@ MonoBehaviour:
   choices:
   - text: 'No, I was just calling to check on you. Not too much trouble getting up
       this morning ? '
+    InterrogatoireValue: 0
   - text: 'Yeah, I have a favor to ask you... '
+    InterrogatoireValue: 0
 --- !u!114 &-39865926447291449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1818,6 +1851,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
@@ -1834,6 +1868,7 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: 
+    InterrogatoireValue: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1874,6 +1909,8 @@ MonoBehaviour:
   - {fileID: 3708588408512394339}
   - {fileID: -1182011657248441848}
   PersonInteractedWith: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9,
+    type: 2}
+  PersonInteractedWith2: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9,
     type: 2}
 --- !u!114 &2610289308335254494
 MonoBehaviour:
@@ -1951,6 +1988,7 @@ MonoBehaviour:
       _dynamic: 0
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 1
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -2042,6 +2080,7 @@ MonoBehaviour:
       _dynamic: 0
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -2146,6 +2185,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
@@ -2164,6 +2204,7 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: 
+    InterrogatoireValue: 0
 --- !u!114 &4744646181810616744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2253,6 +2294,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -2271,6 +2313,7 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: 'Is it possible for you to pick me up? I admit I''m a bit desperate... '
+    InterrogatoireValue: 0
 --- !u!114 &4886684288031267115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2373,6 +2416,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -2390,7 +2434,9 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: Indeed.. I actually have a small favor to ask you...
+    InterrogatoireValue: 0
   - text: I'm feeling great ! Surprisingly. And you ?
+    InterrogatoireValue: 0
 --- !u!114 &5757726012123575565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2404,7 +2450,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -104, y: 760}
+  position: {x: -136, y: 328}
   ports:
     keys:
     - choix
@@ -2490,6 +2536,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 4
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -2498,6 +2545,7 @@ MonoBehaviour:
   IndiceToHave: {fileID: 11400000, guid: f1e700f9a1a1c0c4ca47725e212d62be, type: 2}
   choixIndice:
   - text: I found my location
+    InterrogatoireValue: 0
   sentences:
   - 'So, where are you ? '
   indicesToShow: []
@@ -2507,6 +2555,7 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: I still don't know
+    InterrogatoireValue: 0
 --- !u!114 &6011139505175487716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2619,6 +2668,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 2
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -2635,9 +2685,12 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: Ask her how she is doing
+    InterrogatoireValue: 0
   - text: "Hi Chlo\xE9, about yesterday, I think things are moving a bit too fast
       between us"
+    InterrogatoireValue: 0
   - text: "Hey, Chlo\xE9, was it ? We met at the party, I think so."
+    InterrogatoireValue: 0
 --- !u!114 &7568209469941520266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2736,6 +2789,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -2755,6 +2809,7 @@ MonoBehaviour:
   choices:
   - text: 'Well, life got me lost in the woods and I''d need someone to bring me
       back in town. '
+    InterrogatoireValue: 0
 --- !u!114 &8306346216212958095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2844,6 +2899,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
@@ -2860,3 +2916,4 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: Actually, I have a small favor to ask you...
+    InterrogatoireValue: 0

@@ -1328,7 +1328,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!144 &7573962859323503417
 CharacterJoint:
@@ -2263,15 +2263,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7993212494869446776}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.6912948, y: -0.028348003, z: -0.02716102, w: 0.7215055}
+  m_LocalPosition: {x: 0, y: 0.78, z: 1.59}
   m_LocalScale: {x: 0.28, y: 0.28, z: 0.28}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2919592648179855836}
   - {fileID: 8043458231671802217}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -87.55, y: -4.5, z: 0}
 --- !u!65 &469204700468032340
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2308,6 +2308,8 @@ MonoBehaviour:
   Action:
     m_PersistentCalls:
       m_Calls: []
+  PickSound: 
+  ThrowSound: 
   itemType: 4
   BaseItem: {fileID: 7993212494869446776, guid: 9c492fb5512482d4a983b1a8a9480e9f,
     type: 3}

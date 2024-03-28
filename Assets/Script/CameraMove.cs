@@ -32,13 +32,26 @@ public class CameraMove : Invest_Character_State_Machine
     {
         base.Idle_state();
         MoveCamera();
+        transform.rotation = new Quaternion(0,0,0,0);
        
     }
     protected override void Walk_state()
     {
         base.Walk_state();
         MoveCamera();
-       
+        transform.rotation = new Quaternion(0, 0, 0, 0);
+    }
+
+    protected override void Talk_state()
+    {
+        base.Talk_state();
+        transform.LookAt(pm.Current_Focus_Object.transform);
+    }
+
+    protected override void Examin_state()
+    {
+        base.Examin_state();
+        transform.LookAt(pm.Current_Focus_Object.transform);
     }
 
     void MoveCamera()
@@ -54,13 +67,14 @@ public class CameraMove : Invest_Character_State_Machine
     public void CheckInteractible()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit,20f, pm.Interactibles))
+        if (Physics.Raycast(transform.position, transform.forward, out hit,5f, pm.Interactibles))
         {
             pm.Current_Focus_Object = hit.transform.gameObject;
             pm.Focus.Invoke();
         }
-        else
+        else if(!triggerDialogue)
         {
+           
             pm.Current_Focus_Object = null;
         }
     }

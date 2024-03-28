@@ -11,12 +11,14 @@ public class Invest_PlayerManager : MonoBehaviour
     public UnityEvent FinInteraction;
     public UnityEvent<IndiceItem> AddItemToInventory;
     public UnityEvent<GameObject> AddItemToHand;
+    public UnityEvent TriggerDialogue;
     public Timer throwingItem;
     public Timer Interaction_cooldown;
     public GameObject Current_Focus_Object;
     public GameObject ItemInHand;
     public LayerMask Interactibles;
     public LayerMask Interactibles_noDialogue;
+    public bool PhoneActive;
 
     private void Start()
     {

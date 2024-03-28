@@ -18,6 +18,8 @@ public class Beuverie_GameManager : MonoBehaviour
     private void Awake()
     {
         GM_instance = this;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void LoadNextScene()

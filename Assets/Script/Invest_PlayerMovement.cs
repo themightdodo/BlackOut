@@ -26,6 +26,7 @@ public class Invest_PlayerMovement : Invest_Character_State_Machine
         base.Walk_state();
         Vector3 move = transform.rotation * input.Lstick * Speed * Time.deltaTime;
         cc.Move(new Vector3(move.x,-gravity, move.z));
+      
         
     }
 }

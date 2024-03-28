@@ -36,6 +36,8 @@ public class DialogueManager : Invest_Character_State_Machine
     GameObject CurrentButton;
     AudioManager audioManager;
 
+    public int InterrogatoireValue; 
+
     public enum Dialogue_State
     {
         STATE_SHOWING,
@@ -60,6 +62,10 @@ public class DialogueManager : Invest_Character_State_Machine
             ActiveDialogue = pm.Current_Focus_Object.GetComponent<Interactible>().chara_Dialogue;
             InteractCount = pm.Current_Focus_Object.GetComponent<Interactible>().interactCount;
         }
+        else if(state_ != State.STATE_PHONE)
+        {
+            ActiveDialogue = null;
+        }
         
         if(dialogue_State == Dialogue_State.STATE_SHOWING)
         {
@@ -76,7 +82,6 @@ public class DialogueManager : Invest_Character_State_Machine
         CurrentButton = button;
         if (interactCount > 0&&!CurrentButton.GetComponent<PhoneInteractible>().Success)
         {
-            Debug.Log("OUI");
             FindDialogue(Dialogue.startType.Talk2, out CurrentDialogue);
         }
         else if (!CurrentButton.GetComponent<PhoneInteractible>().Success)
@@ -95,42 +100,62 @@ public class DialogueManager : Invest_Character_State_Machine
         if (input.Cancel.Pressed())
         {
             state_ = stateBuffer_;
-            Debug.Log("FINFIN2");
             closeDialogue();
         }
     }
     protected override void Talk_transition()
     {
-        if (input.Talk.Pressed())
+        if (input.Talk.Pressed()||triggerDialogue)
         {
-            
-            if (InteractCount > 0&& !pm.Current_Focus_Object.GetComponent<Interactible>().Success)
+            if (pm.Current_Focus_Object.GetComponent<Interactible>().Interrogatoire)
             {
-                Debug.Log("OUI");
+                FindDialogue(Dialogue.startType.Interrogatoire, out CurrentDialogue);
+                StartDialogue(CurrentDialogue);
+            }
+            else if (InteractCount > 0&& !pm.Current_Focus_Object.GetComponent<Interactible>().Success)
+            {
+                
                 FindDialogue(Dialogue.startType.Talk2, out CurrentDialogue);
+                StartDialogue(CurrentDialogue);
             }
             else if(!pm.Current_Focus_Object.GetComponent<Interactible>().Success)
             {
                 FindDialogue(Dialogue.startType.Talk, out CurrentDialogue);
+                StartDialogue(CurrentDialogue);
             }
             else
             {
                 FindDialogue(Dialogue.startType.Success, out CurrentDialogue);
+                StartDialogue(CurrentDialogue);
             }
-            StartDialogue(CurrentDialogue);
+          
             pm.Current_Focus_Object.GetComponent<Interactible>().interactCount++;
             state_ = State.STATE_TALK;
         }
     }
     protected override void Examin_transition()
     {
-        if (input.Check.Pressed())
+
+        if (input.Check.Pressed() || triggerDialogue)
         {
-            Dialogue item;
-            FindDialogue(Dialogue.startType.Examin, out item);
-            CurrentDialogue = item;
-            StartDialogue(CurrentDialogue);
-            state_ = State.STATE_EXAMIN;
+            if (pm.Current_Focus_Object.GetComponent<Interactible>().Interrogatoire)
+            {
+                Debug.Log("INTERRO");
+                FindDialogue(Dialogue.startType.Interrogatoire, out CurrentDialogue);
+                pm.Current_Focus_Object.GetComponent<Interactible>().interactCount++;
+                StartDialogue(CurrentDialogue);
+                state_ = State.STATE_TALK;
+                return;
+            }
+            else
+            {
+                Dialogue item;
+                FindDialogue(Dialogue.startType.Examin, out item);
+                CurrentDialogue = item;
+                StartDialogue(CurrentDialogue);
+                state_ = State.STATE_EXAMIN;
+            }
+         
         }
     }
     public void FindDialogue(Dialogue.startType startType, out Dialogue outitem)
@@ -141,6 +166,7 @@ public class DialogueManager : Invest_Character_State_Machine
             if(item.startType_ == startType)
             {
                 outitem = item;
+          
                 return;
             }
         }
@@ -150,9 +176,10 @@ public class DialogueManager : Invest_Character_State_Machine
         dialogue_State = Dialogue_State.STATE_SHOWING;
         sentences.Clear();
         clearButtons();
-       
+      
         if (CurrentDialogue == null)
         {
+            Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3");
             sentences.Enqueue("...");
         }
         else
@@ -172,15 +199,14 @@ public class DialogueManager : Invest_Character_State_Machine
             historic.AddToBuffer(CurrentDialogue);
 
         }
-      
-
         DisplayNextSentence();
     }
 
     public void DisplayNextSentence()
     {
-        if(sentences.Count == 0&&CurrentDialogue!=null)
-        {
+       
+        if (sentences.Count == 0&&CurrentDialogue!=null)
+        {       
             GiveSuccess();
             GiveIndice();
             GiveItem();
@@ -190,9 +216,11 @@ public class DialogueManager : Invest_Character_State_Machine
         }
         else if (sentences.Count == 0&&CurrentDialogue == null)
         {
+         
             EndDialogue();
             return;
         }
+
 
         string sentence = (string)sentences.Dequeue();
         DialogueSound(sentence.Length);
@@ -202,7 +230,11 @@ public class DialogueManager : Invest_Character_State_Machine
     }
     void DialogueSound(int wordCount)
     {
-        Debug.Log(wordCount);
+
+        if (CurrentDialogue == null)
+        {
+            return;
+        }
         if (CurrentDialogue.PersonTalking != null)
         {
             switch (CurrentDialogue.PersonTalking.genre)
@@ -284,13 +316,18 @@ public class DialogueManager : Invest_Character_State_Machine
     void EndDialogue()
     {
         dialogue_State = Dialogue_State.STATE_END;
-        if(CurrentDialogue.startType_ == Dialogue.startType.Answer)
+        if(CurrentDialogue != null && CurrentDialogue.startType_ == Dialogue.startType.Answer)
         {
             CurrentDialogue = (Dialogue)CurrentDialogue.GetOutputPort("choices" + " " + 0).Connection.node;
             StartDialogue(CurrentDialogue);
-            Debug.Log("EEEFSDJPEFI");
             return;
         }
+/*        if (CurrentDialogue != null && CurrentDialogue.choices.Count == 1)
+        {
+            CurrentDialogue = (Dialogue)CurrentDialogue.GetOutputPort("choices" + " " + 0).Connection.node;
+            StartDialogue(CurrentDialogue);
+            return;
+        }*/
         if(CurrentDialogue != null &&CurrentDialogue.choices.Count > 0)
         {
             for (int i = 0; i < CurrentDialogue.choices.Count; i++)
@@ -333,19 +370,46 @@ public class DialogueManager : Invest_Character_State_Machine
         }
         else if (input.Check.PressedDown() || input.Talk.Pressed())
         {
-            if(CurrentDialogue != null && pm.ItemInHand != null&& CurrentDialogue.choices.Count == 0
+            
+
+            if (CurrentDialogue != null && pm.Current_Focus_Object != null&&
+                CurrentDialogue.choices.Count == 0 && pm.Current_Focus_Object.GetComponent<Interactible>().Interrogatoire)
+            {
+                
+                pm.Current_Focus_Object.GetComponent<Interactible>().Interrogatoire = false;
+                if (InterrogatoireValue > -3)
+                {
+                    FindDialogue(Dialogue.startType.Success, out CurrentDialogue);
+                }
+                else
+                {
+                    FindDialogue(Dialogue.startType.Loose, out CurrentDialogue);
+                }
+                StartDialogue(CurrentDialogue);
+                InterrogatoireValue = 0;
+            }
+            else if(CurrentDialogue != null && pm.ItemInHand != null&& CurrentDialogue.choices.Count == 0
                 && pm.ItemInHand.GetComponent<Item_Manager>().itemType != CurrentDialogue.ItemToHaveInHand)
             {
+            
                 closeDialogue();
             }
             else if (CurrentDialogue != null&& pm.ItemInHand == null && CurrentDialogue.choices.Count == 0)
             {
+  
+                closeDialogue();
+            }
+            else if(CurrentDialogue != null && CurrentDialogue.choices.Count == 0)
+            {
+               
                 closeDialogue();
             }
             if (CurrentDialogue == null)
             {
+             
                 closeDialogue();
             }
+           
         }
 
     }
@@ -376,7 +440,7 @@ public class DialogueManager : Invest_Character_State_Machine
         audioManager.Stop("HommeMid");
         audioManager.Stop("HommeCourt");
         sentences.Clear();
-        if(ActiveDialogue.PersonInteractedWith != null)
+        if(ActiveDialogue!= null &&ActiveDialogue.PersonInteractedWith != null)
         {
             historic.SaveHistoric(ActiveDialogue.PersonInteractedWith);
         }

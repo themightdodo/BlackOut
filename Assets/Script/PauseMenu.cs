@@ -19,6 +19,7 @@ public class PauseMenu : Invest_Character_State_Machine
     public GameObject Winscreen;
     public GameObject GameOverUI;
     public GameObject OeilPanel;
+    public GameObject ContinueButton;
     public float winRadius;
     public LayerMask Player;
     public float Timer = 1.5f;
@@ -61,10 +62,11 @@ public class PauseMenu : Invest_Character_State_Machine
         }
 
     }
-    public void endMenu(Sprite image,string text)
+    public void endMenu(Sprite image,string text,string nextScene)
     {
 
         EndMenu.SetActive(true);
+        ContinueButton.GetComponent<Button>().onClick.AddListener(() => { LoadScene(nextScene); });
         EndMenu.GetComponent<Image>().sprite = image;
         TextEndMenu.text = text;
         Endbool = true;

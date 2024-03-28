@@ -10,8 +10,11 @@ public class Invest_GameManager : MonoBehaviour
     public CanvasManager CanvasManager;
     public DialogueManager DialogueManager;
     public PhoneManager PhoneManager;
-    public UnityEvent<Sprite,string> InvestigationDone;
+    public UnityEvent<Sprite,string,string> InvestigationDone;
     public PauseMenu menuManager;
+
+    public string NextSceneWin;
+    public string NextSceneLose;
 
     private void Awake()
     {

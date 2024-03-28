@@ -116,7 +116,7 @@ public class penseArthur : Invest_Character_State_Machine
     {
 
         canvasManager.thinking = false;
-        canvasManager.DialoguePanel.SetActive(false);
+  
         if (leaveNoEnd)
         {
             return;

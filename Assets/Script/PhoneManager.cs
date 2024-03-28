@@ -29,6 +29,7 @@ public class PhoneManager : Invest_Character_State_Machine
     public TextMeshProUGUI ArchiveDesc;
     public Image ArchiveImage;
     public Historic_manager historic;
+    public Notification_manager notification_Manager;
 
     protected override void Start()
     {
@@ -53,7 +54,7 @@ public class PhoneManager : Invest_Character_State_Machine
 
     protected override void Phone_transition()
     {
-        if(state_ == State.STATE_PHONE)
+        if(state_ == State.STATE_PHONE||!pm.PhoneActive)
         {
             return;
         }
