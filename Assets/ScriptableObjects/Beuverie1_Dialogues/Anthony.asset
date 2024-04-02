@@ -17,6 +17,7 @@ MonoBehaviour:
   - {fileID: 7245019193912084873}
   - {fileID: 168420313506805953}
   - {fileID: 5233182311949645007}
+  PersonInteractedWith: {fileID: 0}
 --- !u!114 &168420313506805953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,6 +107,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
@@ -127,6 +129,7 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: 
+    InterrogatoireValue: 0
 --- !u!114 &5233182311949645007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +206,7 @@ MonoBehaviour:
       _dynamic: 0
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 0}
@@ -216,7 +220,6 @@ MonoBehaviour:
   - 'here, I can''t leave you high and dry.
 
 '
-  - "tu devrais faire connaissance avec d\u2019autres \xE9tudiants"
   - Go on now, you should meet some of the other students
   - If you want, there's a group of regulars back there, they are really nice
   - 'Tell them ANTHONY sent you.
@@ -318,6 +321,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 0}
@@ -338,6 +342,7 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: 
+    InterrogatoireValue: 0
 --- !u!114 &9097136297643316985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,6 +429,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 2
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
@@ -443,3 +449,4 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: 
+    InterrogatoireValue: 0

@@ -83,7 +83,7 @@ public class CanvasManager : Invest_Character_State_Machine
         FocusPanelAlt.SetActive(false);
         DialoguePanel.SetActive(true);
         ItemInfo.SetActive(false);
-        Panelinfo.SetActive(true);
+        Panelinfo.SetActive(false);
     }
     void FocusPanelUI()
     {

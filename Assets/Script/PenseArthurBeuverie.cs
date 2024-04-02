@@ -37,6 +37,10 @@ public class PenseArthurBeuverie : MonoBehaviour
 
     private void Update()
     {
+        if (gm.CurrentlyTalking)
+        {
+            EndDialogue();
+        }
         if (CurrentChatBox == null || CurrentDialogue == null)
         {
             return;
@@ -112,6 +116,7 @@ public class PenseArthurBeuverie : MonoBehaviour
             sentences.Clear();
             launchDialogue = false;
         }
+        Destroy(CurrentChatBox);
 
     }
     void ResetDialogue()
@@ -161,7 +166,7 @@ public class PenseArthurBeuverie : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !launchDialogue)
+        if (other.CompareTag("Player") && !launchDialogue && !gm.CurrentlyTalking)
         {
             Debug.Log(InteractCount);
             if (InteractCount == 0)

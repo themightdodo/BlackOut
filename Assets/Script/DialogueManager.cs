@@ -179,7 +179,6 @@ public class DialogueManager : Invest_Character_State_Machine
       
         if (CurrentDialogue == null)
         {
-            Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3");
             sentences.Enqueue("...");
         }
         else
@@ -203,8 +202,7 @@ public class DialogueManager : Invest_Character_State_Machine
     }
 
     public void DisplayNextSentence()
-    {
-       
+    {    
         if (sentences.Count == 0&&CurrentDialogue!=null)
         {       
             GiveSuccess();
@@ -306,9 +304,20 @@ public class DialogueManager : Invest_Character_State_Machine
     IEnumerator TypeSentence(string sentence)
     {
         text.text = "";
+        /*int i = 1;*/
         foreach (char letter in sentence.ToCharArray())
         {
             text.text += letter;
+/*            if (i == sentence.ToCharArray().Length)
+            {
+                audioManager.Stop("FemmeLong");
+                audioManager.Stop("FemmeCourt");
+                audioManager.Stop("FemmeMid");
+                audioManager.Stop("HommeLong");
+                audioManager.Stop("HommeMid");
+                audioManager.Stop("HommeCourt");
+            }
+            i++;*/
             yield return null;
         }
     }

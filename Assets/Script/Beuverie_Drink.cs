@@ -73,6 +73,10 @@ public class Beuverie_Drink : Beuverie_Character_StateMachine
     {
         base.Addiction_state();
         pm.NearDrink = Near_Drink(transform.position, out currentDrink);
+        if (pm.NearDrink)
+        {
+            Delay.CurrentValue = currentDrink.GetComponent<Beuverie_Boisson>().drink.TimeToDrink;
+        }
     }
     public bool Near_Drink(Vector3 position, out GameObject currentDrink)
     {
