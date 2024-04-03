@@ -14,10 +14,13 @@ public class Beuverie_GameManager : MonoBehaviour
     public string NextSceneRouge;
     public Character PlayerInfo;
     public float TimeBtwDialogues;
+    public bool CurrentlyTalking;
 
     private void Awake()
     {
         GM_instance = this;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void LoadNextScene()

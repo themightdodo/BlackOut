@@ -17,9 +17,11 @@ public class Dialogue : Node
         Examin,
         Talk,
         Talk2,
-        Success,
+        Success,     
         Inventory_Show,
         Answer,
+        Interrogatoire,
+        Loose,
     }
     public startType startType_;
 
@@ -47,5 +49,7 @@ public class Dialogue : Node
     public GameObject EventToCreate;
 
     [Output(dynamicPortList = true)]
-    public List<Choix> choices; 
+    public List<Choix> choices;
+
+  
 }

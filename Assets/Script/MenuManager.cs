@@ -93,7 +93,11 @@ public class MenuManager : MonoBehaviour
     {
        
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneName);  
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+        SceneManager.LoadScene(SceneName);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
   
     public void SetMenu(GameObject Menu)

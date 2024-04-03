@@ -23,20 +23,26 @@ public class Invest_Character_State_Machine : MonoBehaviour
     public Invest_PlayerManager pm { get; set; }
     public InputManager input { get; set; }
 
+    public bool triggerDialogue;
+
+    public Timer PhoneClose { get; set; }
+
     protected virtual void Start()
     {
         gm = Invest_GameManager.GM_instance;
         pm = gm.playerManager;
         input = gm.GetComponent<InputManager>();
-
+        PhoneClose = new Timer(0.2f);
         pm.Focus.AddListener(Focus);
         pm.MiniJeu.AddListener(MiniGame_transition);
         pm.FinInteraction.AddListener(FinInteraction);
+        pm.TriggerDialogue.AddListener(TriggerDialogue);
+       
     }
 
     protected virtual void Update()
     {
-        Phone_transition();
+        PhoneClose.Refresh();
         switch (state_)
         {
             case State.STATE_IDLE:
@@ -73,22 +79,45 @@ public class Invest_Character_State_Machine : MonoBehaviour
     protected virtual void Idle_state()
     {
         Walk_transition();
+
+        Phone_transition();
     }
     protected virtual void Walk_state()
     {
         Idle_transition();
+
+        Phone_transition();
+    }
+    protected virtual void TriggerDialogue()
+    {
+        triggerDialogue = true;
+        Talk_transition();
+        
     }
     protected virtual void Focus()
-    {
-       
+    {     
         if(pm.Interaction_cooldown.Done()&&pm.throwingItem.Done())
         {
-            Show_transition();
-            Talk_transition();
+            if (pm.Current_Focus_Object.CompareTag("Interactible"))
+            {
+                Show_transition();
+                Talk_transition();
+            }
+            else if (input.Talk.Pressed()&&pm.Current_Focus_Object.CompareTag("Phone"))
+            {
+                pm.PhoneActive = true;
+                Destroy(pm.Current_Focus_Object);
+                pm.Current_Focus_Object = null;
+            }
+            else if (input.Talk.Pressed())
+            {
+                Pick();
+            }
             Examin_transition();
         }
-           
-        
+    }
+    protected virtual void Pick()
+    {
 
     }
     protected virtual void Talk_state()
@@ -111,8 +140,11 @@ public class Invest_Character_State_Machine : MonoBehaviour
     }
     protected virtual void Phone_state()
     {
-        if (input.Cancel.Pressed())
+        
+
+        if ((input.Cancel.Pressed()||input.Phone.PressedDown()))
         {
+            PhoneClose.Reset();
             state_ = stateBuffer_;
         }
     }
@@ -129,10 +161,11 @@ public class Invest_Character_State_Machine : MonoBehaviour
     }
     protected virtual void Phone_transition()
     {
-        if (state_ == State.STATE_PHONE)
+        if (state_ == State.STATE_PHONE||!pm.PhoneActive||!PhoneClose.Done())
         {
             return;
         }
+       
         if (input.Phone.PressedDown())
         {
             stateBuffer_ = state_;      
@@ -151,14 +184,14 @@ public class Invest_Character_State_Machine : MonoBehaviour
     }
     protected virtual void Examin_transition()
     {
-        if (input.Check.Pressed())
+        if (input.Check.Pressed() || triggerDialogue)
         {
             state_ = State.STATE_EXAMIN;
         }
     }
     protected virtual void Talk_transition()
     {
-        if (input.Talk.Pressed())
+        if (input.Talk.Pressed()||triggerDialogue)
         {
             state_ = State.STATE_TALK;
         }
@@ -179,7 +212,8 @@ public class Invest_Character_State_Machine : MonoBehaviour
     }
     protected virtual void FinInteraction()
     {
-        if(state_ != State.STATE_PHONE)
+        triggerDialogue = false;
+        if (state_ != State.STATE_PHONE)
         {
             state_ = State.STATE_IDLE;
         }

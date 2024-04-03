@@ -31,7 +31,7 @@ public class Addiction : Beuverie_Character_StateMachine
             AddictionPersoAnim.Play("Addiction",-1,1 - (Addiction_timer.CurrentValue / Addiction_timer.StartValue));
         }
         AddictionPersoAnim.speed = 1 * Addiction_timer.StartValue / 3f;
-        if (pm.inActivity)
+        if (pm.inActivity&&!pm.currentActivityData.currentValue.Done())
         {
             ActivityStatus();
         }

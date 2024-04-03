@@ -16,8 +16,27 @@ public class ChoixButton : MonoBehaviour
     {
         choixBuffer();
         dm.CurrentDialogue = dialogue;
+        if (dm.pm.Current_Focus_Object!=null && dm.pm.Current_Focus_Object.GetComponent<Interactible>().Interrogatoire)
+        {
+            dm.InterrogatoireValue += choix.InterrogatoireValue;
+        }
+        if (dm.pm.Current_Focus_Object != null && dm.InterrogatoireValue < -3)
+        {
+            dm.pm.Current_Focus_Object.GetComponent<Interactible>().Interrogatoire = false;
+            if (dm.InterrogatoireValue > -3)
+            {
+                dm.FindDialogue(Dialogue.startType.Success, out dialogue);
+            }
+            else
+            {
+                dm.FindDialogue(Dialogue.startType.Loose, out dialogue);
+            }
+            dm.CurrentDialogue = dialogue;
+            dm.InterrogatoireValue = 0;
+        }
+
         dm.StartDialogue(dialogue);
-     
+       
     }
     void choixBuffer()
     {

@@ -206,6 +206,7 @@ public class Beuverie_Dialogue : MonoBehaviour
         sentences.Clear();
         launchDialogue = false;
         CurrentDialogue = null;
+        gm.CurrentlyTalking = false;
     }
     IEnumerator TypeSentence(string sentence)
     {
@@ -238,7 +239,7 @@ public class Beuverie_Dialogue : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")&&!launchDialogue)
+        if (other.CompareTag("Player")&&!launchDialogue&&!gm.CurrentlyTalking)
         {
             Debug.Log(InteractCount);
             if(InteractCount == 0)
@@ -247,6 +248,7 @@ public class Beuverie_Dialogue : MonoBehaviour
             }
             StartDialogue(CurrentDialogue);
             launchDialogue = true;
+            gm.CurrentlyTalking = true;
             leaveNoEnd = false;
         }       
     }

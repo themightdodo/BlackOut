@@ -6,7 +6,7 @@ using UnityEngine;
 public class Choix {
 
     public string text;
-
+    public int InterrogatoireValue;
     
 
 }

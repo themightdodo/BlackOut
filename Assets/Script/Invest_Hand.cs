@@ -21,6 +21,7 @@ public class Invest_Hand : Invest_Character_State_Machine
     {
         base.Update();
         pm.throwingItem.Refresh();
+
     }
     protected override void Idle_state()
     {
@@ -31,6 +32,13 @@ public class Invest_Hand : Invest_Character_State_Machine
     {
         base.Walk_state();
         throwItem();
+    }
+
+    protected override void Pick()
+    {
+        base.Pick();
+        PickItem(pm.Current_Focus_Object.GetComponent<Interactible>().HandVersion);
+        Destroy(pm.Current_Focus_Object);
     }
 
     void PlayAction(string layer)

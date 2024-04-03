@@ -10,6 +10,7 @@ public class EndZone : MonoBehaviour
     public string Description;
 
     public Item_Manager.ItemType ItemToHaveInHand;
+    public bool noPopup;
     public Sprite AltImage;
     [TextArea(10, 3)]
     public string AltDescription;
@@ -20,11 +21,11 @@ public class EndZone : MonoBehaviour
             if(Invest_GameManager.GM_instance.playerManager.ItemInHand!=null&&
                 Invest_GameManager.GM_instance.playerManager.ItemInHand.GetComponent<Item_Manager>().itemType == ItemToHaveInHand)
             {
-                Invest_GameManager.GM_instance.InvestigationDone.Invoke(AltImage, AltDescription);
+                Invest_GameManager.GM_instance.InvestigationDone.Invoke(AltImage, AltDescription,Invest_GameManager.GM_instance.NextSceneLose,noPopup);
             }
             else
             {
-                Invest_GameManager.GM_instance.InvestigationDone.Invoke(Image, Description);
+                Invest_GameManager.GM_instance.InvestigationDone.Invoke(Image, Description, Invest_GameManager.GM_instance.NextSceneWin, noPopup);
             }
                 
         }

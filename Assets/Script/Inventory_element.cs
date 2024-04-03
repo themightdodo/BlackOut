@@ -8,6 +8,7 @@ public class Inventory_element : MonoBehaviour
     
     public void ShowInfo()
     {
+        Debug.Log("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZ");
         Invest_GameManager.GM_instance.PhoneManager.ArchiveDesc.text = infos.Desc;
         Invest_GameManager.GM_instance.PhoneManager.ArchiveImage.sprite = infos.Image;
         Invest_GameManager.GM_instance.PhoneManager.ItemDetail_transition();
