@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class penseArthur : Invest_Character_State_Machine
+public class PenseArthur : Invest_Character_State_Machine
 {
     public Chara_dialogue chara_Dialogue;
 

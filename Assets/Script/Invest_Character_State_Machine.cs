@@ -25,12 +25,14 @@ public class Invest_Character_State_Machine : MonoBehaviour
 
     public bool triggerDialogue;
 
+    public Timer PhoneClose { get; set; }
+
     protected virtual void Start()
     {
         gm = Invest_GameManager.GM_instance;
         pm = gm.playerManager;
         input = gm.GetComponent<InputManager>();
-
+        PhoneClose = new Timer(0.2f);
         pm.Focus.AddListener(Focus);
         pm.MiniJeu.AddListener(MiniGame_transition);
         pm.FinInteraction.AddListener(FinInteraction);
@@ -40,6 +42,7 @@ public class Invest_Character_State_Machine : MonoBehaviour
 
     protected virtual void Update()
     {
+        PhoneClose.Refresh();
         switch (state_)
         {
             case State.STATE_IDLE:
@@ -137,8 +140,11 @@ public class Invest_Character_State_Machine : MonoBehaviour
     }
     protected virtual void Phone_state()
     {
-        if (input.Cancel.Pressed())
+        
+
+        if ((input.Cancel.Pressed()||input.Phone.PressedDown()))
         {
+            PhoneClose.Reset();
             state_ = stateBuffer_;
         }
     }
@@ -155,10 +161,11 @@ public class Invest_Character_State_Machine : MonoBehaviour
     }
     protected virtual void Phone_transition()
     {
-        if (state_ == State.STATE_PHONE||!pm.PhoneActive)
+        if (state_ == State.STATE_PHONE||!pm.PhoneActive||!PhoneClose.Done())
         {
             return;
         }
+       
         if (input.Phone.PressedDown())
         {
             stateBuffer_ = state_;      

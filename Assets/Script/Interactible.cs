@@ -8,10 +8,11 @@ public class Interactible : MonoBehaviour
     public GameObject HandVersion;
     public bool Interrogatoire;
     public bool Success;
+    public bool drown;
     public int interactCount = 0;
 
     private void Start()
     {
-        interactCount = 0;
+       
     }
 }

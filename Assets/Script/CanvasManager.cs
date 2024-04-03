@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CanvasManager : Invest_Character_State_Machine
 {
@@ -11,6 +12,7 @@ public class CanvasManager : Invest_Character_State_Machine
     public GameObject ItemInfo;
     public GameObject Panelinfo;
     public GameObject PhoneIcon;
+    public TextMeshProUGUI FocusExaminText;
     bool focus;
 
     public bool thinking;

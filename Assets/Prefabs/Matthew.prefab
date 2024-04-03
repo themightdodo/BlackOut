@@ -1261,7 +1261,7 @@ GameObject:
   - component: {fileID: 2322067430300277451}
   m_Layer: 9
   m_Name: Spine
-  m_TagString: Interactible
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1412,7 +1412,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chara_Dialogue: {fileID: 11400000, guid: 21e6ec9f1cee743458d3501f4dcdbaed, type: 2}
+  HandVersion: {fileID: 7993212494869446776, guid: 26c14e8883b8c7b42b53c0be509e35c5,
+    type: 3}
+  Interrogatoire: 0
   Success: 0
+  drown: 1
   interactCount: 0
 --- !u!1 &4746639603913030314
 GameObject:
@@ -2286,7 +2290,7 @@ GameObject:
   - component: {fileID: 1852147520989495645}
   m_Layer: 0
   m_Name: Matthew
-  m_TagString: Interactible
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

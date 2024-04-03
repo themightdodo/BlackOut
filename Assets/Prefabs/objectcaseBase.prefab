@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3881063993236294086}
   - component: {fileID: 142701249649918399}
   - component: {fileID: 4937784917941139713}
+  - component: {fileID: 9106619576223277522}
   m_Layer: 9
   m_Name: objectcaseBase
   m_TagString: Untagged
@@ -170,11 +171,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a122388eecd69d42a5a500e73f9a2d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chara_Dialogue: {fileID: 0}
+  chara_Dialogue: {fileID: 11400000, guid: eaf5c3f919c5f914b8a7be14e64b7491, type: 2}
   HandVersion: {fileID: 1455732402384054577, guid: d303f57c2221fb84fa889f12c7c96bbc,
     type: 3}
   Interrogatoire: 0
   Success: 0
+  drown: 0
   interactCount: 0
 --- !u!65 &142701249649918399
 BoxCollider:
@@ -218,3 +220,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0000002, y: 0.22418417, z: 2.0000005}
   m_Center: {x: 4.3097625e-15, y: -0.88790876, z: -2.6695556e-15}
+--- !u!65 &9106619576223277522
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2411932597555611604}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.19320026, y: 2.0000007, z: 2.0000005}
+  m_Center: {x: -0.90339977, y: -2.5008267e-16, z: 2.5203866e-22}

@@ -15,6 +15,7 @@ public class PauseMenu : Invest_Character_State_Machine
     public GameObject pauseMenuUI;
     public Animator AnimPause;
     public GameObject EndMenu;
+    public GameObject EndMenuPopup;
     public TextMeshProUGUI TextEndMenu;
     public GameObject Winscreen;
     public GameObject GameOverUI;
@@ -34,7 +35,7 @@ public class PauseMenu : Invest_Character_State_Machine
         GameIsPaused = false;
         Time.timeScale = 1f;
         AnimPause = pauseMenuUI.GetComponent<Animator>();
-        gm.InvestigationDone.AddListener(endMenu);
+        gm.InvestigationDone.AddListener(endMenuAsk);
     }
 
     protected override void Update()
@@ -62,13 +63,32 @@ public class PauseMenu : Invest_Character_State_Machine
         }
 
     }
-    public void endMenu(Sprite image,string text,string nextScene)
+    public void endMenuAsk(Sprite image, string text, string nextScene, bool noPopup)
     {
-
-        EndMenu.SetActive(true);
+        if (noPopup == true)
+        {
+            endMenu();
+        }
+        else
+        {
+            EndMenuPopup.SetActive(true);
+        }
+        
         ContinueButton.GetComponent<Button>().onClick.AddListener(() => { LoadScene(nextScene); });
         EndMenu.GetComponent<Image>().sprite = image;
         TextEndMenu.text = text;
+        Pause();
+        pauseMenuUI.SetActive(false);
+    }
+    public void NoEndMenu()
+    {
+        EndMenuPopup.SetActive(false);
+        Resume();
+    }
+    public void endMenu()
+    {
+        EndMenuPopup.SetActive(false);
+        EndMenu.SetActive(true);
         Endbool = true;
         Pause();
     }

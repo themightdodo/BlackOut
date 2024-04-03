@@ -61,6 +61,16 @@ public class DialogueManager : Invest_Character_State_Machine
         {
             ActiveDialogue = pm.Current_Focus_Object.GetComponent<Interactible>().chara_Dialogue;
             InteractCount = pm.Current_Focus_Object.GetComponent<Interactible>().interactCount;
+            Dialogue item;
+            FindDialogue(Dialogue.startType.Examin, out item);
+            if (pm.ItemInHand != null && pm.ItemInHand.GetComponent<Item_Manager>().itemType == item.ItemToHaveInHand)
+            {
+                gm.CanvasManager.FocusExaminText.text = item.choixHand[0].text;
+            }
+            else
+            {
+                gm.CanvasManager.FocusExaminText.text = "Examin";
+            }
         }
         else if(state_ != State.STATE_PHONE)
         {
@@ -152,6 +162,11 @@ public class DialogueManager : Invest_Character_State_Machine
                 Dialogue item;
                 FindDialogue(Dialogue.startType.Examin, out item);
                 CurrentDialogue = item;
+                if(pm.ItemInHand != null && pm.ItemInHand.GetComponent<Item_Manager>().itemType == CurrentDialogue.ItemToHaveInHand)
+                {
+                    CurrentDialogue = (Dialogue)CurrentDialogue.GetOutputPort("choixHand" + " " + 0).Connection.node;
+
+                }
                 StartDialogue(CurrentDialogue);
                 state_ = State.STATE_EXAMIN;
             }

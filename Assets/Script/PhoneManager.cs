@@ -54,7 +54,7 @@ public class PhoneManager : Invest_Character_State_Machine
 
     protected override void Phone_transition()
     {
-        if(state_ == State.STATE_PHONE||!pm.PhoneActive)
+        if(state_ == State.STATE_PHONE||!pm.PhoneActive||!PhoneClose.Done())
         {
             return;
         }

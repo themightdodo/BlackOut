@@ -76,6 +76,7 @@ MonoBehaviour:
       _dynamic: 0
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 0}
@@ -164,6 +165,7 @@ MonoBehaviour:
       _dynamic: 0
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 2
   PersonTalking: {fileID: 0}
@@ -176,7 +178,7 @@ MonoBehaviour:
 
 '
   - " do you have any idea why I'm here? \r\n...ah... ah.......... \r"
-  - Why am I talking to a shovel?
+  - Why am I talking to a bucket?
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
@@ -282,6 +284,7 @@ MonoBehaviour:
       _dynamic: 1
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 1
   PersonTalking: {fileID: 0}
@@ -290,7 +293,7 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - A shovel...
+  - A bucket...
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
@@ -298,7 +301,9 @@ MonoBehaviour:
   EventToCreate: {fileID: 0}
   choices:
   - text: Take it
+    InterrogatoireValue: 0
   - text: Do nothing
+    InterrogatoireValue: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,6 +399,7 @@ MonoBehaviour:
       _dynamic: 0
   choix:
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
   startType_: 0
   PersonTalking: {fileID: 0}

@@ -107,7 +107,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a948912aa9d573b409059b889ec22cc4,
         type: 3}
       propertyPath: m_TagString
-      value: Interactible
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -172,7 +172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chara_Dialogue: {fileID: 11400000, guid: 9e2623af657290b4b91f4431228f5802, type: 2}
-  HandVersion: {fileID: 0}
+  HandVersion: {fileID: 2622773325936242488, guid: 2d741e0eb9ef778458f04d0fa1b3ef64,
+    type: 3}
   Interrogatoire: 0
   Success: 0
   interactCount: 0
