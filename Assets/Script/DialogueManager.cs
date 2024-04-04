@@ -35,6 +35,7 @@ public class DialogueManager : Invest_Character_State_Machine
 
     GameObject CurrentButton;
     AudioManager audioManager;
+    Timer ExaminButtonPressTimer;
 
     public int InterrogatoireValue; 
 
@@ -51,12 +52,14 @@ public class DialogueManager : Invest_Character_State_Machine
         sentences = new Queue<string>();
         historic = gm.PhoneManager.historic;
         audioManager = gm.GetComponent<AudioManager>();
+        ExaminButtonPressTimer = new Timer(0.2f);
     }
 
 
     protected override void Update()
     {
         base.Update();
+        ExaminButtonPressTimer.Refresh();
         if (pm.Current_Focus_Object != null)
         {
             ActiveDialogue = pm.Current_Focus_Object.GetComponent<Interactible>().chara_Dialogue;
@@ -79,7 +82,7 @@ public class DialogueManager : Invest_Character_State_Machine
         
         if(dialogue_State == Dialogue_State.STATE_SHOWING)
         {
-            if (input.Check.PressedDown() || input.Talk.PressedDown())
+            if ((input.Check.PressedDown() || input.Talk.PressedDown())&&ExaminButtonPressTimer.Done())
             {
                 DisplayNextSentence();
             }
@@ -146,8 +149,9 @@ public class DialogueManager : Invest_Character_State_Machine
     protected override void Examin_transition()
     {
 
-        if (input.Check.Pressed() || triggerDialogue)
+        if (input.Check.PressedDown() || triggerDialogue)
         {
+            ExaminButtonPressTimer.Reset();
             if (pm.Current_Focus_Object.GetComponent<Interactible>().Interrogatoire)
             {
                 Debug.Log("INTERRO");
@@ -159,6 +163,7 @@ public class DialogueManager : Invest_Character_State_Machine
             }
             else
             {
+                Debug.Log("EXAMIN");
                 Dialogue item;
                 FindDialogue(Dialogue.startType.Examin, out item);
                 CurrentDialogue = item;
@@ -258,18 +263,27 @@ public class DialogueManager : Invest_Character_State_Machine
                         audioManager.Play("FemmeCourt");
                         audioManager.Stop("FemmeLong");
                         audioManager.Stop("FemmeMid");
+                        audioManager.Stop("HommeLong");
+                        audioManager.Stop("HommeCourt");
+                        audioManager.Stop("HommeMid");
                     }
                     else if (wordCount > 35)
                     {
                         audioManager.Play("FemmeLong");
                         audioManager.Stop("FemmeCourt");
                         audioManager.Stop("FemmeMid");
+                        audioManager.Stop("HommeLong");
+                        audioManager.Stop("HommeCourt");
+                        audioManager.Stop("HommeMid");
                     }
                     else
                     {
                         audioManager.Play("FemmeMid");
                         audioManager.Stop("FemmeCourt");
                         audioManager.Stop("FemmeLong");
+                        audioManager.Stop("HommeLong");
+                        audioManager.Stop("HommeCourt");
+                        audioManager.Stop("HommeMid");
                     }
                     break;
                 case Character.Genre.Homme:
@@ -278,18 +292,27 @@ public class DialogueManager : Invest_Character_State_Machine
                         audioManager.Play("HommeCourt");
                         audioManager.Stop("HommeLong");
                         audioManager.Stop("HommeMid");
+                        audioManager.Stop("FemmeMid");
+                        audioManager.Stop("FemmeCourt");
+                        audioManager.Stop("FemmeLong");
                     }
                     else if (wordCount > 35)
                     {
                         audioManager.Play("HommeLong");
                         audioManager.Stop("HommeCourt");
                         audioManager.Stop("HommeMid");
+                        audioManager.Stop("FemmeMid");
+                        audioManager.Stop("FemmeCourt");
+                        audioManager.Stop("FemmeLong");
                     }
                     else
                     {
                         audioManager.Play("HommeMid");
                         audioManager.Stop("HommeCourt");
                         audioManager.Stop("HommeLong");
+                        audioManager.Stop("FemmeMid");
+                        audioManager.Stop("FemmeCourt");
+                        audioManager.Stop("FemmeLong");
                     }
                     break;
             }

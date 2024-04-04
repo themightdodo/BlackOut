@@ -16,7 +16,7 @@ public class Beuverie_MouseController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (UnityEngine.Input.GetMouseButtonDown(0))
+        if (UnityEngine.Input.GetMouseButtonDown(0)&&!Beuverie_GameManager.GM_instance.CurrentlyTalking)
         {
             Ray ray = cam.ScreenPointToRay(UnityEngine.Input.mousePosition);
             RaycastHit hit;

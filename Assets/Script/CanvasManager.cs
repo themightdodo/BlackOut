@@ -12,6 +12,7 @@ public class CanvasManager : Invest_Character_State_Machine
     public GameObject ItemInfo;
     public GameObject Panelinfo;
     public GameObject PhoneIcon;
+    public GameObject UsePanel;
     public TextMeshProUGUI FocusExaminText;
     bool focus;
 
@@ -27,6 +28,15 @@ public class CanvasManager : Invest_Character_State_Machine
         else
         {
             PhoneIcon.SetActive(true);
+        }
+
+        if (pm.ItemInHand != null &&pm.ItemInHand.GetComponent<Item_Manager>().usableItem)
+        {
+            UsePanel.SetActive(true);
+        }
+        else
+        {
+            UsePanel.SetActive(false);
         }
     }
     protected override void Idle_state()
