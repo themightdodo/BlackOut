@@ -63,7 +63,7 @@ public class DialogueManager : Invest_Character_State_Machine
             InteractCount = pm.Current_Focus_Object.GetComponent<Interactible>().interactCount;
             Dialogue item;
             FindDialogue(Dialogue.startType.Examin, out item);
-            if (pm.ItemInHand != null && pm.ItemInHand.GetComponent<Item_Manager>().itemType == item.ItemToHaveInHand)
+            if (item != null &&item.choixHand.Count > 0 && pm.ItemInHand != null && pm.ItemInHand.GetComponent<Item_Manager>().itemType == item.ItemToHaveInHand)
             {
                 gm.CanvasManager.FocusExaminText.text = item.choixHand[0].text;
             }
