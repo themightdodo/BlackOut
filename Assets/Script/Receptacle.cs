@@ -10,12 +10,15 @@ public class Receptacle : Item
     Invest_PlayerManager pm;
     public GameObject water;
     public LayerMask Liquids;
+    Item_Manager item_Manager;
 
     protected override void Start()
     {
         base.Start();
         gm = Invest_GameManager.GM_instance;
         pm = gm.playerManager;
+        item_Manager = GetComponent<Item_Manager>();
+        item_Manager.usableItem = true;
     }
 
 

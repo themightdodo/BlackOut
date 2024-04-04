@@ -19,4 +19,6 @@ public class Item_Manager : MonoBehaviour
     public ItemType itemType;
 
     public GameObject BaseItem;
+
+    public bool usableItem;
 }

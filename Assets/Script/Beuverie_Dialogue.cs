@@ -30,12 +30,15 @@ public class Beuverie_Dialogue : MonoBehaviour
 
     AudioManager audioManager;
 
+    InputManager input;
+
     private void Start()
     {
         sentences = new Queue<string>();
         FindDialogue(Dialogue.startType.Talk, out CurrentDialogue);
         
         gm = Beuverie_GameManager.GM_instance;
+        input = gm.GetComponent<InputManager>();
         audioManager = gm.GetComponent<AudioManager>();
     }
 
@@ -48,6 +51,10 @@ public class Beuverie_Dialogue : MonoBehaviour
         if (CurrentDialogue.PersonTalking == gm.PlayerInfo)
         {
             CurrentChatBox.transform.position = gm.playerManager.transform.position + ChatBoxOffset;
+        }
+        if (input.Talk.PressedDown())
+        {
+            DisplayNextSentence();
         }
     }
 
@@ -188,6 +195,7 @@ public class Beuverie_Dialogue : MonoBehaviour
             }
             sentences.Clear();
             launchDialogue = false;
+            gm.CurrentlyTalking = false;
         }
        
     }
@@ -216,10 +224,10 @@ public class Beuverie_Dialogue : MonoBehaviour
         {
             
             CurrentChatBox.GetComponentInChildren<TextMeshPro>().text += letter;
-            if (i == sentence.ToCharArray().Length)
+/*            if (i == sentence.ToCharArray().Length)
             {
                Invoke("DisplayNextSentence",gm.TimeBtwDialogues);
-            }
+            }*/
             i++;
             yield return null;
         }
@@ -257,10 +265,10 @@ public class Beuverie_Dialogue : MonoBehaviour
        
         if (other.CompareTag("Player"))
         {
-/*            if(CurrentChatBox != null)
+            if(CurrentChatBox != null)
             {
                 Destroy(CurrentChatBox);
-            }    */     
+            }       
             ResetDialogue();
         }
     }

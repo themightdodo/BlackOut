@@ -13,6 +13,21 @@ public class Invest_Inventory : Invest_Character_State_Machine
     {
         base.Start();
         pm.AddItemToInventory.AddListener(AddToInventory);
+        UpdateInventoryStart();
+    }
+    public void UpdateInventoryStart()
+    {
+        for (int i = 0; i < CurrentIndices.Count; i++)
+        {
+            foreach (var Inventoryitem in InventoryContainer)
+            {
+                GameObject Button = Instantiate(ButtonPrefab, Inventoryitem.transform);
+                Button.GetComponent<Image>().sprite = CurrentIndices[i].Image;
+                Button.GetComponent<Inventory_element>().infos = CurrentIndices[i];
+            }
+        }
+
+        
     }
     public void UpdateInventory()
     {
