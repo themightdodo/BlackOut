@@ -14,7 +14,10 @@ public class ChoixButton : MonoBehaviour
     }
     public void TriggerDialogue()
     {
-        choixBuffer();
+        if (dm.pm.Current_Focus_Object != null && !dm.pm.Current_Focus_Object.GetComponent<Interactible>().noChoiceRegister)
+        {
+            choixBuffer();
+        }
         dm.CurrentDialogue = dialogue;
         if (dm.pm.Current_Focus_Object!=null && dm.pm.Current_Focus_Object.GetComponent<Interactible>().Interrogatoire)
         {

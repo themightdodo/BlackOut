@@ -7,6 +7,7 @@ public class SpotLightManager : Beuverie_Character_StateMachine
     Light spot;
     public float StartSpot;
     public float ChangeMultiplier;
+    public int MaxSpot = 179;
 
     protected override void Start()
     {
@@ -15,7 +16,7 @@ public class SpotLightManager : Beuverie_Character_StateMachine
     }
     protected override void Update()
     {
-        spot.spotAngle = ((StartSpot - (pm.Taux*ChangeMultiplier))*179)/ StartSpot;
-        spot.innerSpotAngle = ((StartSpot - (pm.Taux * ChangeMultiplier))*179)/ StartSpot;
+        spot.spotAngle = ((StartSpot - (pm.Taux*ChangeMultiplier))* MaxSpot) / StartSpot;
+        spot.innerSpotAngle = ((StartSpot - (pm.Taux * ChangeMultiplier))* MaxSpot) / StartSpot;
     }
 }
