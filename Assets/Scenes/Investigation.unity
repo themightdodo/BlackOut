@@ -621,6 +621,7 @@ MonoBehaviour:
   Interrogatoire: 0
   Success: 0
   drown: 0
+  noChoiceRegister: 0
   interactCount: 0
 --- !u!54 &88786772
 Rigidbody:
@@ -23456,6 +23457,7 @@ MonoBehaviour:
   Interrogatoire: 0
   Success: 0
   drown: 0
+  noChoiceRegister: 0
   interactCount: 0
 --- !u!114 &1778825282
 MonoBehaviour:
@@ -29648,6 +29650,7 @@ MonoBehaviour:
   Interrogatoire: 0
   Success: 0
   drown: 0
+  noChoiceRegister: 0
   interactCount: 0
 --- !u!4 &4072294665756720499
 Transform:
@@ -30348,7 +30351,7 @@ PrefabInstance:
     - target: {fileID: 5894828650183253327, guid: 4054f29c7d102d446a4531d39bb66d59,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6005710872473789918, guid: 4054f29c7d102d446a4531d39bb66d59,
         type: 3}

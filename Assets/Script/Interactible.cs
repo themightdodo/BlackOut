@@ -9,6 +9,7 @@ public class Interactible : MonoBehaviour
     public bool Interrogatoire;
     public bool Success;
     public bool drown;
+    public bool noChoiceRegister;
     public int interactCount = 0;
 
     private void Start()

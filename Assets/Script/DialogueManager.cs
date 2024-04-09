@@ -215,7 +215,11 @@ public class DialogueManager : Invest_Character_State_Machine
             {
                 sentences.Enqueue(sentence);
             }
-            historic.AddToBuffer(CurrentDialogue);
+            if(state_ == State.STATE_PHONE)
+            {
+                historic.AddToBuffer(CurrentDialogue);
+            }
+           
 
         }
         DisplayNextSentence();
@@ -487,7 +491,7 @@ public class DialogueManager : Invest_Character_State_Machine
         audioManager.Stop("HommeMid");
         audioManager.Stop("HommeCourt");
         sentences.Clear();
-        if(ActiveDialogue!= null &&ActiveDialogue.PersonInteractedWith != null)
+        if(ActiveDialogue!= null &&ActiveDialogue.PersonInteractedWith != null&&state_ == State.STATE_PHONE)
         {
             historic.SaveHistoric(ActiveDialogue.PersonInteractedWith);
         }
