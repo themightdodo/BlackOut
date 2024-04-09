@@ -25,6 +25,7 @@ public class Water : MonoBehaviour
             Drown.Refresh();
             CurrentDrown = other.gameObject;
             other.gameObject.transform.position -= new Vector3(0, drownIntensity, 0) * Time.deltaTime;
+            other.gameObject.transform.position -= transform.forward * (drownIntensity/2) * Time.deltaTime;
             if (Drown.Done())
             {
                 Drown.Reset();

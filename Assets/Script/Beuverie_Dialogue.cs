@@ -50,7 +50,7 @@ public class Beuverie_Dialogue : MonoBehaviour
         }
         if (CurrentDialogue.PersonTalking == gm.PlayerInfo)
         {
-            CurrentChatBox.transform.position = gm.playerManager.transform.position + ChatBoxOffset;
+            CurrentChatBox.transform.position = gm.playerManager.transform.position + new Vector3(0, gm.chatboxHeight, 0);
         }
         if (input.Talk.PressedDown())
         {
@@ -91,10 +91,10 @@ public class Beuverie_Dialogue : MonoBehaviour
       
         string sentence = (string)sentences.Dequeue();
         DialogueSound(sentence.Length);
-        Vector3 RandomPos = transform.position + ChatBoxOffset + randomPos;
+        Vector3 RandomPos = transform.position + ChatBoxOffset;
         if (CurrentDialogue != null&&CurrentDialogue.PersonTalking == gm.PlayerInfo)
         {
-            RandomPos = gm.playerManager.transform.position + ChatBoxOffset;
+            RandomPos = gm.playerManager.transform.position + new Vector3(0,gm.chatboxHeight,0);
         }
         CurrentChatBox = Instantiate(Text,RandomPos, transform.rotation);
         CurrentChatBox.GetComponentInChildren<TextMeshPro>().text = sentence;
