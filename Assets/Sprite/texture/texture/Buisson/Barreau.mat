@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sol
+  m_Name: Barreau
   m_Shader: {fileID: -6465566751694194690, guid: c51559ea74f729a4f9149eb63d34d0e0,
     type: 3}
   m_Parent: {fileID: 0}
@@ -25,15 +25,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BakeTexture:
-        m_Texture: {fileID: 2800000, guid: 2223a1cfff3a523458bee8b6ffe59491, type: 3}
+        m_Texture: {fileID: 2800000, guid: 865b3fb1ebe2a2842a1a2fcac53ba086, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DustBodyTexture:
-        m_Texture: {fileID: 2800000, guid: 2223a1cfff3a523458bee8b6ffe59491, type: 3}
+        m_Texture: {fileID: 2800000, guid: 865b3fb1ebe2a2842a1a2fcac53ba086, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: 81dc10fafa6e47048844f4d4f7f3cd49, type: 3}
+        m_Texture: {fileID: 2800000, guid: cecf1212776b47144a7f1710dee2662f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2DLOD_02e3ce7f97594625aea8d491460d0ab2_Texture_1_Texture2D:
@@ -62,15 +62,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _NormalStrength: 6.9
-    - _PaintAmount: 0.7
+    - _NormalStrength: 99.97
+    - _PaintAmount: 25.73
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Scale: 385.74
+    - _Scale: 40.2
     m_Colors:
-    - _Color: {r: 1, g: 0.78002924, b: 0.5943395, a: 0}
-    - _LightColor: {r: 0.7372549, g: 0.22745098, b: 0.08235294, a: 1}
-    - _LightColor2: {r: 0.9686274, g: 0.81960785, b: 0.0470588, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 0}
+    - _LightColor: {r: 0.96862745, g: 0.81960785, b: 0.047058824, a: 0}
+    - _LightColor2: {r: 0.7372549, g: 0.22745098, b: 0.08235294, a: 1}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _Tilling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []

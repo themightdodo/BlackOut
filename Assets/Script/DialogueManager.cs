@@ -194,6 +194,7 @@ public class DialogueManager : Invest_Character_State_Machine
     public void StartDialogue(Dialogue dialogue)
     {
         dialogue_State = Dialogue_State.STATE_SHOWING;
+        gm.CanvasManager.NextDialogue.SetActive(false);
         sentences.Clear();
         clearButtons();
       
@@ -346,20 +347,15 @@ public class DialogueManager : Invest_Character_State_Machine
     IEnumerator TypeSentence(string sentence)
     {
         text.text = "";
-        /*int i = 1;*/
+        int i = 1;
         foreach (char letter in sentence.ToCharArray())
         {
             text.text += letter;
-/*            if (i == sentence.ToCharArray().Length)
+            if (i == sentence.ToCharArray().Length)
             {
-                audioManager.Stop("FemmeLong");
-                audioManager.Stop("FemmeCourt");
-                audioManager.Stop("FemmeMid");
-                audioManager.Stop("HommeLong");
-                audioManager.Stop("HommeMid");
-                audioManager.Stop("HommeCourt");
+                gm.CanvasManager.NextDialogue.SetActive(true);
             }
-            i++;*/
+            i++;
             yield return null;
         }
     }

@@ -13,6 +13,7 @@ public class CanvasManager : Invest_Character_State_Machine
     public GameObject Panelinfo;
     public GameObject PhoneIcon;
     public GameObject UsePanel;
+    public GameObject NextDialogue;
     public TextMeshProUGUI FocusExaminText;
     bool focus;
 
