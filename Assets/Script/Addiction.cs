@@ -46,7 +46,8 @@ public class Addiction : Beuverie_Character_StateMachine
     public void ActivityLeave()
     {
         Debug.Log("leave");
-        Addiction_timer.Reset();
+        Addiction_timer.Remove(pm.currentActivityData.currentValue.CurrentValue-Addiction_timer.StartValue);
+
     }
     protected override void Addiction_state()
     {

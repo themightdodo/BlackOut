@@ -1,5 +1,102 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8985144716869953298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 5992, y: 4072}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    values:
+    - _fieldName: choix
+      _node: {fileID: -8985144716869953298}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: 5160641902490845174}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: -8985144716869953298}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: -8985144716869953298}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: -8985144716869953298}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: -8985144716869953298}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  BadDialogue: 0
+  startType_: 0
+  PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - "I\u2019m not sure\u2026 "
+  - 'but I definitely went to a club.
+
+'
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  EventToCreate: {fileID: 0}
+  choices: []
 --- !u!114 &-8730371324317379595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22,6 +119,7 @@ MonoBehaviour:
     - indicesToShow
     - choices
     - choices 0
+    - choices 1
     values:
     - _fieldName: choix
       _node: {fileID: -8730371324317379595}
@@ -87,19 +185,34 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
+    - _fieldName: choices 1
+      _node: {fileID: -8730371324317379595}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: -8265328822425482843}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
-  startType_: 6
+  BadDialogue: 0
+  startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "There\u2019s nothing to be proud of, Arthur... "
-  - 'I hope it''s not too serious ?
+  - "Is it about the <#74A2BE> car accident\u202F? </color>"
+  - 'I just saw that in the news.
+
 
 '
   indicesToShow: []
@@ -108,7 +221,11 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: " It\u2019s about a nightclub"
+    InterrogatoireValue: 0
+  - pasbien: 0
+    text: 'Ask for more information about the news '
     InterrogatoireValue: 0
 --- !u!114 &-8611309418517774161
 MonoBehaviour:
@@ -198,9 +315,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -218,7 +337,118 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+--- !u!114 &-8265328822425482843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 3270.3923, y: 5688.244}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    - choices 0
+    values:
+    - _fieldName: choix
+      _node: {fileID: -8265328822425482843}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 1
+        node: {fileID: -8730371324317379595}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: -8265328822425482843}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: -8265328822425482843}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: -8265328822425482843}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: -8265328822425482843}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: -8265328822425482843}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: 5155706726278152144}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  BadDialogue: 0
+  startType_: 6
+  PersonTalking: {fileID: 0}
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - "I don\u2019t think it is, but can you tell me more ?\r\n"
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  EventToCreate: {fileID: 0}
+  choices:
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &-7358246305637855222
 MonoBehaviour:
@@ -305,9 +535,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 2
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
@@ -322,7 +554,118 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: Check on Chloe
+  - pasbien: 0
+    text: Check on Chloe
+    InterrogatoireValue: 0
+--- !u!114 &-6372760957574682127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 5160, y: 4056}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    - choices 0
+    values:
+    - _fieldName: choix
+      _node: {fileID: -6372760957574682127}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: 8575213338551802421}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: -6372760957574682127}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: -6372760957574682127}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: -6372760957574682127}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: -6372760957574682127}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: -6372760957574682127}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: 5160641902490845174}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  BadDialogue: 0
+  startType_: 6
+  PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - "There is no way that I am ! I hope\u2026"
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  EventToCreate: {fileID: 0}
+  choices:
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &-6005205155170008189
 MonoBehaviour:
@@ -345,6 +688,7 @@ MonoBehaviour:
     - choixIndice
     - indicesToShow
     - choices
+    - choices 0
     values:
     - _fieldName: choix
       _node: {fileID: -6005205155170008189}
@@ -398,10 +742,24 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: -6005205155170008189}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: 5462134699131303349}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
@@ -411,9 +769,217 @@ MonoBehaviour:
   sentences:
   - "I don\u2019t know much either... I remember we talked, "
   - 'and then you left with three people to go to a club, or something. But given
-    your condition, I doubt they accepted you.
+    your condition, <#74A2BE>I doubt they accepted you. </color>
 
 '
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  EventToCreate: {fileID: 0}
+  choices:
+  - pasbien: 0
+    text: Ask about Linda
+    InterrogatoireValue: 0
+--- !u!114 &-5185211995487366772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 4376, y: 3848}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    - choices 0
+    values:
+    - _fieldName: choix
+      _node: {fileID: -5185211995487366772}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: -2127726619012735212}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: -5185211995487366772}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: -5185211995487366772}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: -5185211995487366772}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: -5185211995487366772}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: -5185211995487366772}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: 8575213338551802421}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  BadDialogue: 0
+  startType_: 6
+  PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - 'Wait, maybe you could still help me. '
+  - Have you seen any news of an accident in town or something similar ?
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  EventToCreate: {fileID: 0}
+  choices:
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+--- !u!114 &-4979369463765443260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 4923.471, y: 6088.6875}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    values:
+    - _fieldName: choix
+      _node: {fileID: -4979369463765443260}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: -3141549754711916957}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: -4979369463765443260}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: -4979369463765443260}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: -4979369463765443260}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: -4979369463765443260}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  BadDialogue: 0
+  startType_: 0
+  PersonTalking: {fileID: 0}
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - "Y-Yeah, probably\u2026"
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
@@ -441,6 +1007,7 @@ MonoBehaviour:
     - choixIndice
     - indicesToShow
     - choices
+    - choices 0
     values:
     - _fieldName: choix
       _node: {fileID: -4906394158489391361}
@@ -494,24 +1061,152 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: -4906394158489391361}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: -2985035802899505894}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
-  startType_: 0
+  BadDialogue: 0
+  startType_: 6
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - I hope so...
+  - 'A car accident ? '
+  - " I don\u2019t think so, I only know that it is about a nightclub.\r\n"
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
-  choices: []
+  choices:
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+--- !u!114 &-3779675554715381209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 3560, y: 3528}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    - choices 0
+    values:
+    - _fieldName: choix
+      _node: {fileID: -3779675554715381209}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: -755410971329179409}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: -3779675554715381209}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: -3779675554715381209}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: -3779675554715381209}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: -3779675554715381209}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: -3779675554715381209}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: -2127726619012735212}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  BadDialogue: 0
+  startType_: 6
+  PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - Alright, thanks for your help
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  EventToCreate: {fileID: 0}
+  choices:
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
 --- !u!114 &-3367330762469179321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -600,9 +1295,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
@@ -619,7 +1316,358 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+--- !u!114 &-3141549754711916957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 4520, y: 6040}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    - choices 0
+    values:
+    - _fieldName: choix
+      _node: {fileID: -3141549754711916957}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: 6347430987944462761}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: -3141549754711916957}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: -3141549754711916957}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: -3141549754711916957}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: -3141549754711916957}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: -3141549754711916957}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: -4979369463765443260}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  BadDialogue: 0
+  startType_: 6
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - 'Me too, and I hope you are not involved. You would remember if you were involved,
+    right ?
+
+'
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  EventToCreate: {fileID: 0}
+  choices:
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+--- !u!114 &-2985035802899505894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 3735.133, y: 4934.482}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    - choices 0
+    values:
+    - _fieldName: choix
+      _node: {fileID: -2985035802899505894}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: -4906394158489391361}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: -2985035802899505894}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: -2985035802899505894}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: -2985035802899505894}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: -2985035802899505894}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: -2985035802899505894}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: -159768645112406756}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  BadDialogue: 0
+  startType_: 6
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - "It says the accident happened near the <#74A2BE> Electric House nightclub.\r
+    </color>\n"
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  EventToCreate: {fileID: 0}
+  choices:
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+--- !u!114 &-2127726619012735212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 3992, y: 3624}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    - choices 0
+    - choices 1
+    values:
+    - _fieldName: choix
+      _node: {fileID: -2127726619012735212}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: -3779675554715381209}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: -2127726619012735212}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: -2127726619012735212}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: -2127726619012735212}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: -2127726619012735212}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: -2127726619012735212}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: -5185211995487366772}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: choices 1
+      _node: {fileID: -2127726619012735212}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: 2847152102236332666}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  BadDialogue: 0
+  startType_: 0
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - "I\u2019m sorry that I can\u2019t be of more help."
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  EventToCreate: {fileID: 0}
+  choices:
+  - pasbien: 0
+    text: 'Ask about the news  '
+    InterrogatoireValue: 0
+  - pasbien: 0
+    text: Ask about the Night Club
     InterrogatoireValue: 0
 --- !u!114 &-1466300157867486679
 MonoBehaviour:
@@ -709,9 +1757,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
@@ -726,8 +1776,216 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
+--- !u!114 &-755410971329179409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 3128, y: 3432}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    - choices 0
+    values:
+    - _fieldName: choix
+      _node: {fileID: -755410971329179409}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: 5462134699131303349}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: -755410971329179409}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: -755410971329179409}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: -755410971329179409}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: -755410971329179409}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: -755410971329179409}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: -3779675554715381209}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  BadDialogue: 0
+  startType_: 6
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - 'No, there was an <#74A2BE> elder student </color> with that name, but she dropped
+    school a long time ago.
+
+'
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  EventToCreate: {fileID: 0}
+  choices:
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+--- !u!114 &-159768645112406756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 4064.599, y: 5098.347}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    values:
+    - _fieldName: choix
+      _node: {fileID: -159768645112406756}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: -2985035802899505894}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: -159768645112406756}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: -159768645112406756}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: -159768645112406756}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: -159768645112406756}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  BadDialogue: 0
+  startType_: 0
+  PersonTalking: {fileID: 0}
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - "\u2026\r\n"
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  EventToCreate: {fileID: 0}
+  choices: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -753,6 +2011,24 @@ MonoBehaviour:
   - {fileID: -8730371324317379595}
   - {fileID: -4906394158489391361}
   - {fileID: 4114437483962889840}
+  - {fileID: 5462134699131303349}
+  - {fileID: -755410971329179409}
+  - {fileID: -3779675554715381209}
+  - {fileID: -2127726619012735212}
+  - {fileID: -5185211995487366772}
+  - {fileID: 8575213338551802421}
+  - {fileID: -6372760957574682127}
+  - {fileID: 5160641902490845174}
+  - {fileID: -8985144716869953298}
+  - {fileID: 2847152102236332666}
+  - {fileID: 4428389959481220634}
+  - {fileID: -2985035802899505894}
+  - {fileID: -159768645112406756}
+  - {fileID: -8265328822425482843}
+  - {fileID: 5155706726278152144}
+  - {fileID: 6347430987944462761}
+  - {fileID: -3141549754711916957}
+  - {fileID: -4979369463765443260}
   PersonInteractedWith: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9,
     type: 2}
 --- !u!114 &1644858911319306655
@@ -843,9 +2119,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -860,7 +2138,121 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+--- !u!114 &2847152102236332666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 4376, y: 4968}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    - choices 0
+    values:
+    - _fieldName: choix
+      _node: {fileID: 2847152102236332666}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 1
+        node: {fileID: -2127726619012735212}
+        reroutePoints: []
+      - fieldName: choices 1
+        node: {fileID: 5462134699131303349}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: 2847152102236332666}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: 2847152102236332666}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: 2847152102236332666}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: 2847152102236332666}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: 2847152102236332666}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: 4428389959481220634}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  BadDialogue: 0
+  startType_: 6
+  PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - "Wait, don\u2019t you know a Night Club near the Millienium ?\r\n"
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  EventToCreate: {fileID: 0}
+  choices:
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &4114437483962889840
 MonoBehaviour:
@@ -950,9 +2342,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -968,7 +2362,565 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+--- !u!114 &4428389959481220634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 4904, y: 5160}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    values:
+    - _fieldName: choix
+      _node: {fileID: 4428389959481220634}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: 2847152102236332666}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: 4428389959481220634}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: 4428389959481220634}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: 4428389959481220634}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: 4428389959481220634}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  BadDialogue: 0
+  startType_: 0
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - The most famous one is the <#74A2BE> Nova Night Club </color>,
+  - "it\u2019s quite far from the Millienium tho, I would say <#74A2BE> 40 minutes
+    by car.\r </color>\n"
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  EventToCreate: {fileID: 0}
+  choices: []
+--- !u!114 &5155706726278152144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 3720, y: 5896}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    - choices 0
+    values:
+    - _fieldName: choix
+      _node: {fileID: 5155706726278152144}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: -8265328822425482843}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: 5155706726278152144}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: 5155706726278152144}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: 5155706726278152144}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: 5155706726278152144}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: 5155706726278152144}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: 6347430987944462761}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  BadDialogue: 0
+  startType_: 6
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - Apparently <#74A2BE>a girl got hit by a car </color> and is hospitalized, it
+    happened near the <#74A2BE> Electric House. </color>
+  - The culprit is said to be on the run.
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  EventToCreate: {fileID: 0}
+  choices:
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+--- !u!114 &5160641902490845174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 5560, y: 4040}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    - choices 0
+    values:
+    - _fieldName: choix
+      _node: {fileID: 5160641902490845174}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: -6372760957574682127}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: 5160641902490845174}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: 5160641902490845174}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: 5160641902490845174}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: 5160641902490845174}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: 5160641902490845174}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: -8985144716869953298}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  BadDialogue: 0
+  startType_: 6
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - It happened near the <#74A2BE> Electric House </color> nightclub !
+  - 'Were you there ?
+
+'
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  EventToCreate: {fileID: 0}
+  choices:
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+--- !u!114 &5462134699131303349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 2520, y: 3384}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    - choices 0
+    - choices 1
+    values:
+    - _fieldName: choix
+      _node: {fileID: 5462134699131303349}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: -6005205155170008189}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: 5462134699131303349}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: 5462134699131303349}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: 5462134699131303349}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: 5462134699131303349}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: 5462134699131303349}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: -755410971329179409}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: choices 1
+      _node: {fileID: 5462134699131303349}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: 2847152102236332666}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  BadDialogue: 0
+  startType_: 0
+  PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - Do you know someone that goes by the name of Linda ?
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  EventToCreate: {fileID: 0}
+  choices:
+  - pasbien: 0
+    text: Ask about Linda
+    InterrogatoireValue: 0
+  - pasbien: 0
+    text: Ask about the Night Club
+    InterrogatoireValue: 0
+--- !u!114 &6347430987944462761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 4136, y: 5944}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    - choices 0
+    values:
+    - _fieldName: choix
+      _node: {fileID: 6347430987944462761}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: 5155706726278152144}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: 6347430987944462761}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: 6347430987944462761}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: 6347430987944462761}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: 6347430987944462761}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: 6347430987944462761}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: -3141549754711916957}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  BadDialogue: 0
+  startType_: 6
+  PersonTalking: {fileID: 0}
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - Damn, I hope the girl is alright.
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  EventToCreate: {fileID: 0}
+  choices:
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &6566891165396092489
 MonoBehaviour:
@@ -1058,9 +3010,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -1075,7 +3029,8 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &7175939020326395938
 MonoBehaviour:
@@ -1165,9 +3120,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -1185,7 +3142,8 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &7271079122626891574
 MonoBehaviour:
@@ -1288,9 +3246,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
@@ -1306,7 +3266,123 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 'Seek help '
+  - pasbien: 0
+    text: 'Seek help '
     InterrogatoireValue: 0
-  - text: 'Joke about your situation '
+  - pasbien: 0
+    text: 'Joke about your situation '
+    InterrogatoireValue: 0
+--- !u!114 &8575213338551802421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 4760, y: 4040}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    - choices 0
+    values:
+    - _fieldName: choix
+      _node: {fileID: 8575213338551802421}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: -5185211995487366772}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: 8575213338551802421}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: 8575213338551802421}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: 8575213338551802421}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: 8575213338551802421}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: 8575213338551802421}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: -6372760957574682127}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  BadDialogue: 0
+  startType_: 6
+  PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - "There is nothing that comes to mind, but I can check quickly\u2026\r\n"
+  - 'Oh ! I see on Sheep News that there was a<#74A2BE> car accident </color>last
+    night ! '
+  - "And the culprit is known to be still on the run. I hope you aren\u2019t involved,
+    Arthur\u2026\r\n"
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  EventToCreate: {fileID: 0}
+  choices:
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0

@@ -395,6 +395,7 @@ MonoBehaviour:
   StartSpot: 74
   ChangeMultiplier: 2
   MaxSpot: 74
+  MinSpot: 16
 --- !u!1 &303051246
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +568,7 @@ MonoBehaviour:
   PlayerInfo: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
   TimeBtwDialogues: 3
   CurrentlyTalking: 0
+  chatboxHeight: 0
 --- !u!114 &309070915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -724,6 +726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FPR: {fileID: -667179178089633446, guid: c40be3174f62c4acf8c1216858c64956, type: 2}
   PostProcessAmount: 0.005
+  posterisationColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &318745751
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,8 +38,15 @@ public class Beuverie_Player_Movement : Beuverie_Character_StateMachine
             
         }*/
     }
+
+    protected override void Drink_state()
+    {
+        base.Drink_state();
+        rb.velocity = Vector3.zero;
+    }
     protected override void FollowClick_state()
     {
+        rb.velocity = Vector3.zero;
         pm.agent.SetDestination(pm.MouseDestinationVec);
         base.FollowClick_state();
         

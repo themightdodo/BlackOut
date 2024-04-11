@@ -14,6 +14,7 @@ public class ChoixButton : MonoBehaviour
     }
     public void TriggerDialogue()
     {
+
         if (dm.pm.Current_Focus_Object != null && !dm.pm.Current_Focus_Object.GetComponent<Interactible>().noChoiceRegister)
         {
             choixBuffer();
@@ -37,9 +38,22 @@ public class ChoixButton : MonoBehaviour
             dm.CurrentDialogue = dialogue;
             dm.InterrogatoireValue = 0;
         }
+        if (choix.pasbien)
+        {
+            GetComponent<Animator>().Play("Fail");
+            Invoke("StartDialogue", 0.5f);
+        }
+        else
+        {
+            dm.StartDialogue(dialogue);
+        }
 
-        dm.StartDialogue(dialogue);
        
+       
+    }
+    void StartDialogue()
+    {
+        dm.StartDialogue(dialogue);
     }
     void choixBuffer()
     {

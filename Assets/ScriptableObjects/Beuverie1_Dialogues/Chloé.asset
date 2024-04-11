@@ -1,5 +1,99 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7786185052521484471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1912, y: 40}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    values:
+    - _fieldName: choix
+      _node: {fileID: -7786185052521484471}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: -5416953327033409650}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: -7786185052521484471}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: -7786185052521484471}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: -7786185052521484471}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: -7786185052521484471}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  BadDialogue: 0
+  startType_: 0
+  PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - "It was nice meeting you, I\u2019m Arthur.\r\n"
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  EventToCreate: {fileID: 0}
+  choices: []
 --- !u!114 &-5416953327033409650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21,6 +115,7 @@ MonoBehaviour:
     - choixIndice
     - indicesToShow
     - choices
+    - choices 0
     values:
     - _fieldName: choix
       _node: {fileID: -5416953327033409650}
@@ -74,10 +169,24 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: -5416953327033409650}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: -7786185052521484471}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
@@ -85,13 +194,17 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "I\u2019m Chloe, nice to meet you Arthur.\r\n"
+  - Sure, just be careful.
+  - "I\u2019m Chloe if you ever <#F7D10C> need my help </color> don\u2019t hesitate. "
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
-  choices: []
+  choices:
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
 --- !u!114 &-5325443207708761885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,9 +293,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
   ItemToHaveInHand: 0
@@ -192,13 +307,15 @@ MonoBehaviour:
   sentences:
   - HAHA no, I'm new
   - but you seemed... nice haha.
+  - "Anyway why don\u2019t you join with the other guys behind ?\r\n"
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &11400000
 MonoBehaviour:
@@ -219,6 +336,7 @@ MonoBehaviour:
   - {fileID: 2915335607356589205}
   - {fileID: 1592387820103123826}
   - {fileID: -5416953327033409650}
+  - {fileID: -7786185052521484471}
   PersonInteractedWith: {fileID: 0}
 --- !u!114 &1592387820103123826
 MonoBehaviour:
@@ -308,9 +426,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
   ItemToHaveInHand: 0
@@ -318,14 +438,16 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "What\u2019s your name by te way ? I\u2019m Arthur.\r\n"
+  - Yes I am, and thank you for the advice,
+  - "but I\u2019ve got to meet people myself before judging them.\r\n"
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &2915335607356589205
 MonoBehaviour:
@@ -415,9 +537,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
@@ -425,16 +549,17 @@ MonoBehaviour:
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - Oooh a freshman
-  - so cute
-  - come have a drink with me
+  - Those guys ??
+  - No <#F7D10C> you should avoid them </color>, they always get in trouble.
+  - "So I guess you\u2019re a freshman ?\r\n"
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &3175831328251620680
 MonoBehaviour:
@@ -521,9 +646,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 2
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
   ItemToHaveInHand: 0
@@ -539,7 +666,8 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &3508953903459518430
 MonoBehaviour:
@@ -629,9 +757,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: 7b4005bc129c1ab47b09e49919df52e9, type: 2}
   ItemToHaveInHand: 0
@@ -649,5 +779,6 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0

@@ -106,9 +106,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
   ItemToHaveInHand: 0
@@ -128,7 +130,8 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &5233182311949645007
 MonoBehaviour:
@@ -205,9 +208,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -221,7 +226,8 @@ MonoBehaviour:
 
 '
   - Go on now, you should meet some of the other students
-  - If you want, there's a group of regulars back there, they are really nice
+  - If you want, there's <#F7D10C> a group of regulars </color> back there, they
+    are really nice
   - 'Tell them ANTHONY sent you.
 
 
@@ -320,9 +326,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -341,7 +349,8 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &9097136297643316985
 MonoBehaviour:
@@ -428,9 +437,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 2
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
   ItemToHaveInHand: 0
@@ -448,5 +459,6 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0

@@ -82,7 +82,6 @@ public class Cinematique : MonoBehaviour
 
 
         string sentence = (string)sentences.Dequeue();
-        DialogueSound(sentence.Length);
         text.text = sentence;
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
@@ -123,80 +122,32 @@ public class Cinematique : MonoBehaviour
         }
     }
 
-    void DialogueSound(int wordCount)
+    void DialogueSound()
     {
+        int rand = Random.Range(1, 6);
 
-        if (CurrentDialogue == null)
+        switch (rand)
         {
-            return;
+            case (1):
+                audioManager.Play("Bip");
+                break;
+            case (2):
+                audioManager.Play("Bip2");
+                break;
+            case (3):
+                audioManager.Play("Bip3");
+                break;
+            case (4):
+                audioManager.Play("Bip4");
+                break;
+            case (5):
+                audioManager.Play("Bip5");
+                break;
+            case (6):
+                audioManager.Play("Bip6");
+                break;
         }
-        if (CurrentDialogue.PersonTalking != null)
-        {
-            switch (CurrentDialogue.PersonTalking.genre)
-            {
-                case Character.Genre.Femme:
-                    if (wordCount < 15)
-                    {
-                        audioManager.Play("FemmeCourt");
-                        audioManager.Stop("FemmeLong");
-                        audioManager.Stop("FemmeMid");
-                    }
-                    else if (wordCount > 35)
-                    {
-                        audioManager.Play("FemmeLong");
-                        audioManager.Stop("FemmeCourt");
-                        audioManager.Stop("FemmeMid");
-                    }
-                    else
-                    {
-                        audioManager.Play("FemmeMid");
-                        audioManager.Stop("FemmeCourt");
-                        audioManager.Stop("FemmeLong");
-                    }
-                    break;
-                case Character.Genre.Homme:
-                    if (wordCount < 15)
-                    {
-                        audioManager.Play("HommeCourt");
-                        audioManager.Stop("HommeLong");
-                        audioManager.Stop("HommeMid");
-                    }
-                    else if (wordCount > 35)
-                    {
-                        audioManager.Play("HommeLong");
-                        audioManager.Stop("HommeCourt");
-                        audioManager.Stop("HommeMid");
-                    }
-                    else
-                    {
-                        audioManager.Play("HommeMid");
-                        audioManager.Stop("HommeCourt");
-                        audioManager.Stop("HommeLong");
-                    }
-                    break;
-            }
-        }
-        else
-        {
-            if (wordCount < 15)
-            {
-                audioManager.Play("HommeCourt");
-                audioManager.Stop("HommeLong");
-                audioManager.Stop("HommeMid");
-            }
-            else if (wordCount > 35)
-            {
-                audioManager.Play("HommeLong");
-                audioManager.Stop("HommeCourt");
-                audioManager.Stop("HommeMid");
-            }
-            else
-            {
-                audioManager.Play("HommeMid");
-                audioManager.Stop("HommeCourt");
-                audioManager.Stop("HommeLong");
-            }
-        }
+
     }
     IEnumerator TypeSentence(string sentence)
     {
@@ -215,6 +166,7 @@ public class Cinematique : MonoBehaviour
                             audioManager.Stop("HommeCourt");
                         }
                         i++;*/
+            DialogueSound();
             yield return null;
         }
     }

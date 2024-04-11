@@ -85,8 +85,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   choix:
+    pasbien: 0
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 2
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
   ItemToHaveInHand: 0
@@ -104,7 +107,9 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
 --- !u!114 &-4541926234714524753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,8 +198,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   choix:
+    pasbien: 0
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
   ItemToHaveInHand: 0
@@ -210,7 +218,9 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
 --- !u!114 &-4240632494122365955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,8 +309,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   choix:
+    pasbien: 0
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -315,7 +328,9 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
 --- !u!114 &-1244581276098964753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,8 +419,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   choix:
+    pasbien: 0
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -427,7 +445,9 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,6 +469,7 @@ MonoBehaviour:
   - {fileID: 2109611691860795289}
   - {fileID: -4240632494122365955}
   - {fileID: 5768526646612408309}
+  PersonInteractedWith: {fileID: 0}
 --- !u!114 &1209877314756536614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,8 +558,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   choix:
+    pasbien: 0
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -547,7 +571,7 @@ MonoBehaviour:
   choixIndice: []
   sentences:
   - Take it easy on the drinks
-  - we're making a campfire in the woods later
+  - <#F7D10C> we're making a campfire </color> in the woods later
   - "you in\u202F?\r\n"
   indicesToShow: []
   indicesGiven: []
@@ -555,7 +579,9 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
 --- !u!114 &2109611691860795289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -644,8 +670,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   choix:
+    pasbien: 0
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
   ItemToHaveInHand: 0
@@ -661,7 +690,9 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
 --- !u!114 &3456339243337196971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -750,8 +781,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   choix:
+    pasbien: 0
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
@@ -767,7 +801,9 @@ MonoBehaviour:
   DestroyWhenGive: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
 --- !u!114 &5768526646612408309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -843,8 +879,11 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   choix:
+    pasbien: 0
     text: 
+    InterrogatoireValue: 0
   SuccessPoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 0}
   ItemToHaveInHand: 0
