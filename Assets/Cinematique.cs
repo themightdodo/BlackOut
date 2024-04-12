@@ -21,6 +21,8 @@ public class Cinematique : MonoBehaviour
 
     AudioManager audioManager;
     InputManager input;
+
+    public GameObject NextDialogue;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +44,7 @@ public class Cinematique : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         sentences.Clear();
-
+        NextDialogue.SetActive(false);
         if (CurrentDialogue == null)
         {
             sentences.Enqueue("...");
@@ -152,7 +154,7 @@ public class Cinematique : MonoBehaviour
     IEnumerator TypeSentence(string sentence)
     {
         text.text = "";
-        /*int i = 1;*/
+        int i = 1;
         foreach (char letter in sentence.ToCharArray())
         {
             text.text += letter;
@@ -167,6 +169,11 @@ public class Cinematique : MonoBehaviour
                         }
                         i++;*/
             DialogueSound();
+            if (i == sentence.ToCharArray().Length)
+            {
+                NextDialogue.SetActive(true);
+            }
+            i++;
             yield return null;
         }
     }

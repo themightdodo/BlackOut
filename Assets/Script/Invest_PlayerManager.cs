@@ -22,8 +22,8 @@ public class Invest_PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        Interaction_cooldown = new Timer(0.5f);
-        throwingItem = new Timer(0.5f);
+        Interaction_cooldown = new Timer(0.2f);
+        throwingItem = new Timer(0.2f);
     }
     private void Update()
     {

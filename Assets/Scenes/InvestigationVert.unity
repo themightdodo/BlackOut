@@ -2243,6 +2243,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3153334766482886720, guid: 4054f29c7d102d446a4531d39bb66d59,
+        type: 3}
+      propertyPath: objectifList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153334766482886720, guid: 4054f29c7d102d446a4531d39bb66d59,
+        type: 3}
+      propertyPath: objectifList.Array.data[0]
+      value: guess what happened to save linda
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153334766482886720, guid: 4054f29c7d102d446a4531d39bb66d59,
+        type: 3}
+      propertyPath: objectifList.Array.data[1]
+      value: Take a drive with Matthew
+      objectReference: {fileID: 0}
     - target: {fileID: 3194045592433844586, guid: 4054f29c7d102d446a4531d39bb66d59,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2532,6 +2547,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143067203471065644, guid: 4054f29c7d102d446a4531d39bb66d59,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143067203471065644, guid: 4054f29c7d102d446a4531d39bb66d59,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4207426254013815391, guid: 4054f29c7d102d446a4531d39bb66d59,
         type: 3}
@@ -3096,6 +3121,31 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6329170133357740245, guid: 4054f29c7d102d446a4531d39bb66d59,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387753489935245012, guid: 4054f29c7d102d446a4531d39bb66d59,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387753489935245012, guid: 4054f29c7d102d446a4531d39bb66d59,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387753489935245012, guid: 4054f29c7d102d446a4531d39bb66d59,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387753489935245012, guid: 4054f29c7d102d446a4531d39bb66d59,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387753489935245012, guid: 4054f29c7d102d446a4531d39bb66d59,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
@@ -6000,12 +6050,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0000007, y: 2.000001, z: 2.0000005}
   m_Center: {x: 0.00000333786, y: 4.065758e-20, z: -0.0000009536743}
---- !u!1 &920764099 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8645071946833798901, guid: 4054f29c7d102d446a4531d39bb66d59,
-    type: 3}
-  m_PrefabInstance: {fileID: 370860281}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &987000069
 GameObject:
   m_ObjectHideFlags: 0
@@ -7365,12 +7409,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: a5b7b43736f613f45a84d15a5c76b381, type: 3}
+  NextCinematic: 
   Description: 
   OnlyWin: 0
   OnlyLoose: 0
   ItemToHaveInHand: 4
   noPopup: 0
   AltImage: {fileID: 21300000, guid: f07e30ab7880cc84e92cd15505e0b092, type: 3}
+  AltNextCinematic: 
   AltDescription: 
 --- !u!65 &1485877372
 BoxCollider:
@@ -7767,7 +7813,6 @@ MonoBehaviour:
   OverFirst: {fileID: 0}
   pauseMenuUI: {fileID: 374370179}
   AnimPause: {fileID: 0}
-  EndMenu: {fileID: 920764099}
   EndMenuPopup: {fileID: 512589140}
   TextEndMenu: {fileID: 1908892000}
   Winscreen: {fileID: 0}
@@ -9165,12 +9210,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: a5b7b43736f613f45a84d15a5c76b381, type: 3}
+  NextCinematic: 
   Description: 
   OnlyWin: 0
   OnlyLoose: 0
   ItemToHaveInHand: 4
   noPopup: 0
   AltImage: {fileID: 21300000, guid: f07e30ab7880cc84e92cd15505e0b092, type: 3}
+  AltNextCinematic: 
   AltDescription: 
 --- !u!65 &1977997540
 BoxCollider:

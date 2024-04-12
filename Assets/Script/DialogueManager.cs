@@ -52,7 +52,7 @@ public class DialogueManager : Invest_Character_State_Machine
         sentences = new Queue<string>();
         historic = gm.PhoneManager.historic;
         audioManager = gm.GetComponent<AudioManager>();
-        ExaminButtonPressTimer = new Timer(0.2f);
+        ExaminButtonPressTimer = new Timer(0.25f);
     }
 
 
@@ -467,6 +467,10 @@ public class DialogueManager : Invest_Character_State_Machine
             return;
         }
         pm.AddItemToInventory.Invoke(CurrentDialogue.indicesGiven[0].item);
+        if (CurrentDialogue.indicesGiven[0].item.NextObjective)
+        {
+            gm.CanvasManager.objectifs.NextObjectif(1);
+        }
     }
     void GiveItem()
     {

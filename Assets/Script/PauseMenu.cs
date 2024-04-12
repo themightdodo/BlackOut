@@ -14,7 +14,6 @@ public class PauseMenu : Invest_Character_State_Machine
     public GameObject PauseFirst, WinFirst, OverFirst;
     public GameObject pauseMenuUI;
     public Animator AnimPause;
-    public GameObject EndMenu;
     public GameObject EndMenuPopup;
     public TextMeshProUGUI TextEndMenu;
     public GameObject Winscreen;
@@ -67,7 +66,7 @@ public class PauseMenu : Invest_Character_State_Machine
     {
         if (noPopup == true)
         {
-            endMenu();
+            LoadScene(nextScene);
         }
         else
         {
@@ -75,8 +74,6 @@ public class PauseMenu : Invest_Character_State_Machine
         }
         
         ContinueButton.GetComponent<Button>().onClick.AddListener(() => { LoadScene(nextScene); });
-        EndMenu.GetComponent<Image>().sprite = image;
-        TextEndMenu.text = text;
         Pause();
         pauseMenuUI.SetActive(false);
     }
@@ -85,13 +82,7 @@ public class PauseMenu : Invest_Character_State_Machine
         EndMenuPopup.SetActive(false);
         Resume();
     }
-    public void endMenu()
-    {
-        EndMenuPopup.SetActive(false);
-        EndMenu.SetActive(true);
-        Endbool = true;
-        Pause();
-    }
+
     protected override void Idle_state()
     {
         base.Idle_state();
