@@ -875,6 +875,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1003331683}
+  - {fileID: 805659156}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -882,6 +883,102 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &805659155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 805659156}
+  - component: {fileID: 805659159}
+  - component: {fileID: 805659158}
+  - component: {fileID: 805659157}
+  m_Layer: 5
+  m_Name: NextDialogueIcon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &805659156
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805659155}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 627524395}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1802.4679, y: -960.00006}
+  m_SizeDelta: {x: 84.9081, y: 79.2662}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &805659157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805659155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 1
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
+--- !u!114 &805659158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805659155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 12810653e7c45a542bd590af6c301168, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &805659159
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805659155}
+  m_CullTransparentMesh: 1
 --- !u!1 &918714174
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,6 +1260,7 @@ MonoBehaviour:
   CurrentDialogue: {fileID: 0}
   PersonTalking: {fileID: 507221374}
   SceneToLoad: SampleScene
+  NextDialogue: {fileID: 805659155}
 --- !u!114 &1003331688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1234,62 +1332,6 @@ MonoBehaviour:
     Music: 0
     SFX: 1
     source: {fileID: 0}
-  - name: HommeCourt
-    clip: {fileID: 8300000, guid: b637e24ed26f92740918dacbdb52e293, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    Music: 0
-    SFX: 1
-    source: {fileID: 0}
-  - name: HommeMid
-    clip: {fileID: 8300000, guid: 6a5dc4f47d9622944b6479274bd8d57f, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    Music: 0
-    SFX: 1
-    source: {fileID: 0}
-  - name: HommeLong
-    clip: {fileID: 8300000, guid: ef6f878f897d04d41b47c509b534c457, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    Music: 0
-    SFX: 1
-    source: {fileID: 0}
-  - name: FemmeCourt
-    clip: {fileID: 8300000, guid: 6dba807426f4e4943aa4b42a386ffe2d, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    Music: 0
-    SFX: 1
-    source: {fileID: 0}
-  - name: FemmeMid
-    clip: {fileID: 8300000, guid: 41eb7539823319d4a879a55032f98a76, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    Music: 0
-    SFX: 1
-    source: {fileID: 0}
-  - name: FemmeLong
-    clip: {fileID: 8300000, guid: 0a601e6547477eb4c9bf8f0a82e9476a, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    Music: 0
-    SFX: 1
-    source: {fileID: 0}
-  - name: FemmeLong
-    clip: {fileID: 8300000, guid: 0a601e6547477eb4c9bf8f0a82e9476a, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    Music: 0
-    SFX: 1
-    source: {fileID: 0}
   - name: MusicIntrigue
     clip: {fileID: 8300000, guid: 3f0c4459870b89a49b82c940261dcb22, type: 3}
     volume: 0.276
@@ -1297,6 +1339,54 @@ MonoBehaviour:
     loop: 1
     Music: 1
     SFX: 0
+    source: {fileID: 0}
+  - name: Bip
+    clip: {fileID: 8300000, guid: 2212084f8ccf33b43840296bad7f31dd, type: 3}
+    volume: 0.276
+    pitch: 1
+    loop: 0
+    Music: 0
+    SFX: 1
+    source: {fileID: 0}
+  - name: Bip2
+    clip: {fileID: 8300000, guid: de522e547c3bfae458e8f8e11f6fcb4e, type: 3}
+    volume: 0.276
+    pitch: 1
+    loop: 0
+    Music: 0
+    SFX: 1
+    source: {fileID: 0}
+  - name: Bip3
+    clip: {fileID: 8300000, guid: b698c4281738a734dac72b0c1b32c920, type: 3}
+    volume: 0.276
+    pitch: 1
+    loop: 0
+    Music: 0
+    SFX: 1
+    source: {fileID: 0}
+  - name: Bip4
+    clip: {fileID: 8300000, guid: 9757bdd0390e53446997aae3432dc64c, type: 3}
+    volume: 0.276
+    pitch: 1
+    loop: 0
+    Music: 0
+    SFX: 1
+    source: {fileID: 0}
+  - name: Bip5
+    clip: {fileID: 8300000, guid: 14e5a832eca4d144580220c30e7cb7bb, type: 3}
+    volume: 0.276
+    pitch: 1
+    loop: 0
+    Music: 0
+    SFX: 1
+    source: {fileID: 0}
+  - name: Bip6
+    clip: {fileID: 8300000, guid: 69322e53901cc7146bb3415832e2943d, type: 3}
+    volume: 0.276
+    pitch: 1
+    loop: 0
+    Music: 0
+    SFX: 1
     source: {fileID: 0}
   SFX: {fileID: -5424476109358493427, guid: ec11d8c0160c0bd429049b1d122e07c9, type: 2}
   Musique: {fileID: 7297047763682209996, guid: ec11d8c0160c0bd429049b1d122e07c9, type: 2}
@@ -1379,6 +1469,7 @@ GameObject:
   - component: {fileID: 1115595809}
   - component: {fileID: 1115595808}
   - component: {fileID: 1115595807}
+  - component: {fileID: 1115595810}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1460,6 +1551,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1115595810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115595806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1 &1212971577
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,4 +10,5 @@ public class IndiceItem : ScriptableObject
     public Sprite Image;
     [TextArea(10,3)]
     public string Desc;
+    public bool NextObjective;
 }

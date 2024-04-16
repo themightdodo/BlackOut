@@ -5,8 +5,8 @@ using UnityEngine;
 public class CameraMove : Invest_Character_State_Machine
 {
     public float Sensitivity;
-    float JoyX;
-    float JoyY;
+    public float JoyX { get; set; }
+    public float JoyY { get; set; }
     private const float Y_ANGLE_MIN = -70.0f;
     private const float Y_ANGLE_MAX = 50f;
     GameObject player;
@@ -52,6 +52,14 @@ public class CameraMove : Invest_Character_State_Machine
     {
         base.Examin_state();
         transform.LookAt(pm.Current_Focus_Object.transform);
+    }
+
+    protected override void MiniGame_state()
+    {
+        base.MiniGame_state();
+        MoveCamera();
+        
+        transform.rotation = new Quaternion(0, 0, 0, 0);
     }
 
     void MoveCamera()

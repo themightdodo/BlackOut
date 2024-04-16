@@ -90,7 +90,7 @@ public class Beuverie_Dialogue : MonoBehaviour
         }
       
         string sentence = (string)sentences.Dequeue();
-        DialogueSound(sentence.Length);
+      
         Vector3 RandomPos = transform.position + ChatBoxOffset;
         if (CurrentDialogue != null&&CurrentDialogue.PersonTalking == gm.PlayerInfo)
         {
@@ -102,76 +102,32 @@ public class Beuverie_Dialogue : MonoBehaviour
         StartCoroutine(TypeSentence(sentence));
     }
     
-    void DialogueSound(int wordCount)
+    void DialogueSound()
     {
-        Debug.Log(wordCount);
-        if(CurrentDialogue.PersonTalking != null)
+        int rand = Random.Range(1, 6);
+
+        switch (rand) 
         {
-            switch (CurrentDialogue.PersonTalking.genre)
-            {
-                case Character.Genre.Femme:
-                    if (wordCount < 15)
-                    {
-                        audioManager.Play("FemmeCourt");
-                        audioManager.Stop("FemmeLong");
-                        audioManager.Stop("FemmeMid");
-                    }
-                    else if (wordCount > 35)
-                    {
-                        audioManager.Play("FemmeLong");
-                        audioManager.Stop("FemmeCourt");
-                        audioManager.Stop("FemmeMid");
-                    }
-                    else
-                    {
-                        audioManager.Play("FemmeMid");
-                        audioManager.Stop("FemmeCourt");
-                        audioManager.Stop("FemmeLong");
-                    }
-                    break;
-                case Character.Genre.Homme:
-                    if (wordCount < 15)
-                    {
-                        audioManager.Play("HommeCourt");
-                        audioManager.Stop("HommeLong");
-                        audioManager.Stop("HommeMid");
-                    }
-                    else if (wordCount > 35)
-                    {
-                        audioManager.Play("HommeLong");
-                        audioManager.Stop("HommeCourt");
-                        audioManager.Stop("HommeMid");
-                    }
-                    else
-                    {
-                        audioManager.Play("HommeMid");
-                        audioManager.Stop("HommeCourt");
-                        audioManager.Stop("HommeLong");
-                    }
-                    break;
-            }
+            case (1):
+                audioManager.Play("Bip");
+                break;
+            case (2):
+                audioManager.Play("Bip2");
+                break;
+            case (3):
+                audioManager.Play("Bip3");
+                break;
+            case (4):
+                audioManager.Play("Bip4");
+                break;
+            case (5):
+                audioManager.Play("Bip5");
+                break;
+            case (6):
+                audioManager.Play("Bip6");
+                break;
         }
-        else
-        {
-            if (wordCount < 15)
-            {
-                audioManager.Play("HommeCourt");
-                audioManager.Stop("HommeLong");
-                audioManager.Stop("HommeMid");
-            }
-            else if (wordCount > 35)
-            {
-                audioManager.Play("HommeLong");
-                audioManager.Stop("HommeCourt");
-                audioManager.Stop("HommeMid");
-            }
-            else
-            {
-                audioManager.Play("HommeMid");
-                audioManager.Stop("HommeCourt");
-                audioManager.Stop("HommeLong");
-            }
-        }
+        
     }
 
     void EndDialogue()
@@ -191,13 +147,15 @@ public class Beuverie_Dialogue : MonoBehaviour
             InteractCount++;
             if(InteractCount > 0)
             {
+                gm.CurrentlyTalking = false;
                 FindDialogue(Dialogue.startType.Talk2, out CurrentDialogue);
             }
             sentences.Clear();
             launchDialogue = false;
-            gm.CurrentlyTalking = false;
         }
        
+
+
     }
     void ResetDialogue()
     {
@@ -210,20 +168,50 @@ public class Beuverie_Dialogue : MonoBehaviour
         {
             leaveNoEnd = true;
         }
+        else
+        {
+            CurrentDialogue = null;
+            sentences.Clear();
+        }
         StopAllCoroutines();
-        sentences.Clear();
+       
         launchDialogue = false;
-        CurrentDialogue = null;
         gm.CurrentlyTalking = false;
+        
+       
     }
+
     IEnumerator TypeSentence(string sentence)
     {
         CurrentChatBox.GetComponentInChildren<TextMeshPro>().text = "";
+        string wordBuffer = "";
+        bool balise = false;
         int i = 1;
         foreach (char letter in sentence.ToCharArray())
         {
+            string l = "";
+            l += letter;
+            if (l == "<")
+            {
+                balise = true;
+
+            }
+            else if (l == ">")
+            {
+                balise = false;
+            }
+            if (balise)
+            {
+                wordBuffer += letter;
+            }
+            else
+            {
+                DialogueSound();
+                
+                CurrentChatBox.GetComponentInChildren<TextMeshPro>().text += wordBuffer + letter;
+                wordBuffer = "";
+            }
             
-            CurrentChatBox.GetComponentInChildren<TextMeshPro>().text += letter;
 /*            if (i == sentence.ToCharArray().Length)
             {
                Invoke("DisplayNextSentence",gm.TimeBtwDialogues);
@@ -250,14 +238,24 @@ public class Beuverie_Dialogue : MonoBehaviour
         if (other.CompareTag("Player")&&!launchDialogue&&!gm.CurrentlyTalking)
         {
             Debug.Log(InteractCount);
-            if(InteractCount == 0)
+            if(InteractCount == 0&&!leaveNoEnd)
             {
                 FindDialogue(Dialogue.startType.Talk, out CurrentDialogue);
+                StartDialogue(CurrentDialogue);
+                launchDialogue = true;
+                gm.CurrentlyTalking = true;
+                leaveNoEnd = false;
             }
-            StartDialogue(CurrentDialogue);
-            launchDialogue = true;
-            gm.CurrentlyTalking = true;
-            leaveNoEnd = false;
+            else if(leaveNoEnd)
+            {
+                launchDialogue = true;
+                gm.CurrentlyTalking = true;
+                StartDialogue(CurrentDialogue);
+                leaveNoEnd = false;
+
+            }
+
+
         }       
     }
     private void OnTriggerExit(Collider other)
@@ -268,7 +266,8 @@ public class Beuverie_Dialogue : MonoBehaviour
             if(CurrentChatBox != null)
             {
                 Destroy(CurrentChatBox);
-            }       
+            }
+            Debug.Log("sortie dialogue");
             ResetDialogue();
         }
     }

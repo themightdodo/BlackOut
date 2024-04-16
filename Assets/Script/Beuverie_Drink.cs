@@ -63,8 +63,15 @@ public class Beuverie_Drink : Beuverie_Character_StateMachine
                 pm.NearDrink = false;
                 Delay.Reset();
             }
+            else if (!pm.NearDrink)
+            {
+                pm.NearDrink = Near_Drink(transform.position, out currentDrink);
+            }
         }
-  
+        else if (!pm.NearDrink)
+        {
+            pm.NearDrink = Near_Drink(transform.position, out currentDrink);
+        }
 
 
 

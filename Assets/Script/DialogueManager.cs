@@ -52,7 +52,7 @@ public class DialogueManager : Invest_Character_State_Machine
         sentences = new Queue<string>();
         historic = gm.PhoneManager.historic;
         audioManager = gm.GetComponent<AudioManager>();
-        ExaminButtonPressTimer = new Timer(0.2f);
+        ExaminButtonPressTimer = new Timer(0.25f);
     }
 
 
@@ -246,111 +246,71 @@ public class DialogueManager : Invest_Character_State_Machine
 
 
         string sentence = (string)sentences.Dequeue();
-        DialogueSound(sentence.Length);
+     
         text.text = sentence;
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
-    void DialogueSound(int wordCount)
+    void DialogueSound()
     {
+        int rand = Random.Range(1, 6);
 
-        if (CurrentDialogue == null)
+        switch (rand)
         {
-            return;
+            case (1):
+                audioManager.Play("Bip");
+                break;
+            case (2):
+                audioManager.Play("Bip2");
+                break;
+            case (3):
+                audioManager.Play("Bip3");
+                break;
+            case (4):
+                audioManager.Play("Bip4");
+                break;
+            case (5):
+                audioManager.Play("Bip5");
+                break;
+            case (6):
+                audioManager.Play("Bip6");
+                break;
         }
-        if (CurrentDialogue.PersonTalking != null)
-        {
-            switch (CurrentDialogue.PersonTalking.genre)
-            {
-                case Character.Genre.Femme:
-                    if (wordCount < 15)
-                    {
-                        audioManager.Play("FemmeCourt");
-                        audioManager.Stop("FemmeLong");
-                        audioManager.Stop("FemmeMid");
-                        audioManager.Stop("HommeLong");
-                        audioManager.Stop("HommeCourt");
-                        audioManager.Stop("HommeMid");
-                    }
-                    else if (wordCount > 35)
-                    {
-                        audioManager.Play("FemmeLong");
-                        audioManager.Stop("FemmeCourt");
-                        audioManager.Stop("FemmeMid");
-                        audioManager.Stop("HommeLong");
-                        audioManager.Stop("HommeCourt");
-                        audioManager.Stop("HommeMid");
-                    }
-                    else
-                    {
-                        audioManager.Play("FemmeMid");
-                        audioManager.Stop("FemmeCourt");
-                        audioManager.Stop("FemmeLong");
-                        audioManager.Stop("HommeLong");
-                        audioManager.Stop("HommeCourt");
-                        audioManager.Stop("HommeMid");
-                    }
-                    break;
-                case Character.Genre.Homme:
-                    if (wordCount < 15)
-                    {
-                        audioManager.Play("HommeCourt");
-                        audioManager.Stop("HommeLong");
-                        audioManager.Stop("HommeMid");
-                        audioManager.Stop("FemmeMid");
-                        audioManager.Stop("FemmeCourt");
-                        audioManager.Stop("FemmeLong");
-                    }
-                    else if (wordCount > 35)
-                    {
-                        audioManager.Play("HommeLong");
-                        audioManager.Stop("HommeCourt");
-                        audioManager.Stop("HommeMid");
-                        audioManager.Stop("FemmeMid");
-                        audioManager.Stop("FemmeCourt");
-                        audioManager.Stop("FemmeLong");
-                    }
-                    else
-                    {
-                        audioManager.Play("HommeMid");
-                        audioManager.Stop("HommeCourt");
-                        audioManager.Stop("HommeLong");
-                        audioManager.Stop("FemmeMid");
-                        audioManager.Stop("FemmeCourt");
-                        audioManager.Stop("FemmeLong");
-                    }
-                    break;
-            }
-        }
-        else
-        {
-            if (wordCount < 15)
-            {
-                audioManager.Play("HommeCourt");
-                audioManager.Stop("HommeLong");
-                audioManager.Stop("HommeMid");
-            }
-            else if (wordCount > 35)
-            {
-                audioManager.Play("HommeLong");
-                audioManager.Stop("HommeCourt");
-                audioManager.Stop("HommeMid");
-            }
-            else
-            {
-                audioManager.Play("HommeMid");
-                audioManager.Stop("HommeCourt");
-                audioManager.Stop("HommeLong");
-            }
-        }
+
     }
     IEnumerator TypeSentence(string sentence)
     {
         text.text = "";
+        string wordBuffer = "";
+        bool balise = false;
         int i = 1;
         foreach (char letter in sentence.ToCharArray())
         {
-            text.text += letter;
+            string l = "";
+            l += letter;
+            if(l == "<")
+            {
+                balise = true;
+                
+            }
+            else if (l == ">")
+            {
+                balise = false;
+            }
+            if (balise)
+            {
+                wordBuffer += letter;
+            }
+            else
+            {
+                DialogueSound();
+                text.text += wordBuffer + letter;
+                wordBuffer = "";
+            }
+
+
+            l = "";
+
             if (i == sentence.ToCharArray().Length)
             {
                 gm.CanvasManager.NextDialogue.SetActive(true);
@@ -507,6 +467,10 @@ public class DialogueManager : Invest_Character_State_Machine
             return;
         }
         pm.AddItemToInventory.Invoke(CurrentDialogue.indicesGiven[0].item);
+        if (CurrentDialogue.indicesGiven[0].item.NextObjective)
+        {
+            gm.CanvasManager.objectifs.NextObjectif(1);
+        }
     }
     void GiveItem()
     {

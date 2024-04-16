@@ -8,6 +8,7 @@ public class Invest_PlayerManager : MonoBehaviour
     public UnityEvent Focus;
     public UnityEvent<string> Focus_NoDialogue;
     public UnityEvent MiniJeu;
+    public UnityEvent FinMiniJeu;
     public UnityEvent FinInteraction;
     public UnityEvent<IndiceItem> AddItemToInventory;
     public UnityEvent<GameObject> AddItemToHand;
@@ -18,12 +19,13 @@ public class Invest_PlayerManager : MonoBehaviour
     public GameObject ItemInHand;
     public LayerMask Interactibles;
     public LayerMask Interactibles_noDialogue;
+    public GameObject Camera;
     public bool PhoneActive;
 
     private void Start()
     {
-        Interaction_cooldown = new Timer(0.5f);
-        throwingItem = new Timer(0.5f);
+        Interaction_cooldown = new Timer(0.2f);
+        throwingItem = new Timer(0.2f);
     }
     private void Update()
     {

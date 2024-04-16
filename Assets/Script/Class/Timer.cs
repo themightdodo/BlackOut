@@ -14,6 +14,11 @@ public class Timer
     {
         CurrentValue -= Time.deltaTime;
     }
+    
+    public void RefreshTime(float value)
+    {
+        CurrentValue -= Time.deltaTime / value;
+    }
 
     public void Add(float value)
     {
