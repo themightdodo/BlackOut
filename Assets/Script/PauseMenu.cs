@@ -55,6 +55,11 @@ public class PauseMenu : Invest_Character_State_Machine
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
+        else if (state_ == State.STATE_MINIGAME && !GameIsPaused)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
         else
         {
             Cursor.visible = true;

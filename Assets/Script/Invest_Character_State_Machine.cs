@@ -35,6 +35,7 @@ public class Invest_Character_State_Machine : MonoBehaviour
         PhoneClose = new Timer(0.2f);
         pm.Focus.AddListener(Focus);
         pm.MiniJeu.AddListener(MiniGame_transition);
+        pm.FinMiniJeu.AddListener(Idle_transition);
         pm.FinInteraction.AddListener(FinInteraction);
         pm.TriggerDialogue.AddListener(TriggerDialogue);
        

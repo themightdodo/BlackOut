@@ -8,6 +8,7 @@ public class Invest_PlayerManager : MonoBehaviour
     public UnityEvent Focus;
     public UnityEvent<string> Focus_NoDialogue;
     public UnityEvent MiniJeu;
+    public UnityEvent FinMiniJeu;
     public UnityEvent FinInteraction;
     public UnityEvent<IndiceItem> AddItemToInventory;
     public UnityEvent<GameObject> AddItemToHand;

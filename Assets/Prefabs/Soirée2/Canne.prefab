@@ -76,9 +76,9 @@ MonoBehaviour:
   startPoint: {fileID: 5915122043038842469}
   endPoint: {fileID: 0}
   midPoint: {fileID: 0}
-  linePoints: 10
+  linePoints: 2
   stiffness: 1
-  damping: 0.1
+  damping: 1
   ropeLength: 1
   ropeWidth: 0.06
 --- !u!120 &1016898679368839800
@@ -332,6 +332,19 @@ MonoBehaviour:
   state_: 0
   LeurreToInstance: {fileID: 1221930391867416419, guid: 70c7e963a2c50c4499c7dd53cad0fd27,
     type: 3}
-  LineRenderer: {fileID: 9219798145724468893}
+  Linerenderer: {fileID: 9219798145724468893}
   Offset: {x: 0, y: 0.44, z: 0.68}
+  MoveRod: 0
+  Speed: 5
+  RandomValue: 0
+  LeurreSpeed: 0
+  LeurreHealth: 0
+  LigneHealth: 20
+  WaitValue: 0
+  CatchRadius: 5
+  itemToDrop:
+  - {fileID: 8063815432423579128, guid: a1dc7da31b355f74ea8b6ef9d330d001, type: 3}
+  - {fileID: 7993212494869446776, guid: 9c492fb5512482d4a983b1a8a9480e9f, type: 3}
+  itemOnLeurre: {fileID: 0}
+  leurreState: 0
   _State: 0
