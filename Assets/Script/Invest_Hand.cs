@@ -43,10 +43,10 @@ public class Invest_Hand : Invest_Character_State_Machine
 
     void PlayAction(string layer)
     {
-       
+        Debug.Log(item);
         if (input.Check.PressedDown()&&item!=null)
         {
-           
+            
             item.Action.Invoke(layer);
           
         }

@@ -18,6 +18,7 @@ public class Invest_PlayerManager : MonoBehaviour
     public GameObject ItemInHand;
     public LayerMask Interactibles;
     public LayerMask Interactibles_noDialogue;
+    public GameObject Camera;
     public bool PhoneActive;
 
     private void Start()
