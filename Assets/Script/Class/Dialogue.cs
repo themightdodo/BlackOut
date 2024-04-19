@@ -48,6 +48,7 @@ public class Dialogue : Node
     public GameObject GiveItem;
     public bool DestroyWhenGive;
 
+    public bool unlimitedEvent;
     public GameObject EventToCreate;
 
     [Output(dynamicPortList = true)]

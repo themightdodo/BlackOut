@@ -26,9 +26,11 @@ public class TriggerDialogue : MonoBehaviour
             Invest_GameManager.GM_instance.playerManager.Current_Focus_Object = this.gameObject;
             Invest_GameManager.GM_instance.playerManager.TriggerDialogue.Invoke();
 
+
+  
+                triggerCount++;
+
             
-            
-            triggerCount++;
 
         }
     }

@@ -35,14 +35,18 @@ public class Invest_Character_State_Machine : MonoBehaviour
         PhoneClose = new Timer(0.2f);
         pm.Focus.AddListener(Focus);
         pm.MiniJeu.AddListener(MiniGame_transition);
-        pm.FinMiniJeu.AddListener(Idle_transition);
+        pm.FinMiniJeu.AddListener(IdlePls);
         pm.FinInteraction.AddListener(FinInteraction);
         pm.TriggerDialogue.AddListener(TriggerDialogue);
        
     }
 
-    protected virtual void Update()
+    protected virtual void LateUpdate()
     {
+        if (!pm.StartEnd.Done())
+        {
+            return;
+        }
         PhoneClose.Refresh();
         switch (state_)
         {
@@ -203,6 +207,10 @@ public class Invest_Character_State_Machine : MonoBehaviour
         {
             state_ = State.STATE_WALK;
         }
+    }
+    void IdlePls()
+    {
+        state_ = State.STATE_IDLE;
     }
     protected virtual void Idle_transition()
     {

@@ -27,13 +27,22 @@ public class Beuverie_Drink : Beuverie_Character_StateMachine
     }
     protected override void Walk_state()
     {
-        base.Walk_state(); 
+        base.Walk_state();
+        if (!input.Check.PressedDown())
+        {
+            pm.NearDrink = false;
+        }
 
     }
     protected override void Idle_state()
     {
         base.Idle_state();
         pm.drinked = false;
+        if (!input.Check.PressedDown())
+        {
+            pm.NearDrink = false;
+        }
+        
     }
     protected override void Drink_transition()
     {

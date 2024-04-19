@@ -16,6 +16,7 @@ public class Teleport : MonoBehaviour
             other.GetComponent<CharacterController>().enabled = false;
             other.transform.position = TpPosition;
             other.GetComponent<CharacterController>().enabled = true;
+            Destroy(gameObject);
         }
     }
 

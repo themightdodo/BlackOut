@@ -20,8 +20,9 @@ public class PopupManager : Invest_Character_State_Machine
         pm.AddItemToInventory.AddListener(ShowScreen);
         timer = new Timer(ShowTime);
     }
-    protected override void Update()
+    protected override void LateUpdate()
     {
+        base.LateUpdate();
         if (ScreenActive)
         {
             timer.Refresh();

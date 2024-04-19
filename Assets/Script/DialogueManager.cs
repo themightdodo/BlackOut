@@ -56,9 +56,9 @@ public class DialogueManager : Invest_Character_State_Machine
     }
 
 
-    protected override void Update()
+    protected override void LateUpdate()
     {
-        base.Update();
+        base.LateUpdate();
         ExaminButtonPressTimer.Refresh();
         if (pm.Current_Focus_Object != null)
         {
@@ -491,7 +491,11 @@ public class DialogueManager : Invest_Character_State_Machine
             return;
         }
         Instantiate(CurrentDialogue.EventToCreate);
-        Events.Add(CurrentDialogue.EventToCreate);
+        if (!CurrentDialogue.unlimitedEvent)
+        {
+            Events.Add(CurrentDialogue.EventToCreate);
+        }
+        
     }
     void clearButtons()
     {

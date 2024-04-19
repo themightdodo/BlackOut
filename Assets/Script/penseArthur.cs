@@ -39,11 +39,7 @@ public class PenseArthur : Invest_Character_State_Machine
         canvasManager.DialoguePanel.SetActive(false);
     }
 
-    protected override void Update()
-    {
-        base.Update();
-       
-    }
+
 
     protected override void Talk_state()
     {
