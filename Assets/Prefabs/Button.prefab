@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: -2935621995796198988}
   - component: {fileID: 2088266572898986809}
   - component: {fileID: 5739880621688429148}
+  - component: {fileID: 9199560083668351545}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -286,6 +287,7 @@ MonoBehaviour:
   dialogue: {fileID: 0}
   choix:
     text: 
+    InterrogatoireValue: 0
 --- !u!114 &2088266572898986809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,3 +334,24 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!95 &9199560083668351545
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5228665721072006191}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d3069376ed844dd469685b2acf31123c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

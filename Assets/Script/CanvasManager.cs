@@ -15,6 +15,7 @@ public class CanvasManager : Invest_Character_State_Machine
     public GameObject UsePanel;
     public GameObject NextDialogue;
     public TextMeshProUGUI FocusExaminText;
+    public Objectifs objectifs;
     bool focus;
 
     public bool thinking;
