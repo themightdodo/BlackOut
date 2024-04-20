@@ -58,11 +58,11 @@ public class BoatBehavior : MonoBehaviour
         //Avancer/reculer
         if (InputManager.Lstick.z <= -DeadZone)
         {
-            PhysicsHelper.PhysicsHelper.ApplyForceToReachVelocity(rb, forward * MaxSpeed, Power);
+            PhysicsHelper.PhysicsHelper.ApplyForceToReachVelocity(rb, forward * -MaxSpeed, Power);
         }
         if (InputManager.Lstick.z >= DeadZone)
         {
-            PhysicsHelper.PhysicsHelper.ApplyForceToReachVelocity(rb, forward * -MaxSpeed, Power);
+            PhysicsHelper.PhysicsHelper.ApplyForceToReachVelocity(rb, forward * MaxSpeed, Power);
         }
 
         // Particle System
