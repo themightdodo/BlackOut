@@ -14958,8 +14958,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   menuManager: {fileID: 0}
-  NextSceneWin: Cinematique1 5
-  NextSceneLose: Cinematique1 6
+  NextSceneWin: Cinematique1 4
+  NextSceneLose: Cinematique1 3
 --- !u!4 &1303513076
 Transform:
   m_ObjectHideFlags: 0
@@ -26930,12 +26930,12 @@ PrefabInstance:
     - target: {fileID: 3607150095031989858, guid: e3cdaebb720aaeb45ae7d9440898ff51,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.958795
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3607150095031989858, guid: e3cdaebb720aaeb45ae7d9440898ff51,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.28409892
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3607150095031989858, guid: e3cdaebb720aaeb45ae7d9440898ff51,
         type: 3}
@@ -26950,7 +26950,7 @@ PrefabInstance:
     - target: {fileID: 3607150095031989858, guid: e3cdaebb720aaeb45ae7d9440898ff51,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -33.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3607150095031989858, guid: e3cdaebb720aaeb45ae7d9440898ff51,
         type: 3}
@@ -27641,7 +27641,7 @@ PrefabInstance:
     - target: {fileID: 1997387733776058153, guid: 4054f29c7d102d446a4531d39bb66d59,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 1727.5228
       objectReference: {fileID: 0}
     - target: {fileID: 1997387733776058153, guid: 4054f29c7d102d446a4531d39bb66d59,
         type: 3}
@@ -27779,6 +27779,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3901014707160725467, guid: 4054f29c7d102d446a4531d39bb66d59,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3947108061019615360, guid: 4054f29c7d102d446a4531d39bb66d59,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -27872,6 +27877,11 @@ PrefabInstance:
     - target: {fileID: 4143067203471065644, guid: 4054f29c7d102d446a4531d39bb66d59,
         type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4207426254013815391, guid: 4054f29c7d102d446a4531d39bb66d59,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4254524033249797398, guid: 4054f29c7d102d446a4531d39bb66d59,
@@ -28122,7 +28132,7 @@ PrefabInstance:
     - target: {fileID: 6005710872473789918, guid: 4054f29c7d102d446a4531d39bb66d59,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 1446.5212
       objectReference: {fileID: 0}
     - target: {fileID: 6005710872473789918, guid: 4054f29c7d102d446a4531d39bb66d59,
         type: 3}
@@ -28562,7 +28572,7 @@ PrefabInstance:
     - target: {fileID: 8295225721186384282, guid: 4054f29c7d102d446a4531d39bb66d59,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8309331676600338971, guid: 4054f29c7d102d446a4531d39bb66d59,
         type: 3}

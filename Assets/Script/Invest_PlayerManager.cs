@@ -21,14 +21,18 @@ public class Invest_PlayerManager : MonoBehaviour
     public LayerMask Interactibles_noDialogue;
     public GameObject Camera;
     public bool PhoneActive;
+    public Timer StartEnd;
 
     private void Start()
     {
         Interaction_cooldown = new Timer(0.2f);
         throwingItem = new Timer(0.2f);
+        StartEnd = new Timer(6f);
     }
     private void Update()
     {
         Interaction_cooldown.Refresh();
+        StartEnd.Refresh();
+
     }
 }

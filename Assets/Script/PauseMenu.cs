@@ -37,9 +37,9 @@ public class PauseMenu : Invest_Character_State_Machine
         gm.InvestigationDone.AddListener(endMenuAsk);
     }
 
-    protected override void Update()
+    protected override void LateUpdate()
     {
-        base.Update();
+        base.LateUpdate();
         Oeil.Refresh();
         if (Oeil.Done())
         {

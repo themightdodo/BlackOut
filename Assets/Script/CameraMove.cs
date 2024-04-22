@@ -10,24 +10,16 @@ public class CameraMove : Invest_Character_State_Machine
     private const float Y_ANGLE_MIN = -70.0f;
     private const float Y_ANGLE_MAX = 50f;
     GameObject player;
+
     protected override void Start()
     {
         base.Start();
-
         player = pm.gameObject;
     }
-    protected override void Update()
-    {
-
-        
-
-        base.Update();
 
 
 
 
-            
-    }
     protected override void Idle_state()
     {
         base.Idle_state();
@@ -57,12 +49,10 @@ public class CameraMove : Invest_Character_State_Machine
     protected override void MiniGame_state()
     {
         base.MiniGame_state();
-        MoveCamera();
-        
-        transform.rotation = new Quaternion(0, 0, 0, 0);
+
     }
 
-    void MoveCamera()
+    public void MoveCamera()
     {
         JoyX += input.RstickHorizontal.getAxis() * Sensitivity * Time.deltaTime;
         JoyY += input.RstickVertical.getAxis() * Sensitivity * Time.deltaTime;

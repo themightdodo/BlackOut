@@ -1150,6 +1150,7 @@ GameObject:
   - component: {fileID: 1003331687}
   - component: {fileID: 1003331689}
   - component: {fileID: 1003331688}
+  - component: {fileID: 1003331690}
   m_Layer: 5
   m_Name: Cinematique
   m_TagString: Untagged
@@ -1390,6 +1391,19 @@ MonoBehaviour:
     source: {fileID: 0}
   SFX: {fileID: -5424476109358493427, guid: ec11d8c0160c0bd429049b1d122e07c9, type: 2}
   Musique: {fileID: 7297047763682209996, guid: ec11d8c0160c0bd429049b1d122e07c9, type: 2}
+--- !u!114 &1003331690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003331682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c68f8175f386f8439229f8964f187ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReperctutionToSave: MatthewSauve
 --- !u!1 &1046286235
 GameObject:
   m_ObjectHideFlags: 0

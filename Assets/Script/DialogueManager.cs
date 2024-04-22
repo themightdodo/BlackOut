@@ -22,12 +22,15 @@ public class DialogueManager : Invest_Character_State_Machine
     public GameObject ButtonPanel;
 
     public TextMeshProUGUI PersonTalking;
+    public Image ProfilPicture;
 
     public List<GameObject> currentsButtons;
 
     public List<Choix> ClickedChoix;
 
     public List<GameObject> Events;
+
+    public Animator animator;
 
     Historic_manager historic;
 
@@ -36,6 +39,7 @@ public class DialogueManager : Invest_Character_State_Machine
     GameObject CurrentButton;
     AudioManager audioManager;
     Timer ExaminButtonPressTimer;
+    float TimeBtwLetters = Time.deltaTime*2;
 
     public int InterrogatoireValue; 
 
@@ -56,9 +60,10 @@ public class DialogueManager : Invest_Character_State_Machine
     }
 
 
-    protected override void Update()
+    protected override void LateUpdate()
     {
-        base.Update();
+        base.LateUpdate();
+
         ExaminButtonPressTimer.Refresh();
         if (pm.Current_Focus_Object != null)
         {
@@ -120,6 +125,7 @@ public class DialogueManager : Invest_Character_State_Machine
     {
         if (input.Talk.Pressed()||triggerDialogue)
         {
+            ExaminButtonPressTimer.Reset();
             if (pm.Current_Focus_Object.GetComponent<Interactible>().Interrogatoire)
             {
                 FindDialogue(Dialogue.startType.Interrogatoire, out CurrentDialogue);
@@ -197,20 +203,28 @@ public class DialogueManager : Invest_Character_State_Machine
         gm.CanvasManager.NextDialogue.SetActive(false);
         sentences.Clear();
         clearButtons();
-      
+
         if (CurrentDialogue == null)
         {
+            
             sentences.Enqueue("...");
+            
         }
         else
         {
-            if(CurrentDialogue.PersonTalking != null)
+            if (CurrentDialogue.AnimToPlay != "")
+            {
+                animator.Play(CurrentDialogue.AnimToPlay, -1, 0f);
+            }
+            if (CurrentDialogue.PersonTalking != null)
             {
                 PersonTalking.text = CurrentDialogue.PersonTalking.name;
+                ProfilPicture.sprite = CurrentDialogue.PersonTalking.ProfilePicture;
             }
             else
             {
                 PersonTalking.text = "Arthur";
+                ProfilPicture.sprite = null;
             }
             foreach (string sentence in dialogue.sentences)
             {
@@ -227,7 +241,9 @@ public class DialogueManager : Invest_Character_State_Machine
     }
 
     public void DisplayNextSentence()
-    {    
+    {
+        TimeBtwLetters = Time.deltaTime * 2;
+        gm.CanvasManager.NextDialogue.SetActive(false);
         if (sentences.Count == 0&&CurrentDialogue!=null)
         {       
             GiveSuccess();
@@ -239,7 +255,7 @@ public class DialogueManager : Invest_Character_State_Machine
         }
         else if (sentences.Count == 0&&CurrentDialogue == null)
         {
-         
+            Debug.Log(sentences.Count);
             EndDialogue();
             return;
         }
@@ -301,14 +317,22 @@ public class DialogueManager : Invest_Character_State_Machine
             {
                 wordBuffer += letter;
             }
-            else
+            else if (l != "[" && l != "]")
             {
                 DialogueSound();
                 text.text += wordBuffer + letter;
                 wordBuffer = "";
+
             }
 
-
+            if (l == "[")
+            {
+                TimeBtwLetters = CurrentDialogue.timeBtwLetter;
+            }
+            if(l == "]")
+            {
+                TimeBtwLetters = Time.deltaTime*2;
+            }
             l = "";
 
             if (i == sentence.ToCharArray().Length)
@@ -316,7 +340,7 @@ public class DialogueManager : Invest_Character_State_Machine
                 gm.CanvasManager.NextDialogue.SetActive(true);
             }
             i++;
-            yield return null;
+            yield return new WaitForSeconds(TimeBtwLetters);
         }
     }
 
@@ -456,9 +480,6 @@ public class DialogueManager : Invest_Character_State_Machine
         ActiveDialogue = null;
         pm.FinInteraction.Invoke();
         pm.Interaction_cooldown.CurrentValue = pm.Interaction_cooldown.StartValue;
-        
-        Debug.Log("FINFIN");
-
     }
     void GiveIndice()
     {
@@ -491,7 +512,11 @@ public class DialogueManager : Invest_Character_State_Machine
             return;
         }
         Instantiate(CurrentDialogue.EventToCreate);
-        Events.Add(CurrentDialogue.EventToCreate);
+        if (!CurrentDialogue.unlimitedEvent)
+        {
+            Events.Add(CurrentDialogue.EventToCreate);
+        }
+        
     }
     void clearButtons()
     {

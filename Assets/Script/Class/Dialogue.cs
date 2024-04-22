@@ -28,6 +28,8 @@ public class Dialogue : Node
     public startType startType_;
 
     public Character PersonTalking;
+    public string AnimToPlay;
+    public float timeBtwLetter = Time.deltaTime * 2;
 
     public Item_Manager.ItemType ItemToHaveInHand;
     [Output(dynamicPortList = true)]
@@ -48,6 +50,7 @@ public class Dialogue : Node
     public GameObject GiveItem;
     public bool DestroyWhenGive;
 
+    public bool unlimitedEvent;
     public GameObject EventToCreate;
 
     [Output(dynamicPortList = true)]

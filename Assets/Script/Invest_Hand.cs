@@ -17,9 +17,9 @@ public class Invest_Hand : Invest_Character_State_Machine
         pm.AddItemToHand.AddListener(PickItem);
         pm.Focus_NoDialogue.AddListener(PlayAction);
     }
-    protected override void Update()
+    protected override void LateUpdate()
     {
-        base.Update();
+        base.LateUpdate();
         pm.throwingItem.Refresh();
 
     }

@@ -20,9 +20,9 @@ public class CanvasManager : Invest_Character_State_Machine
 
     public bool thinking;
 
-    protected override void Update()
+    protected override void LateUpdate()
     {
-        base.Update();
+        base.LateUpdate();
         if (!pm.PhoneActive)
         {
             PhoneIcon.SetActive(false);

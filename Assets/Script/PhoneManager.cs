@@ -39,9 +39,9 @@ public class PhoneManager : Invest_Character_State_Machine
         dm = Invest_GameManager.GM_instance.DialogueManager;
     }
 
-    protected override void Update()
+    protected override void LateUpdate()
     {
-        base.Update();
+        base.LateUpdate();
         if(state_!= State.STATE_PHONE)
         {
             CloseAll();

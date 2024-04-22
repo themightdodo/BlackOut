@@ -7,13 +7,21 @@ public class ChoixButton : MonoBehaviour
     public Dialogue dialogue;
     public Choix choix;
     DialogueManager dm;
+    Timer delay;
 
     private void Start()
     {
-        dm = Invest_GameManager.GM_instance.DialogueManager;   
+        dm = Invest_GameManager.GM_instance.DialogueManager;
+        delay = new Timer(0.5f);
+        delay.CurrentValue = 0;
     }
     public void TriggerDialogue()
     {
+        if (!delay.Done())
+        {
+            delay.Refresh();
+            return;
+        }
 
         if (dm.pm.Current_Focus_Object != null && !dm.pm.Current_Focus_Object.GetComponent<Interactible>().noChoiceRegister)
         {
@@ -42,6 +50,7 @@ public class ChoixButton : MonoBehaviour
         {
             GetComponent<Animator>().Play("Fail");
             Invoke("StartDialogue", 0.5f);
+            delay.Reset();
         }
         else
         {

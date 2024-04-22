@@ -164,7 +164,7 @@ public class fishing : Item
     void Throw()
     {
         RaycastHit hit;
-        if (Physics.SphereCast(Leurre.transform.position, 0.1f, Leurre.transform.forward,out hit, 2f, InteractLayer))
+        if (Physics.SphereCast(Leurre.transform.position, 0.1f, Leurre.transform.forward,out hit, 0.1f, InteractLayer))
         {
             Wait_transition();
             pm.MiniJeu.Invoke();
@@ -180,12 +180,8 @@ public class fishing : Item
      
         WaitTimer.Refresh();
         WaitValue = WaitTimer.CurrentValue;
-        camera.transform.LookAt(Leurre.transform.position);
-        camera.JoyY = Mathf.Clamp(camera.JoyY, -80f, 80f);
-        
-      
-        MoveRod = new Vector3(camera.JoyX, camera.JoyY).magnitude;
-        if(MoveRod >= 50)
+        CameraBehaviour();
+        if (MoveRod >= 50)
         {
             Leurre.transform.position = Vector3.MoveTowards(Leurre.transform.position, 
                 new Vector3(transform.position.x, Leurre.transform.position.y, transform.position.z), Speed * Time.deltaTime);
@@ -197,6 +193,15 @@ public class fishing : Item
         }
 
     }
+    void CameraBehaviour()
+    {
+        camera.MoveCamera();
+        camera.transform.rotation = new Quaternion(0, 0, 0, 0);
+        camera.transform.LookAt(Leurre.transform.position);
+        camera.JoyY = Mathf.Clamp(camera.JoyY, -80f, 80f);
+        MoveRod = new Vector3(camera.JoyX, camera.JoyY).magnitude;
+       
+    }
     void Catch()
     {
         if (Invest_GameManager.GM_instance.GetComponent<InputManager>().Check.Pressed())
@@ -204,10 +209,8 @@ public class fishing : Item
             Rest_transition();
             TimeBtwThrow.Reset();
         }
-        camera.transform.LookAt(Leurre.transform.position);
-        camera.JoyY = Mathf.Clamp(camera.JoyY, -80f, 80f);
-        MoveRod = new Vector3(camera.JoyX, camera.JoyY).magnitude;
 
+        CameraBehaviour();
         AttackTimer.Refresh();
         if (AttackTimer.Done())
         {
