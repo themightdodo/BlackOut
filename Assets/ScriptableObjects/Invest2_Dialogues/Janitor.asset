@@ -95,6 +95,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.02
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -105,6 +107,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 0
@@ -205,13 +208,15 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: 09dc2ed66b2e8374f839fcc5a109154e, type: 2}
+  AnimToPlay: Shake
+  timeBtwLetter: 0.06
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - And please take a shower or put on some perfume,
-  - 'I smell you coming from miles away, did <#74A2BE> you sleep in a trash </color>
+  - And please take a [shower] or put on some [perfume],
+  - 'I smell you coming from miles away, did <#74A2BE> you sleep in a [trash] </color>
     or what ?
 
 '
@@ -219,6 +224,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 0
@@ -319,6 +325,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: 09dc2ed66b2e8374f839fcc5a109154e, type: 2}
+  AnimToPlay: Shake
+  timeBtwLetter: 0.02
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -331,6 +339,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 0
@@ -431,6 +440,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.02
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -443,6 +454,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 0
@@ -565,6 +577,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 2
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.02
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -575,6 +589,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 0
@@ -675,17 +690,20 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: 09dc2ed66b2e8374f839fcc5a109154e, type: 2}
+  AnimToPlay: Shake
+  timeBtwLetter: 0.25
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
-  - "I swear I\u2019ve never seen anything so greasy, "
-  - every time I swipe it spreads even more
+  - "I swear I\u2019ve never seen anything so [GREASY], "
+  - every time I [SWIPE] it [SPREADS] even more
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 0
@@ -786,6 +804,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.02
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -796,6 +816,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 0
@@ -883,6 +904,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.02
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -893,6 +916,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices: []
 --- !u!114 &7409142377203838983
@@ -990,17 +1014,20 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: 09dc2ed66b2e8374f839fcc5a109154e, type: 2}
+  AnimToPlay: Shake
+  timeBtwLetter: 0.5
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
   choixIndice: []
   sentences:
   - What does it look like to you ?
-  - "I\u2019m cleaning your puke"
+  - "I\u2019m cleaning your [PUKE]"
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 0
@@ -1101,6 +1128,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.02
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1111,6 +1140,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 0
@@ -1195,6 +1225,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 1
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.02
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1205,5 +1237,6 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices: []
