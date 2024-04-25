@@ -15,6 +15,7 @@ public class Item_Manager : MonoBehaviour
         Resceptacle,
         Filled_Resceptacle,
         Person,
+        Key,
     }
     public ItemType itemType;
 

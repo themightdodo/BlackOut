@@ -39,7 +39,7 @@ public class DialogueManager : Invest_Character_State_Machine
     GameObject CurrentButton;
     AudioManager audioManager;
     Timer ExaminButtonPressTimer;
-    float TimeBtwLetters = Time.deltaTime*2;
+    float TimeBtwLetters = 0.022f*2;
 
     public int InterrogatoireValue; 
 
@@ -73,11 +73,17 @@ public class DialogueManager : Invest_Character_State_Machine
             FindDialogue(Dialogue.startType.Examin, out item);
             if (item != null &&item.choixHand.Count > 0 && pm.ItemInHand != null && pm.ItemInHand.GetComponent<Item_Manager>().itemType == item.ItemToHaveInHand)
             {
-                gm.CanvasManager.FocusExaminText.text = item.choixHand[0].text;
+                foreach (var examintext in gm.CanvasManager.FocusExaminText)
+                {
+                    examintext.text = item.choixHand[0].text;
+                }
             }
             else
             {
-                gm.CanvasManager.FocusExaminText.text = "Examin";
+                foreach (var examintext in gm.CanvasManager.FocusExaminText)
+                {
+                    examintext.text = "Examin";
+                }
             }
         }
         else if(state_ != State.STATE_PHONE)
