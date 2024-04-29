@@ -27,7 +27,10 @@ MonoBehaviour:
       _node: {fileID: -8472753133728474669}
       _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: choices 0
+        node: {fileID: 7704926241733133143}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -2855,7 +2858,10 @@ MonoBehaviour:
       _node: {fileID: 7704926241733133143}
       _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: choix
+        node: {fileID: -8472753133728474669}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0

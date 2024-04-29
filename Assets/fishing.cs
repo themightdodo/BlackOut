@@ -17,7 +17,9 @@ public class fishing : Item
     public float LeurreSpeed;
     public float LeurreHealth;
 
+    public float WaterPos;
     public float LigneHealth;
+    float baseLigneHealth;
     float timeToWait;
     public float WaitValue;
 
@@ -62,6 +64,7 @@ public class fishing : Item
         camera = pm.Camera.GetComponent<CameraMove>();
         AttackTimer = new Timer(2f);
         TimeBtwThrow = new Timer(0.5f);
+        baseLigneHealth = LigneHealth;
     }
 
     private void ResetLeurre()
@@ -137,6 +140,7 @@ public class fishing : Item
     {
         _State = FishingState.THROW;
         Destroy(Leurre.GetComponent<CharacterJoint>());
+        LigneHealth = baseLigneHealth;
         Leurre.GetComponent<Rigidbody>().AddForce((transform.forward + new Vector3(0, 2, 0))*500);
     }
     void Wait_transition()
@@ -161,12 +165,13 @@ public class fishing : Item
     }
     void Throw()
     {
-        RaycastHit hit;
-        if (Physics.SphereCast(Leurre.transform.position, 0.5f, -transform.up,out hit, 0.1f, InteractLayer))
+ 
+        if(Leurre.transform.position.y < WaterPos)
         {
             Wait_transition();
             pm.MiniJeu.Invoke();
         }
+
     }
     void Wait()
     {
@@ -276,11 +281,11 @@ public class fishing : Item
             {
                 if (RandomValue == 0)
                 {
-                    Leurre.transform.position += transform.right  * Time.deltaTime;
+                    Leurre.transform.position += Leurre.transform.up  * Time.deltaTime;
                 }
                 else
                 {
-                    Leurre.transform.position -= transform.right  * Time.deltaTime;
+                    Leurre.transform.position -= Leurre.transform.up * Time.deltaTime;
                 }
             }
             else

@@ -11,6 +11,7 @@ public class BoatComponents : MonoBehaviour
     Rigidbody BoatRigidbody;
     GameObject Camera;
     GameObject Player;
+    Invest_PlayerManager playerManager;
 
     public enum BoatState
     {
@@ -23,9 +24,11 @@ public class BoatComponents : MonoBehaviour
     private void Start()
     {
         Boat.GetComponent<Rigidbody>().isKinematic = true;
+        playerManager = Invest_GameManager.GM_instance.playerManager;
         Camera = Invest_GameManager.GM_instance.playerManager.Camera;
         Player = Invest_GameManager.GM_instance.playerManager.gameObject;
         BoatRigidbody = Boat.GetComponent<Rigidbody>();
+        
     }
     private void Update()
     {
@@ -41,6 +44,7 @@ public class BoatComponents : MonoBehaviour
         DestroyObjects();
         BoatRigidbody.isKinematic = false;
         Player.GetComponent<CharacterController>().enabled = false;
+        playerManager.MiniJeu.Invoke();
         Camera.SetActive(false);
         BoatCam.SetActive(true);
     }
@@ -50,6 +54,7 @@ public class BoatComponents : MonoBehaviour
         InstantiateObjects();
         BoatRigidbody.isKinematic = true;
         Player.GetComponent<CharacterController>().enabled = true;
+        playerManager.FinMiniJeu.Invoke();
         Camera.SetActive(true);
         BoatCam.SetActive(false);
     }

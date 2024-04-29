@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7294237950208916175
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PersosTerrain Variant
+  m_Shader: {fileID: -6465566751694194690, guid: 08ffd1ce279f25143a78233bb3ca388f,
+    type: 3}
+  m_Parent: {fileID: -876546973899608171, guid: 08ffd1ce279f25143a78233bb3ca388f,
+    type: 3}
+  m_ModifiedSerializedProperties: 2
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BakeTexture:
+        m_Texture: {fileID: 2800000, guid: 411e1ace192228448aff9db73b3c9f32, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BakeTexture_1:
+        m_Texture: {fileID: 2800000, guid: ef1c59507d903fc4a9ddcb6dccb1af5a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DustBodyTexture:
+        m_Texture: {fileID: 2800000, guid: 411e1ace192228448aff9db73b3c9f32, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DustBodyTexture_1:
+        m_Texture: {fileID: 2800000, guid: ef1c59507d903fc4a9ddcb6dccb1af5a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: 7d3a5d54fab918b4b9b5419e049e7778, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AngleValue: 0.6
+    - _QueueControl: 0
+    - _Scale: 482.85
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Color_1: {r: 1, g: 1, b: 1, a: 0}
+    - _LightColor: {r: 0, g: 1, b: 0.5254902, a: 0}
+    - _LightColor2: {r: 0.45490196, g: 0.63529414, b: 0.74509805, a: 0}
+    - _Offset: {r: 0.41, g: 0, b: 0, a: 0}
+    - _Tilling: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
