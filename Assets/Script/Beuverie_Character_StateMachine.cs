@@ -29,7 +29,11 @@ public class Beuverie_Character_StateMachine : MonoBehaviour
     protected virtual void Update()
     {
         Blackout_transition();
-        Addiction_transition();
+        if (!pm.desactivateAddictionUntilDrink)
+        {
+            Addiction_transition();
+        }
+        
         switch (state_)
         {
             case State.STATE_IDLE:
@@ -80,12 +84,16 @@ public class Beuverie_Character_StateMachine : MonoBehaviour
     }
     protected virtual void Blackout_state()
     {
-
+        Beuverie_GameManager.GM_instance.Invoke("LoadNextScene", 2f);
     }
     protected virtual void Drink_state()
     {
         if (pm.drinked)
         {
+            if (pm.desactivateAddictionUntilDrink)
+            {
+                pm.desactivateAddictionUntilDrink = false;
+            }
            state_ = State.STATE_IDLE;
         }
     }
@@ -147,6 +155,7 @@ public class Beuverie_Character_StateMachine : MonoBehaviour
     {
         if(pm.TauxAlcool.ToMuch())
         {
+            Debug.Log("BLACKOUT");
             state_ = State.STATE_BLACKOUT;
         }
     }

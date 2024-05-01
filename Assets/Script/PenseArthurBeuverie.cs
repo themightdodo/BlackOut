@@ -166,13 +166,24 @@ public class PenseArthurBeuverie : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if(InteractCount != 0)
+        {
+            return; 
+        }
         if (other.CompareTag("Player") && !launchDialogue && !gm.CurrentlyTalking)
         {
+            if(gm.CurrentlyThinking != null)
+            {
+                gm.CurrentlyThinking.GetComponent<PenseArthurBeuverie>().EndDialogue();
+                Destroy(gm.CurrentlyThinking);
+            }
+            gm.CurrentlyThinking = gameObject;
             Debug.Log(InteractCount);
             if (InteractCount == 0)
             {
                 FindDialogue(Dialogue.startType.Talk, out CurrentDialogue);
             }
+
             StartDialogue(CurrentDialogue);
             launchDialogue = true;
             leaveNoEnd = false;

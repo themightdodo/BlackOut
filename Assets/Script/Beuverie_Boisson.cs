@@ -5,4 +5,6 @@ using UnityEngine;
 public class Beuverie_Boisson : MonoBehaviour
 {
     public Drink drink;
+    public GameObject EventtoCreateOnDrink;
+    public GameObject ObjectToDestroyOnDrink;
 }

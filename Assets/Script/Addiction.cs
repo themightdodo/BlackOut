@@ -21,6 +21,10 @@ public class Addiction : Beuverie_Character_StateMachine
     protected override void Update()
     {
         base.Update();
+        if (pm.desactivateAddictionUntilDrink)
+        {
+            return;
+        }
         Addiction_timer.Refresh();
         Debug.Log(Addiction_timer.Done());
         pm.Addiction_timer_done = Addiction_timer.Done();

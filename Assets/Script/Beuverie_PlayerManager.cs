@@ -17,6 +17,8 @@ public class Beuverie_PlayerManager : MonoBehaviour
     public Taux_Alcool TauxAlcool { get; set; }
     public bool Addiction_timer_done { get; set; }
     public bool drinked { get; set; }
+
+    public bool desactivateAddictionUntilDrink = false;
     public bool MouseDestination { get; set; }
     public bool NearDrink;
     public bool inActivity;
@@ -24,6 +26,7 @@ public class Beuverie_PlayerManager : MonoBehaviour
     public UnityEvent leaveActivity;
     public Activité currentActivityData { get; set; }
     public LayerMask drinkLayer { get; set; }
+    public float drinkDetectionRadius;
     public LayerMask ActivityLayer;
 
     public Vector3 MouseDestinationVec { get; set; }
@@ -48,7 +51,7 @@ public class Beuverie_PlayerManager : MonoBehaviour
         }
         if (TauxAlcool.ToMuch())
         {
-            Beuverie_GameManager.GM_instance.LoadNextScene();
+            Beuverie_GameManager.GM_instance.Invoke("LoadNextScene", 2f);
         }
     }
     public void StopMouseControl()
