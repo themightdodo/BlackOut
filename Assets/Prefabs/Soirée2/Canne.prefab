@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1197271423559355601}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.477, z: 0}
+  m_LocalPosition: {x: 0, y: 0.815, z: 0.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -80,7 +80,7 @@ MonoBehaviour:
   stiffness: 1
   damping: 1
   ropeLength: 1
-  ropeWidth: 0.06
+  ropeWidth: 0.02
 --- !u!120 &1016898679368839800
 LineRenderer:
   serializedVersion: 2
@@ -102,7 +102,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: -876546973899608171, guid: 4ea846c8ca844e64cb1b285cf0bb5ede, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -196,7 +196,6 @@ GameObject:
   - component: {fileID: 1276013119499702783}
   - component: {fileID: 1050777574541348860}
   - component: {fileID: 4543028455655039288}
-  - component: {fileID: 5879760915746208390}
   - component: {fileID: 6068294616098833618}
   - component: {fileID: 4694974575917033256}
   m_Layer: 0
@@ -214,14 +213,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3939131450885275179}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.15246832, y: -0, z: -0, w: 0.98830837}
+  m_LocalRotation: {x: 0.110615835, y: -0.69840115, z: -0.098410174, w: 0.7002253}
   m_LocalPosition: {x: 0, y: 0, z: 0.12}
-  m_LocalScale: {x: 0.09917917, y: 3.0677004, z: 0.09337045}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.66, y: 1.66, z: 1.66}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5915122043038842469}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 17.54, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1, y: -90, z: -17}
 --- !u!33 &1050777574541348860
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -229,7 +228,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3939131450885275179}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 6239881831769578202, guid: 5006a442b95f2a74ab55c3a054efb866, type: 3}
 --- !u!23 &4543028455655039288
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -272,27 +271,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5879760915746208390
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3939131450885275179}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6068294616098833618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,7 +289,8 @@ MonoBehaviour:
   PickSound: 
   ThrowSound: 
   itemType: 0
-  BaseItem: {fileID: 486112422907768155, guid: f52914bff3ffc8544aef1c65f07f0300, type: 3}
+  BaseItem: {fileID: 6733789140515806225, guid: cef02a0f242a6bd41ac5919737aa74a6,
+    type: 3}
   usableItem: 1
 --- !u!114 &4694974575917033256
 MonoBehaviour:
@@ -339,11 +318,12 @@ MonoBehaviour:
   RandomValue: 0
   LeurreSpeed: 0
   LeurreHealth: 0
+  WaterPos: -11.1
   LigneHealth: 20
   WaitValue: 0
   CatchRadius: 5
   itemToDrop:
-  - {fileID: 7993212494869446776, guid: 9c492fb5512482d4a983b1a8a9480e9f, type: 3}
+  - {fileID: 8063815432423579128, guid: a1dc7da31b355f74ea8b6ef9d330d001, type: 3}
   - {fileID: 7993212494869446776, guid: 9c492fb5512482d4a983b1a8a9480e9f, type: 3}
   itemOnLeurre: {fileID: 0}
   leurreState: 0

@@ -108,13 +108,13 @@ public class Invest_Character_State_Machine : MonoBehaviour
                 Show_transition();
                 Talk_transition();
             }
-            else if (input.Talk.Pressed()&&pm.Current_Focus_Object.CompareTag("Phone"))
+            else if (input.Talk.PressedDown()&&pm.Current_Focus_Object.CompareTag("Phone"))
             {
                 pm.PhoneActive = true;
                 Destroy(pm.Current_Focus_Object);
                 pm.Current_Focus_Object = null;
             }
-            else if (input.Talk.Pressed())
+            else if (input.Talk.PressedDown())
             {
                 Pick();
             }
@@ -189,14 +189,14 @@ public class Invest_Character_State_Machine : MonoBehaviour
     }
     protected virtual void Examin_transition()
     {
-        if (input.Check.Pressed() || triggerDialogue)
+        if (input.Check.PressedDown() || triggerDialogue)
         {
             state_ = State.STATE_EXAMIN;
         }
     }
     protected virtual void Talk_transition()
     {
-        if (input.Talk.Pressed()||triggerDialogue)
+        if (input.Talk.PressedDown()||triggerDialogue)
         {
             state_ = State.STATE_TALK;
         }

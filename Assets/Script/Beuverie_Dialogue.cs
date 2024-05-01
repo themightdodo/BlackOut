@@ -13,6 +13,7 @@ public class Beuverie_Dialogue : MonoBehaviour
     public Dialogue CurrentDialogue;
 
     public Vector3 ChatBoxOffset;
+    public Vector3 DialogueLinePos;
 
     public Queue<string> sentences;
 
@@ -31,7 +32,8 @@ public class Beuverie_Dialogue : MonoBehaviour
     AudioManager audioManager;
 
     InputManager input;
-
+    bool writing;
+    string currentsentence;
     private void Start()
     {
         sentences = new Queue<string>();
@@ -50,11 +52,20 @@ public class Beuverie_Dialogue : MonoBehaviour
         }
         if (CurrentDialogue.PersonTalking == gm.PlayerInfo)
         {
+            CurrentChatBox.GetComponent<LineRenderer>().SetPosition(0, CurrentChatBox.transform.position);
+            CurrentChatBox.GetComponent<LineRenderer>().SetPosition(1, gm.playerManager.transform.position + Vector3.up);
             CurrentChatBox.transform.position = gm.playerManager.transform.position + new Vector3(0, gm.chatboxHeight, 0);
         }
         if (input.Talk.PressedDown())
         {
-            DisplayNextSentence();
+            if (writing)
+            {
+                StopAllCoroutines();
+                CurrentChatBox.GetComponentInChildren<TextMeshPro>().text = currentsentence;
+                writing = false;
+            }
+            else
+                DisplayNextSentence();
         }
     }
 
@@ -95,9 +106,15 @@ public class Beuverie_Dialogue : MonoBehaviour
         if (CurrentDialogue != null&&CurrentDialogue.PersonTalking == gm.PlayerInfo)
         {
             RandomPos = gm.playerManager.transform.position + new Vector3(0,gm.chatboxHeight,0);
+
         }
+
         CurrentChatBox = Instantiate(Text,RandomPos, transform.rotation);
+        CurrentChatBox.GetComponent<LineRenderer>().SetPosition(0, CurrentChatBox.transform.position);
+        CurrentChatBox.GetComponent<LineRenderer>().SetPosition(1, transform.position+DialogueLinePos );
         CurrentChatBox.GetComponentInChildren<TextMeshPro>().text = sentence;
+        currentsentence = sentence;
+        writing = true;
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
@@ -211,11 +228,12 @@ public class Beuverie_Dialogue : MonoBehaviour
                 CurrentChatBox.GetComponentInChildren<TextMeshPro>().text += wordBuffer + letter;
                 wordBuffer = "";
             }
-            
-/*            if (i == sentence.ToCharArray().Length)
+
+            if (i == sentence.ToCharArray().Length)
             {
-               Invoke("DisplayNextSentence",gm.TimeBtwDialogues);
-            }*/
+                writing = false;
+                          
+            }
             i++;
             yield return null;
         }
@@ -276,6 +294,8 @@ public class Beuverie_Dialogue : MonoBehaviour
     {
         Gizmos.color = Color.white;
         Gizmos.DrawSphere(transform.position + ChatBoxOffset, 0.5f);
+        Gizmos.color = Color.green ;
+        Gizmos.DrawSphere(transform.position + DialogueLinePos, 0.5f);
     }
 
 }

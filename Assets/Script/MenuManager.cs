@@ -18,7 +18,7 @@ public class MenuManager : MonoBehaviour
     public GameObject MainMenu;
     public GameObject LancerPartie;
     public GameObject LancerTraining;
-    
+    string scenenamebuffer;
 
 
     // Called zero
@@ -99,7 +99,29 @@ public class MenuManager : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
     }
-  
+    public void LoadSceneAsync()
+    {
+
+        Time.timeScale = 1f;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+        SceneManager.LoadSceneAsync(scenenamebuffer);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+    public void LoadSceneDelayed(string SceneName)
+    {
+
+        Time.timeScale = 1f;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+        scenenamebuffer = SceneName;
+        this.Invoke( "LoadSceneAsync", 3f);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
+
     public void SetMenu(GameObject Menu)
     {
         Menu.SetActive(true);

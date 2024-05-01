@@ -108,6 +108,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: c97146d22da27334fbdf66d5772e0f9e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -119,6 +121,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 0
@@ -222,6 +225,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -232,6 +237,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 0
@@ -332,6 +338,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 0}
+  AnimToPlay: 
+  timeBtwLetter: 0
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -342,6 +350,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 0
@@ -442,6 +451,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 0}
+  AnimToPlay: 
+  timeBtwLetter: 0
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -452,6 +463,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 0
@@ -552,6 +564,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -562,6 +576,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 0
@@ -668,6 +683,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: c97146d22da27334fbdf66d5772e0f9e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -678,6 +695,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 0
@@ -778,6 +796,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 0}
+  AnimToPlay: 
+  timeBtwLetter: 0
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -788,6 +808,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 0
@@ -814,6 +835,7 @@ MonoBehaviour:
     - choixIndice
     - indicesToShow
     - choices
+    - choixIndice 0
     values:
     - _fieldName: choix
       _node: {fileID: -690447691929958983}
@@ -867,6 +889,15 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: choixIndice 0
+      _node: {fileID: -690447691929958983}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
   choix:
     pasbien: 0
     text: 
@@ -875,10 +906,15 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
-  choixIndice: []
+  choixIndice:
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
   sentences:
   - He really doesn't seem to be okay
   indicesToShow: []
@@ -886,6 +922,7 @@ MonoBehaviour:
   GiveItem: {fileID: 7993212494869446776, guid: 26c14e8883b8c7b42b53c0be509e35c5,
     type: 3}
   DestroyWhenGive: 1
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices: []
 --- !u!114 &11400000
@@ -1011,6 +1048,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 0}
+  AnimToPlay: 
+  timeBtwLetter: 0
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1021,6 +1060,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices: []
 --- !u!114 &661758029941713342
@@ -1105,6 +1145,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: c97146d22da27334fbdf66d5772e0f9e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1115,6 +1157,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices: []
 --- !u!114 &720111656286000157
@@ -1225,6 +1268,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: c97146d22da27334fbdf66d5772e0f9e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1235,6 +1280,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 0
@@ -1325,6 +1371,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: c97146d22da27334fbdf66d5772e0f9e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1336,6 +1384,7 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: f1e700f9a1a1c0c4ca47725e212d62be, type: 2}
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices: []
 --- !u!114 &1548121116573874672
@@ -1433,6 +1482,8 @@ MonoBehaviour:
   BadDialogue: 1
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1443,6 +1494,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 0
@@ -1530,6 +1582,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: c97146d22da27334fbdf66d5772e0f9e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1541,6 +1595,7 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: f1e700f9a1a1c0c4ca47725e212d62be, type: 2}
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices: []
 --- !u!114 &3351062070636920607
@@ -1648,6 +1703,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 3
   PersonTalking: {fileID: 11400000, guid: c97146d22da27334fbdf66d5772e0f9e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0
   ItemToHaveInHand: 3
   choixHand:
   - pasbien: 0
@@ -1661,6 +1718,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 0
@@ -1748,6 +1806,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: c97146d22da27334fbdf66d5772e0f9e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1760,6 +1820,7 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: f1e700f9a1a1c0c4ca47725e212d62be, type: 2}
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices: []
 --- !u!114 &5550433900544758491
@@ -1880,6 +1941,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 1
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0
   ItemToHaveInHand: 3
   choixHand:
   - pasbien: 0
@@ -1895,6 +1958,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 0
@@ -1998,6 +2062,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -2008,6 +2074,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 0
@@ -2121,6 +2188,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: c97146d22da27334fbdf66d5772e0f9e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -2131,6 +2200,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 1
@@ -2244,6 +2314,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 2
   PersonTalking: {fileID: 11400000, guid: c97146d22da27334fbdf66d5772e0f9e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0
   ItemToHaveInHand: 3
   choixHand:
   - pasbien: 0
@@ -2257,6 +2329,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
   - pasbien: 0

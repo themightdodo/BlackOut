@@ -15,6 +15,7 @@ public class Beuverie_Drink : Beuverie_Character_StateMachine
         base.Start();
         Delay = new Timer(AnimationDelay);
         pm.drinkLayer = drinkLayer;
+        pm.drinkDetectionRadius = drinkDetectionRadius;
     }
     protected override void Update()
     {
@@ -65,6 +66,9 @@ public class Beuverie_Drink : Beuverie_Character_StateMachine
             {
                 //code de récup de boisson
                 Drink drink = currentDrink.GetComponent<Beuverie_Boisson>().drink;
+                CreateOnDrink();
+                DestroyOnDrink();
+
                 pm.TauxAlcool.add(drink.TauxAlcoolPlus, drink.type_, drink.Quantity);
                 Destroy(currentDrink);
                 currentDrink = null;
@@ -84,6 +88,20 @@ public class Beuverie_Drink : Beuverie_Character_StateMachine
 
 
 
+    }
+    void CreateOnDrink()
+    {
+        if (currentDrink.GetComponent<Beuverie_Boisson>().EventtoCreateOnDrink != null)
+        {
+            Instantiate(currentDrink.GetComponent<Beuverie_Boisson>().EventtoCreateOnDrink);
+        }
+    }
+    void DestroyOnDrink()
+    {
+        if (currentDrink.GetComponent<Beuverie_Boisson>().ObjectToDestroyOnDrink != null)
+        {
+            Destroy(currentDrink.GetComponent<Beuverie_Boisson>().ObjectToDestroyOnDrink);
+        }
     }
     protected override void Addiction_state()
     {

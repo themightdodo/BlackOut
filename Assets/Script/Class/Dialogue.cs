@@ -29,7 +29,7 @@ public class Dialogue : Node
 
     public Character PersonTalking;
     public string AnimToPlay;
-    public float timeBtwLetter = Time.deltaTime * 2;
+    public float timeBtwLetter = 0.022f * 2;
 
     public Item_Manager.ItemType ItemToHaveInHand;
     [Output(dynamicPortList = true)]

@@ -36,6 +36,8 @@ public class PenseArthur : Invest_Character_State_Machine
         gm = Invest_GameManager.GM_instance;  
         canvasManager = gm.CanvasManager;
         PersonneQuiParle = gm.DialogueManager.PersonTalking;
+        gm.DialogueManager.ProfilPicture.gameObject.SetActive(false);
+        gm.DialogueManager.ArthurPicture.gameObject.SetActive(false);
         canvasManager.DialoguePanel.SetActive(false);
     }
 

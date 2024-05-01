@@ -23,6 +23,8 @@ public class DialogueManager : Invest_Character_State_Machine
 
     public TextMeshProUGUI PersonTalking;
     public Image ProfilPicture;
+    public Image ArthurPicture;
+    public Character Arthur;
 
     public List<GameObject> currentsButtons;
 
@@ -39,10 +41,11 @@ public class DialogueManager : Invest_Character_State_Machine
     GameObject CurrentButton;
     AudioManager audioManager;
     Timer ExaminButtonPressTimer;
-    float TimeBtwLetters = Time.deltaTime*2;
+    float TimeBtwLetters = 0.022f*2;
 
-    public int InterrogatoireValue; 
-
+    bool writing;
+    public int InterrogatoireValue;
+    string currentsentence;
     public enum Dialogue_State
     {
         STATE_SHOWING,
@@ -73,11 +76,17 @@ public class DialogueManager : Invest_Character_State_Machine
             FindDialogue(Dialogue.startType.Examin, out item);
             if (item != null &&item.choixHand.Count > 0 && pm.ItemInHand != null && pm.ItemInHand.GetComponent<Item_Manager>().itemType == item.ItemToHaveInHand)
             {
-                gm.CanvasManager.FocusExaminText.text = item.choixHand[0].text;
+                foreach (var examintext in gm.CanvasManager.FocusExaminText)
+                {
+                    examintext.text = item.choixHand[0].text;
+                }
             }
             else
             {
-                gm.CanvasManager.FocusExaminText.text = "Examin";
+                foreach (var examintext in gm.CanvasManager.FocusExaminText)
+                {
+                    examintext.text = "Examin";
+                }
             }
         }
         else if(state_ != State.STATE_PHONE)
@@ -89,9 +98,22 @@ public class DialogueManager : Invest_Character_State_Machine
         {
             if ((input.Check.PressedDown() || input.Talk.PressedDown())&&ExaminButtonPressTimer.Done())
             {
-                DisplayNextSentence();
+                if (writing)
+                {
+                    StopAllCoroutines();
+                    text.text = currentsentence;
+                    gm.CanvasManager.NextDialogue.SetActive(true);
+                    writing = false;
+                }
+                else
+                {
+                    DisplayNextSentence();
+                }
+             
             }
+ 
         }     
+ 
     }
     
     public void StartDialogueOut(Chara_dialogue chara_Dialogue,int interactCount,GameObject button)
@@ -115,6 +137,7 @@ public class DialogueManager : Invest_Character_State_Machine
     }
     protected override void Phone_state()
     {
+        gm.DialogueManager.ProfilPicture.gameObject.SetActive(false);
         if (input.Cancel.Pressed())
         {
             state_ = stateBuffer_;
@@ -123,7 +146,7 @@ public class DialogueManager : Invest_Character_State_Machine
     }
     protected override void Talk_transition()
     {
-        if (input.Talk.Pressed()||triggerDialogue)
+        if (input.Talk.PressedDown()||triggerDialogue)
         {
             ExaminButtonPressTimer.Reset();
             if (pm.Current_Focus_Object.GetComponent<Interactible>().Interrogatoire)
@@ -201,6 +224,8 @@ public class DialogueManager : Invest_Character_State_Machine
     {
         dialogue_State = Dialogue_State.STATE_SHOWING;
         gm.CanvasManager.NextDialogue.SetActive(false);
+  
+        gm.DialogueManager.ArthurPicture.gameObject.SetActive(true);
         sentences.Clear();
         clearButtons();
 
@@ -216,16 +241,26 @@ public class DialogueManager : Invest_Character_State_Machine
             {
                 animator.Play(CurrentDialogue.AnimToPlay, -1, 0f);
             }
-            if (CurrentDialogue.PersonTalking != null)
+            else
             {
-                PersonTalking.text = CurrentDialogue.PersonTalking.name;
-                ProfilPicture.sprite = CurrentDialogue.PersonTalking.ProfilePicture;
+                animator.Play("Idle");
+            }
+            if(ActiveDialogue.PersonInteractedWith != null&&state_ != State.STATE_PHONE)
+            {
+                ProfilPicture.sprite = ActiveDialogue.PersonInteractedWith.ProfilePicture;
+                gm.DialogueManager.ProfilPicture.gameObject.SetActive(true);
             }
             else
             {
-                PersonTalking.text = "Arthur";
-                ProfilPicture.sprite = null;
+                gm.DialogueManager.ProfilPicture.gameObject.SetActive(false);
             }
+            if (CurrentDialogue.PersonTalking != null)
+            {
+              
+                PersonTalking.text = CurrentDialogue.PersonTalking.name;
+                
+            }
+    
             foreach (string sentence in dialogue.sentences)
             {
                 sentences.Enqueue(sentence);
@@ -244,6 +279,7 @@ public class DialogueManager : Invest_Character_State_Machine
     {
         TimeBtwLetters = Time.deltaTime * 2;
         gm.CanvasManager.NextDialogue.SetActive(false);
+        PersonTalkingColor();
         if (sentences.Count == 0&&CurrentDialogue!=null)
         {       
             GiveSuccess();
@@ -262,8 +298,9 @@ public class DialogueManager : Invest_Character_State_Machine
 
 
         string sentence = (string)sentences.Dequeue();
-     
+        currentsentence = sentence;
         text.text = sentence;
+        writing = true;
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
@@ -300,6 +337,7 @@ public class DialogueManager : Invest_Character_State_Machine
         string wordBuffer = "";
         bool balise = false;
         int i = 1;
+       
         foreach (char letter in sentence.ToCharArray())
         {
             string l = "";
@@ -338,10 +376,13 @@ public class DialogueManager : Invest_Character_State_Machine
             if (i == sentence.ToCharArray().Length)
             {
                 gm.CanvasManager.NextDialogue.SetActive(true);
+                writing = false;
             }
             i++;
             yield return new WaitForSeconds(TimeBtwLetters);
+            
         }
+        
     }
 
     void EndDialogue()
@@ -353,13 +394,20 @@ public class DialogueManager : Invest_Character_State_Machine
             StartDialogue(CurrentDialogue);
             return;
         }
-/*        if (CurrentDialogue != null && CurrentDialogue.choices.Count == 1)
+        if (CurrentDialogue != null && CurrentDialogue.startType_ == Dialogue.startType.Talk&& CurrentDialogue.choices.Count == 1)
         {
+            Debug.Log("SKIP");
             CurrentDialogue = (Dialogue)CurrentDialogue.GetOutputPort("choices" + " " + 0).Connection.node;
             StartDialogue(CurrentDialogue);
             return;
-        }*/
-        if(CurrentDialogue != null &&CurrentDialogue.choices.Count > 0)
+        }
+        /*        if (CurrentDialogue != null && CurrentDialogue.choices.Count == 1)
+                {
+                    CurrentDialogue = (Dialogue)CurrentDialogue.GetOutputPort("choices" + " " + 0).Connection.node;
+                    StartDialogue(CurrentDialogue);
+                    return;
+                }*/
+        if (CurrentDialogue != null &&CurrentDialogue.choices.Count > 0)
         {
             for (int i = 0; i < CurrentDialogue.choices.Count; i++)
             {
@@ -460,6 +508,20 @@ public class DialogueManager : Invest_Character_State_Machine
             {
                 CurrentButton.GetComponent<PhoneInteractible>().Success = true;
             }
+        }
+    }
+
+    void PersonTalkingColor()
+    {
+        if(CurrentDialogue.PersonTalking == Arthur||CurrentDialogue.PersonTalking == null)
+        {
+            ProfilPicture.color = Color.black;
+            ArthurPicture.color = Color.white;
+        }
+        else
+        {
+            ProfilPicture.color = Color.white;
+            ArthurPicture.color = Color.black;
         }
     }
     void closeDialogue()

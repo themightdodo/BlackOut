@@ -48,13 +48,15 @@ public class BoatBehavior : MonoBehaviour
             steer = 1;
         }
 
-        //Rotational Force
-        rb.AddForceAtPosition(steer * transform.right * SteerPower / 100f, Motor.position);
+      
 
         //Compute vectors
         var forward = Vector3.Scale(new Vector3(1, 0, 1), transform.forward);
-        var targetVel = Vector3.zero;
-
+        var targetVel = Vector3.zero;       
+        
+        //Rotational Force
+        rb.AddForceAtPosition(steer * transform.right * SteerPower / 100f, Motor.position);
+        
         //Avancer/reculer
         if (InputManager.Lstick.z <= -DeadZone)
         {
@@ -62,7 +64,7 @@ public class BoatBehavior : MonoBehaviour
         }
         if (InputManager.Lstick.z >= DeadZone)
         {
-            PhysicsHelper.PhysicsHelper.ApplyForceToReachVelocity(rb, forward * MaxSpeed, Power);
+            PhysicsHelper.PhysicsHelper.ApplyForceToReachVelocity(rb, forward * MaxSpeed , Power);
         }
 
         // Particle System

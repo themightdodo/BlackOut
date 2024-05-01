@@ -25,7 +25,7 @@ public class Item : MonoBehaviour
         
         manager.Action.AddListener(ActionTransition);
     }
-    protected virtual void Update()
+    protected virtual void LateUpdate()
     {
         switch (state_)
         {

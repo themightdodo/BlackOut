@@ -14,7 +14,7 @@ public class CanvasManager : Invest_Character_State_Machine
     public GameObject PhoneIcon;
     public GameObject UsePanel;
     public GameObject NextDialogue;
-    public TextMeshProUGUI FocusExaminText;
+    public List<TextMeshProUGUI> FocusExaminText;
     public Objectifs objectifs;
     bool focus;
 
@@ -90,6 +90,16 @@ public class CanvasManager : Invest_Character_State_Machine
         DialoguePanelUI();
   
     }
+    protected override void MiniGame_state()
+    {
+        base.MiniGame_state();
+        BasePanel.SetActive(false);
+        FocusPanel.SetActive(false);
+        FocusPanelAlt.SetActive(false);
+        DialoguePanel.SetActive(false);
+        ItemInfo.SetActive(false);
+        Panelinfo.SetActive(false);
+    }
     void DialoguePanelUI()
     {
         BasePanel.SetActive(false);
@@ -137,6 +147,7 @@ public class CanvasManager : Invest_Character_State_Machine
        
         Panelinfo.SetActive(false);
     }
+
     void ItemUI()
     {
         if(pm.ItemInHand != null)

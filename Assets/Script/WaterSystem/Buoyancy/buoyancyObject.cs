@@ -34,7 +34,7 @@ public class buoyancyObject : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         for(int i = 0; i < floaters.Length; i++)
         {

@@ -15,6 +15,7 @@ public class Beuverie_GameManager : MonoBehaviour
     public Character PlayerInfo;
     public float TimeBtwDialogues;
     public bool CurrentlyTalking;
+    public GameObject CurrentlyThinking;
     public int chatboxHeight;
 
     private void Awake()
