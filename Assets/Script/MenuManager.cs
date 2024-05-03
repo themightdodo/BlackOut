@@ -18,6 +18,8 @@ public class MenuManager : MonoBehaviour
     public GameObject MainMenu;
     public GameObject LancerPartie;
     public GameObject LancerTraining;
+    public AudioMixer BeuverieMaster;
+    public AudioMixer InvestMaster;
     string scenenamebuffer;
 
 
@@ -88,7 +90,22 @@ public class MenuManager : MonoBehaviour
         Screen.fullScreen = isFullscreen;
     }
 
-
+    public void SetVolume(float Volume)
+    {
+        BeuverieMaster.SetFloat("BeuverieMaster", Volume);
+        InvestMaster.SetFloat("InvestMaster", Volume);
+    }
+    public void SetSoundEffect(float Volume)
+    {
+        BeuverieMaster.SetFloat("SFX", Volume);
+        InvestMaster.SetFloat("SFX", Volume);
+    }
+    public void SetMusic(float Volume)
+    {
+        BeuverieMaster.SetFloat("Music", Volume);
+        InvestMaster.SetFloat("Music", Volume);
+    }
+    
     public void LoadScene(string SceneName)
     {
        

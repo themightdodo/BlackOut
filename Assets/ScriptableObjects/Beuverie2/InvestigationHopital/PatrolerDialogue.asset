@@ -15,7 +15,8 @@ MonoBehaviour:
   nodes:
   - {fileID: 475553826556367071}
   - {fileID: 9027902585053842544}
-  PersonInteractedWith: {fileID: 0}
+  PersonInteractedWith: {fileID: 11400000, guid: 98e4f03b649d61145a009579af081acd,
+    type: 2}
 --- !u!114 &475553826556367071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,6 +96,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 2
   PersonTalking: {fileID: 11400000, guid: 98e4f03b649d61145a009579af081acd, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -188,6 +191,8 @@ MonoBehaviour:
   BadDialogue: 0
   startType_: 3
   PersonTalking: {fileID: 11400000, guid: 98e4f03b649d61145a009579af081acd, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}

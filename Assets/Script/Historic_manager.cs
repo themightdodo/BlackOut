@@ -50,9 +50,10 @@ public class Historic_manager : MonoBehaviour
 
     public void SaveHistoric(Character character)
     {
-        Debug.Log("HISTORICSAVE");
+       
         if (Data.ContainsKey(character))
         {
+     
             List<Dialogue> dialoguesExistant = (List<Dialogue>)Data[character];
             foreach (var item in dialogueBuffer)
             {
@@ -66,7 +67,7 @@ public class Historic_manager : MonoBehaviour
             dialogueBuffer.Clear();
             return;
         }
-
+        Debug.Log("HISTORICSAVE");
         List<Dialogue> dialogues = new List<Dialogue>();
         foreach (var item in dialogueBuffer)
         {
@@ -80,9 +81,10 @@ public class Historic_manager : MonoBehaviour
 
     public void ShowHistoric(Character character)
     {
-        Debug.Log("HISTORICSHOW");
+       
         if (!Data.ContainsKey(character))
         {
+            Debug.Log("HISTORICSHOW");
             return;
         }
         CurrentProfilText.text = character.name;

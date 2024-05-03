@@ -32,7 +32,7 @@ public class BoatComponents : MonoBehaviour
     }
     private void Update()
     {
-        if(boatState == BoatState.BOAT&&GetComponent<InputManager>().Check.PressedDown())
+        if(boatState == BoatState.BOAT&&(GetComponent<InputManager>().Check.PressedDown()||GetComponent<InputManager>().Cancel.PressedDown()))
         {
             DeActive();
         }

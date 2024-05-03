@@ -23,7 +23,7 @@ public class ChoixButton : MonoBehaviour
             return;
         }
 
-        if (dm.pm.Current_Focus_Object != null && !dm.pm.Current_Focus_Object.GetComponent<Interactible>().noChoiceRegister)
+        if ((dm.pm.Current_Focus_Object != null && !dm.pm.Current_Focus_Object.GetComponent<Interactible>().noChoiceRegister)||dm.state_==Invest_Character_State_Machine.State.STATE_PHONE)
         {
             choixBuffer();
         }

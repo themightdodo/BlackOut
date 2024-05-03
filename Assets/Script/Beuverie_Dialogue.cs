@@ -61,7 +61,7 @@ public class Beuverie_Dialogue : MonoBehaviour
             if (writing)
             {
                 StopAllCoroutines();
-                CurrentChatBox.GetComponentInChildren<TextMeshPro>().text = currentsentence;
+                CurrentChatBox.GetComponent<ChatBoxComponents>().Text.text = currentsentence;
                 writing = false;
             }
             else
@@ -107,12 +107,24 @@ public class Beuverie_Dialogue : MonoBehaviour
         {
             RandomPos = gm.playerManager.transform.position + new Vector3(0,gm.chatboxHeight,0);
 
+
         }
 
+
         CurrentChatBox = Instantiate(Text,RandomPos, transform.rotation);
+        if (CurrentDialogue != null && CurrentDialogue.PersonTalking == gm.PlayerInfo)
+        {
+            CurrentChatBox.GetComponent<ChatBoxComponents>().Name.text = "";
+        }
+        else if (CurrentDialogue != null)
+        {
+            Debug.Log(CurrentDialogue.PersonTalking.name);
+            CurrentChatBox.GetComponent<ChatBoxComponents>().Name.text = CurrentDialogue.PersonTalking.name;
+        }
         CurrentChatBox.GetComponent<LineRenderer>().SetPosition(0, CurrentChatBox.transform.position);
         CurrentChatBox.GetComponent<LineRenderer>().SetPosition(1, transform.position+DialogueLinePos );
-        CurrentChatBox.GetComponentInChildren<TextMeshPro>().text = sentence;
+        CurrentChatBox.GetComponent<ChatBoxComponents>().Text.text = sentence;
+        
         currentsentence = sentence;
         writing = true;
         StopAllCoroutines();
@@ -200,7 +212,7 @@ public class Beuverie_Dialogue : MonoBehaviour
 
     IEnumerator TypeSentence(string sentence)
     {
-        CurrentChatBox.GetComponentInChildren<TextMeshPro>().text = "";
+        CurrentChatBox.GetComponent<ChatBoxComponents>().Text.text = "";
         string wordBuffer = "";
         bool balise = false;
         int i = 1;
@@ -224,8 +236,8 @@ public class Beuverie_Dialogue : MonoBehaviour
             else
             {
                 DialogueSound();
-                
-                CurrentChatBox.GetComponentInChildren<TextMeshPro>().text += wordBuffer + letter;
+
+                CurrentChatBox.GetComponent<ChatBoxComponents>().Text.text += wordBuffer + letter;
                 wordBuffer = "";
             }
 

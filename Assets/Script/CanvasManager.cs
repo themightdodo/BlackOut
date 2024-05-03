@@ -118,10 +118,17 @@ public class CanvasManager : Invest_Character_State_Machine
             FocusPanel.SetActive(true);
             FocusPanelAlt.SetActive(false);
         }
-        else
+        else if(pm.Current_Focus_Object.GetComponent<Interactible>().HandVersion != null)
         {
             Debug.Log("AAAAAAAAAAAAAAAAAAAs%QIJZDQZ");
             FocusPanelAlt.SetActive(true);
+            FocusPanelAlt.transform.GetChild(0).gameObject.SetActive(true);
+            FocusPanel.SetActive(false);
+        }
+        else
+        {
+            FocusPanelAlt.SetActive(true);
+            FocusPanelAlt.transform.GetChild(0).gameObject.SetActive(false);
             FocusPanel.SetActive(false);
         }
         if (!thinking)

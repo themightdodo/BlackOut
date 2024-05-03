@@ -449,8 +449,11 @@ public class DialogueManager : Invest_Character_State_Machine
         }
         else if (input.Check.PressedDown() || input.Talk.Pressed())
         {
-            
 
+            if (ActiveDialogue != null && ActiveDialogue.PersonInteractedWith != null && state_ == State.STATE_PHONE)
+            {
+                historic.SaveHistoric(ActiveDialogue.PersonInteractedWith);
+            }
             if (CurrentDialogue != null && pm.Current_Focus_Object != null&&
                 CurrentDialogue.choices.Count == 0 && pm.Current_Focus_Object.GetComponent<Interactible>().Interrogatoire)
             {
@@ -513,6 +516,10 @@ public class DialogueManager : Invest_Character_State_Machine
 
     void PersonTalkingColor()
     {
+        if(CurrentDialogue == null)
+        {
+            return;
+        }
         if(CurrentDialogue.PersonTalking == Arthur||CurrentDialogue.PersonTalking == null)
         {
             ProfilPicture.color = Color.black;
@@ -533,10 +540,7 @@ public class DialogueManager : Invest_Character_State_Machine
         audioManager.Stop("HommeMid");
         audioManager.Stop("HommeCourt");
         sentences.Clear();
-        if(ActiveDialogue!= null &&ActiveDialogue.PersonInteractedWith != null&&state_ == State.STATE_PHONE)
-        {
-            historic.SaveHistoric(ActiveDialogue.PersonInteractedWith);
-        }
+
         
         CurrentDialogue = null;
         ActiveDialogue = null;

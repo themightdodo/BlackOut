@@ -22,7 +22,7 @@ public class EndZone : MonoBehaviour
     public string AltDescription;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")||other.CompareTag("Bateau"))
         {
             if (!OnlyWin && !OnlyLoose)
             {
