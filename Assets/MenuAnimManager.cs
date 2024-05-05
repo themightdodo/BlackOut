@@ -37,4 +37,12 @@ public class MenuAnimManager : MonoBehaviour
             ChangeState(MenuStates.HOME);
         }
     }
+
+    public void GoBack()
+    {
+        if (UnityEngine.Input.GetButtonDown("Cancel") && (menuStates == MenuStates.SETTINGS || menuStates == MenuStates.CHAPTERS))
+        {
+            ChangeState(MenuStates.HOME);
+        }
+    }
 }

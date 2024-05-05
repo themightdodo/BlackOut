@@ -156,6 +156,7 @@ public class Beuverie_Character_StateMachine : MonoBehaviour
         if(pm.TauxAlcool.ToMuch())
         {
             Debug.Log("BLACKOUT");
+            Beuverie_GameManager.GM_instance.Invoke("LoadNextScene", 2f);
             state_ = State.STATE_BLACKOUT;
         }
     }

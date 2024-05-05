@@ -26,8 +26,10 @@ public class MenuManager : MonoBehaviour
     // Called zero
     private void Awake()
     {
-      
-        if(Instance != null && Instance != this)
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+
+        if (Instance != null && Instance != this)
         {
             Destroy(Instance);
         }

@@ -734,8 +734,8 @@ MonoBehaviour:
   IndicesToHave:
   - {fileID: 11400000, guid: 1001762a21aa0414cb532a103f015360, type: 2}
   - {fileID: 11400000, guid: 8483864f6e647e44ca2aca4dfbe2b0cf, type: 2}
-  NextCinematic: Cinematique1 1
-  AltNextCinematic: CinematiqueIntroSoire2EauPerdu
+  NextCinematic: CinematiqueIntroSoire2HopitalWin
+  AltNextCinematic: CinematiqueIntroSoire2HopitalPerdu
   noPopup: 0
 --- !u!65 &35698199
 BoxCollider:
@@ -14771,7 +14771,7 @@ PrefabInstance:
     - target: {fileID: 5894828650183253327, guid: 4054f29c7d102d446a4531d39bb66d59,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5900052332997581498, guid: 4054f29c7d102d446a4531d39bb66d59,
         type: 3}

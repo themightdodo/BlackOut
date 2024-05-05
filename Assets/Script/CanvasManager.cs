@@ -118,11 +118,18 @@ public class CanvasManager : Invest_Character_State_Machine
             FocusPanel.SetActive(true);
             FocusPanelAlt.SetActive(false);
         }
-        else if(pm.Current_Focus_Object.GetComponent<Interactible>().HandVersion != null)
+        else if(pm.Current_Focus_Object.GetComponent<Interactible>().HandVersion != null||pm.Current_Focus_Object.CompareTag("Phone"))
         {
             Debug.Log("AAAAAAAAAAAAAAAAAAAs%QIJZDQZ");
             FocusPanelAlt.SetActive(true);
             FocusPanelAlt.transform.GetChild(0).gameObject.SetActive(true);
+            FocusPanelAlt.transform.GetChild(1).gameObject.SetActive(true);
+            FocusPanel.SetActive(false);
+        }
+        else if ((pm.Current_Focus_Object.GetComponent<Interactible>().chara_Dialogue == null))
+        {
+            FocusPanelAlt.SetActive(true);
+            FocusPanelAlt.transform.GetChild(1).gameObject.SetActive(false);
             FocusPanel.SetActive(false);
         }
         else

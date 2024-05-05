@@ -118,7 +118,11 @@ public class Invest_Character_State_Machine : MonoBehaviour
             {
                 Pick();
             }
-            Examin_transition();
+            if (pm.Current_Focus_Object.GetComponent<Interactible>().chara_Dialogue != null)
+            {
+                Examin_transition();
+            } 
+           
         }
     }
     protected virtual void Pick()

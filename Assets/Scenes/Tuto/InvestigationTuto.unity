@@ -1888,8 +1888,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   menuManager: {fileID: 0}
-  NextSceneWin: Cinematique1 4
-  NextSceneLose: Cinematique1 3
+  NextSceneWin: NewCinematique1
+  NextSceneLose: NewCinematique1
 --- !u!4 &1303513076
 Transform:
   m_ObjectHideFlags: 0
@@ -2451,14 +2451,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Image: {fileID: 0}
-  NextCinematic: Cinematique1
+  NextCinematic: NewCinematique1
   Description: 
   OnlyWin: 1
   OnlyLoose: 0
   ItemToHaveInHand: 0
   noPopup: 0
   AltImage: {fileID: 0}
-  AltNextCinematic: Cinematique1
+  AltNextCinematic: NewCinematique1
   AltDescription: 
 --- !u!65 &2080819632
 BoxCollider:
@@ -3279,6 +3279,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1343838549502528416, guid: 4054f29c7d102d446a4531d39bb66d59,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1421451828091477121, guid: 4054f29c7d102d446a4531d39bb66d59,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -3978,11 +3983,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4565604645698440244, guid: 4054f29c7d102d446a4531d39bb66d59,
         type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4565604645698440244, guid: 4054f29c7d102d446a4531d39bb66d59,
-        type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -4308,11 +4308,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5425343620056513996, guid: 4054f29c7d102d446a4531d39bb66d59,
         type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5425343620056513996, guid: 4054f29c7d102d446a4531d39bb66d59,
-        type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -4349,7 +4344,7 @@ PrefabInstance:
     - target: {fileID: 5894828650183253327, guid: 4054f29c7d102d446a4531d39bb66d59,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5900052332997581498, guid: 4054f29c7d102d446a4531d39bb66d59,
         type: 3}
@@ -4862,11 +4857,6 @@ PrefabInstance:
     - target: {fileID: 7609745942031361964, guid: 4054f29c7d102d446a4531d39bb66d59,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7609745942031361964, guid: 4054f29c7d102d446a4531d39bb66d59,
-        type: 3}
-      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7609745942031361964, guid: 4054f29c7d102d446a4531d39bb66d59,
