@@ -34,4 +34,12 @@ public class TriggerDialogue : MonoBehaviour
 
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Invest_GameManager.GM_instance.DialogueManager.ActiveDialogue = null;
+        }
+            
+    }
 }

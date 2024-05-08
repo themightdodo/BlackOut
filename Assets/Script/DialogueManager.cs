@@ -85,7 +85,7 @@ public class DialogueManager : Invest_Character_State_Machine
             {
                 foreach (var examintext in gm.CanvasManager.FocusExaminText)
                 {
-                    examintext.text = "Examin";
+                    examintext.text = "Examine";
                 }
             }
         }
@@ -144,8 +144,18 @@ public class DialogueManager : Invest_Character_State_Machine
             closeDialogue();
         }
     }
+    protected override void TriggerDialogue()
+    {
+        ActiveDialogue = pm.Current_Focus_Object.GetComponent<Interactible>().chara_Dialogue;
+        InteractCount = pm.Current_Focus_Object.GetComponent<Interactible>().interactCount;
+        base.TriggerDialogue();
+    }
     protected override void Talk_transition()
     {
+        if(ActiveDialogue == null)
+        {
+            return;
+        }
         if (input.Talk.PressedDown()||triggerDialogue)
         {
             ExaminButtonPressTimer.Reset();
@@ -153,26 +163,37 @@ public class DialogueManager : Invest_Character_State_Machine
             {
                 FindDialogue(Dialogue.startType.Interrogatoire, out CurrentDialogue);
                 StartDialogue(CurrentDialogue);
+                pm.Current_Focus_Object.GetComponent<Interactible>().interactCount++;
+                state_ = State.STATE_TALK;
+                return;
             }
             else if (InteractCount > 0&& !pm.Current_Focus_Object.GetComponent<Interactible>().Success)
             {
                 
                 FindDialogue(Dialogue.startType.Talk2, out CurrentDialogue);
                 StartDialogue(CurrentDialogue);
+                pm.Current_Focus_Object.GetComponent<Interactible>().interactCount++;
+                state_ = State.STATE_TALK;
+                return;
             }
             else if(!pm.Current_Focus_Object.GetComponent<Interactible>().Success)
             {
                 FindDialogue(Dialogue.startType.Talk, out CurrentDialogue);
                 StartDialogue(CurrentDialogue);
+                pm.Current_Focus_Object.GetComponent<Interactible>().interactCount++;
+                state_ = State.STATE_TALK;
+                return;
             }
             else
             {
                 FindDialogue(Dialogue.startType.Success, out CurrentDialogue);
                 StartDialogue(CurrentDialogue);
+                pm.Current_Focus_Object.GetComponent<Interactible>().interactCount++;
+                state_ = State.STATE_TALK;
+                return;
             }
           
-            pm.Current_Focus_Object.GetComponent<Interactible>().interactCount++;
-            state_ = State.STATE_TALK;
+           
         }
     }
     protected override void Examin_transition()

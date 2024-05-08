@@ -275,4 +275,5 @@ public class PhoneManager : Invest_Character_State_Machine
             item.SetActive(false);
         }
     }
+
 }
