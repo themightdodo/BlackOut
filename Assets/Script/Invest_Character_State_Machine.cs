@@ -114,11 +114,15 @@ public class Invest_Character_State_Machine : MonoBehaviour
                 Destroy(pm.Current_Focus_Object);
                 pm.Current_Focus_Object = null;
             }
-            else if (input.Talk.PressedDown())
+            else if (input.Talk.PressedDown()&& pm.Current_Focus_Object.GetComponent<Interactible>().HandVersion != null)
             {
                 Pick();
             }
-            Examin_transition();
+            if (pm.Current_Focus_Object.GetComponent<Interactible>().chara_Dialogue != null)
+            {
+                Examin_transition();
+            } 
+           
         }
     }
     protected virtual void Pick()

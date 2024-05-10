@@ -47,10 +47,7 @@ public class Eye_Manager : Beuverie_Character_StateMachine
     {
         if (input.Check.Pressed() && pm.NearDrink && !pm.TauxAlcool.ToMuch())
         {
-            foreach (var item in InstanciatedObjects)
-            {
-                item.GetComponent<Animator>().Play("Laugh");
-            }
+            PlayAnim();
             pm.StopMouseControl();
             state_ = State.STATE_DRINK;
         }
@@ -59,16 +56,20 @@ public class Eye_Manager : Beuverie_Character_StateMachine
     protected override void Addiction_state()
     {
         base.Addiction_state();
-        foreach (var item in InstanciatedObjects)
-        {
-            item.GetComponent<Animator>().Play("Laugh");
-        }
+        PlayAnim();
     }
     protected override void Drink_state()
     {
         base.Drink_state();
+        PlayAnim();
+    }
+
+    void PlayAnim()
+    {
         foreach (var item in InstanciatedObjects)
         {
+            float randomNumber = Random.Range(0.2f, 1.5f);
+            item.GetComponent<Animator>().speed = randomNumber;
             item.GetComponent<Animator>().Play("Laugh");
         }
     }

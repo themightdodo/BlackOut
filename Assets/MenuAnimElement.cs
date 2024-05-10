@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MenuAnimElement : MonoBehaviour
 {
-    bool AnimLaunched;
+    public bool AnimLaunched;
     Animator animator;
    public MenuAnimManager animManager;
     public MenuAnimManager.MenuStates DesiredState;
 
-    private void Start()
+    private void Awake()
     {
         animator = GetComponent<Animator>();
         animManager = MenuAnimManager.MenuAnimManager_instance;

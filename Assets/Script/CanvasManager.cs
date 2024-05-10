@@ -19,17 +19,24 @@ public class CanvasManager : Invest_Character_State_Machine
     bool focus;
 
     public bool thinking;
+    bool phoneAnimPlayed;
 
     protected override void LateUpdate()
     {
         base.LateUpdate();
+
         if (!pm.PhoneActive)
         {
             PhoneIcon.SetActive(false);
         }
-        else
+        else if(!focus)
         {
             PhoneIcon.SetActive(true);
+        }
+        if (PhoneIcon.activeSelf&&pm.PhoneActive && !phoneAnimPlayed)
+        {
+            PhoneIcon.GetComponent<Animator>().Play("Instanciate");
+            phoneAnimPlayed = true;
         }
 
         if (pm.ItemInHand != null &&pm.ItemInHand.GetComponent<Item_Manager>().usableItem)
@@ -44,23 +51,33 @@ public class CanvasManager : Invest_Character_State_Machine
     protected override void Idle_state()
     {
         base.Idle_state();
-        BasePanelUI();
-        ItemUI();
-        if(pm.Current_Focus_Object == null)
+        if (pm.Current_Focus_Object == null)
         {
             focus = false;
         }
+        if (focus)
+        {
+            return;
+        }
+        BasePanelUI();
+        ItemUI();
+
     }
 
     protected override void Walk_state()
     {
         base.Walk_state();
-        BasePanelUI();
-        ItemUI();
         if (pm.Current_Focus_Object == null)
         {
             focus = false;
         }
+        if (focus)
+        {
+            return;
+        }
+        BasePanelUI();
+        ItemUI();
+
     }
     protected override void Focus()
     {
@@ -112,24 +129,45 @@ public class CanvasManager : Invest_Character_State_Machine
     void FocusPanelUI()
     {
         BasePanel.SetActive(false);
+        ItemInfo.SetActive(false);
+        Panelinfo.SetActive(false);
+        if (!thinking)
+        {
+            DialoguePanel.SetActive(false);
+
+        }
         if (pm.Current_Focus_Object.CompareTag("Interactible"))
         {
             Debug.Log("ZADZONDQOZNID%QIJZDQZ");
             FocusPanel.SetActive(true);
             FocusPanelAlt.SetActive(false);
+            return;
         }
-        else
+        else if(pm.Current_Focus_Object.GetComponent<Interactible>().HandVersion != null||pm.Current_Focus_Object.CompareTag("Phone"))
         {
             Debug.Log("AAAAAAAAAAAAAAAAAAAs%QIJZDQZ");
             FocusPanelAlt.SetActive(true);
+            FocusPanelAlt.transform.GetChild(0).gameObject.SetActive(true);
+            FocusPanelAlt.transform.GetChild(1).gameObject.SetActive(true);
             FocusPanel.SetActive(false);
+            return;
         }
-        if (!thinking)
+        else if ((pm.Current_Focus_Object.GetComponent<Interactible>().chara_Dialogue == null))
         {
-            DialoguePanel.SetActive(false);
+            FocusPanelAlt.SetActive(true);
+            FocusPanelAlt.transform.GetChild(1).gameObject.SetActive(false);
+            FocusPanel.SetActive(false);
+            return;
         }
-        ItemInfo.SetActive(false);
-        Panelinfo.SetActive(false);
+        else
+        {
+            FocusPanelAlt.SetActive(true);
+            FocusPanelAlt.transform.GetChild(0).gameObject.SetActive(false);
+            FocusPanel.SetActive(false);
+            return;
+        }
+
+       
     }
     void BasePanelUI()
     {

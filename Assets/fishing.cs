@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class fishing : Item
 {
@@ -155,13 +156,13 @@ public class fishing : Item
     {
         
         LeurreSpeed = Random.Range(15, 30);
-        LeurreHealth = Random.Range(20, 30);
+        LeurreHealth = Random.Range(3, 6);
         _State = FishingState.CATCH;
 
     }
     void Rest()
     {
-
+        
     }
     void Throw()
     {
@@ -175,7 +176,7 @@ public class fishing : Item
     }
     void Wait()
     {
-        if (Invest_GameManager.GM_instance.GetComponent<InputManager>().Check.Pressed())
+        if (Invest_GameManager.GM_instance.GetComponent<InputManager>().Check.PressedDown()|| Invest_GameManager.GM_instance.GetComponent<InputManager>().Cancel.PressedDown())
         {
             Rest_transition();
             TimeBtwThrow.Reset();
@@ -328,9 +329,26 @@ public class fishing : Item
         }
         else if (itemOnLeurre != null)
         {
-            itemOnLeurre = null;
-            ItemChoosen = null;
-            TimeBtwThrow.Reset();
+            if (!itemOnLeurre.gameObject.CompareTag("Phone")&& itemOnLeurre.GetComponent<Interactible>()!=null)
+            {
+                pm.AddItemToHand.Invoke(itemOnLeurre.GetComponent<Interactible>().HandVersion);
+            }
+            else if(itemOnLeurre.gameObject.CompareTag("Phone"))
+            {
+                pm.PhoneActive = true;
+                itemOnLeurre = null;
+                ItemChoosen = null;
+                TimeBtwThrow.Reset();
+            }
+            else
+            {
+                itemOnLeurre = null;
+                ItemChoosen = null;
+                TimeBtwThrow.Reset();
+            }
+            
+
+
         }
             
         

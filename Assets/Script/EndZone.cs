@@ -20,9 +20,10 @@ public class EndZone : MonoBehaviour
     public string AltNextCinematic;
     [TextArea(10, 3)]
     public string AltDescription;
+    bool active = true;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")||other.CompareTag("Bateau"))
         {
             if (!OnlyWin && !OnlyLoose)
             {
@@ -75,6 +76,5 @@ public class EndZone : MonoBehaviour
             }
                 
         }
-        
     }
 }

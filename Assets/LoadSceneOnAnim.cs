@@ -7,6 +7,10 @@ public class LoadSceneOnAnim : MonoBehaviour
 {
     public string SceneToLoad;
 
+    private void Awake()
+    {
+        Time.timeScale = 1f;
+    }
     public void LoadScene()
     {
         SceneManager.LoadSceneAsync(SceneToLoad);

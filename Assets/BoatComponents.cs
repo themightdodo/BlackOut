@@ -6,6 +6,8 @@ public class BoatComponents : MonoBehaviour
 {
     public GameObject BoatCam;
     public GameObject Boat;
+    public GameObject PauseMenu;
+    public GameObject EndMenuPopup;
     public List<GameObject> gameObjectsOnBoat;
     public List<GameObject> InstantiatedObjects;
     Rigidbody BoatRigidbody;
@@ -32,7 +34,7 @@ public class BoatComponents : MonoBehaviour
     }
     private void Update()
     {
-        if(boatState == BoatState.BOAT&&GetComponent<InputManager>().Check.PressedDown())
+        if(boatState == BoatState.BOAT&&(GetComponent<InputManager>().Check.PressedDown()||GetComponent<InputManager>().Cancel.PressedDown())&&!PauseMenu.activeSelf&&!EndMenuPopup.activeSelf)
         {
             DeActive();
         }

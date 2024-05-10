@@ -1029,6 +1029,7 @@ GameObject:
   - component: {fileID: 8775882422656953051}
   - component: {fileID: 106126494698598886}
   - component: {fileID: 4157552486142311210}
+  - component: {fileID: 2996606433153983491}
   m_Layer: 6
   m_Name: Player_beuverie
   m_TagString: Player
@@ -1169,11 +1170,13 @@ MonoBehaviour:
   MaxtauxAlcool: 0
   MaxBoisson: 12
   Taux: 0
+  desactivateAddictionUntilDrink: 0
   NearDrink: 0
   inActivity: 0
   leaveActivity:
     m_PersistentCalls:
       m_Calls: []
+  drinkDetectionRadius: 0
   ActivityLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -1290,6 +1293,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state_: 0
+--- !u!114 &2996606433153983491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3199071744406587915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bf55484e88455e4b93c46c75443e978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DrinkUI: {fileID: 6162325387567549406, guid: a26f2e09bd408b2468be10c61b1ac20a, type: 3}
+  Offset: {x: 0, y: -0.39, z: 0}
 --- !u!1 &3351522580568474121
 GameObject:
   m_ObjectHideFlags: 0

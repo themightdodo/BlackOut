@@ -762,6 +762,7 @@ MonoBehaviour:
   ActiveDialogue: {fileID: 11400000, guid: e4e4474ca2a13e246b732c45c0cdbd5b, type: 2}
   CurrentDialogue: {fileID: 0}
   ChatBoxOffset: {x: -0.93, y: 2.71, z: 0.11}
+  DialogueLinePos: {x: -0.87, y: 1.19, z: 0}
 --- !u!1001 &222558958
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1580,6 +1581,103 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df8e0181574f4554693a84af666762ec, type: 3}
+--- !u!1 &357520582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 357520583}
+  - component: {fileID: 357520586}
+  - component: {fileID: 357520585}
+  - component: {fileID: 357520584}
+  m_Layer: 5
+  m_Name: OeilFin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &357520583
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357520582}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1191463449}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &357520584
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357520582}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cc651f4601cf5c145a52311ac19519d3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &357520585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357520582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 50ab2cffb2253d94bb062d6ad57fada7, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &357520586
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357520582}
+  m_CullTransparentMesh: 1
 --- !u!1 &360950224
 GameObject:
   m_ObjectHideFlags: 0
@@ -4092,7 +4190,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: SampleScene
+          m_StringArgument: BeuverieTuto
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &929326987
@@ -4802,6 +4900,7 @@ MonoBehaviour:
   ActiveDialogue: {fileID: 11400000, guid: 17551435cd5d52247953cd57b899da83, type: 2}
   CurrentDialogue: {fileID: 0}
   ChatBoxOffset: {x: 1.97, y: 2, z: 0.15}
+  DialogueLinePos: {x: 1.07, y: 0.78, z: 1.25}
 --- !u!1001 &980783500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5198,6 +5297,7 @@ MonoBehaviour:
   ActiveDialogue: {fileID: 11400000, guid: e9e9770b4b5346246abaf01c16b15d88, type: 2}
   CurrentDialogue: {fileID: 0}
   ChatBoxOffset: {x: -8.4, y: 2.06, z: 0.62}
+  DialogueLinePos: {x: -7.93, y: 0.17, z: 2.26}
 --- !u!1001 &1035528362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6309,6 +6409,7 @@ GameObject:
   - component: {fileID: 1191463448}
   - component: {fileID: 1191463447}
   - component: {fileID: 1191463446}
+  - component: {fileID: 1191463450}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -6391,6 +6492,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 357520583}
   - {fileID: 1867207968}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6399,6 +6501,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1191463450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191463445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940824c8958ac9b4194744a956365ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state_: 0
+  Oeil: {fileID: 357520582}
 --- !u!1 &1214288764
 GameObject:
   m_ObjectHideFlags: 0
@@ -9589,6 +9705,7 @@ MonoBehaviour:
   ActiveDialogue: {fileID: 11400000, guid: 55ac408f0dde3f54ca191031a691f649, type: 2}
   CurrentDialogue: {fileID: 0}
   ChatBoxOffset: {x: -0.37, y: 2, z: 0.51}
+  DialogueLinePos: {x: -0.46, y: 0.65, z: 1.72}
 --- !u!1001 &1845628200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11873,6 +11990,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gens (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7385318746302508603, guid: 4f3749614fb907d4c88cd04400c918e8,
+        type: 3}
+      propertyPath: DialogueLinePos.y
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385318746302508603, guid: 4f3749614fb907d4c88cd04400c918e8,
+        type: 3}
+      propertyPath: DialogueLinePos.z
+      value: 1.13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11940,6 +12067,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770133385612720641, guid: 59bddc4963bca1445a4036caf9f7601d,
+        type: 3}
+      propertyPath: AddictionStartTime
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
