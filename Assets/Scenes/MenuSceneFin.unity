@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31132b3646e54c846b489252b4e05e56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuStates: 1
+  menuStates: 2
 --- !u!1 &169422303
 GameObject:
   m_ObjectHideFlags: 0
@@ -2400,7 +2400,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 6e63fc96f6a7e7e4daa325478a2162a4, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -2449,6 +2449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc23196235e11564fb8a074a4714ddad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimLaunched: 0
   animManager: {fileID: 0}
   DesiredState: 1
 --- !u!1 &691504346
@@ -2529,6 +2530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc23196235e11564fb8a074a4714ddad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimLaunched: 0
   animManager: {fileID: 0}
   DesiredState: 2
 --- !u!114 &691504351
@@ -2581,7 +2583,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: dd0e440eb8db41443a827b4731120a09, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -3397,6 +3399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc23196235e11564fb8a074a4714ddad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimLaunched: 0
   animManager: {fileID: 0}
   DesiredState: 1
 --- !u!1 &1074363753
@@ -4161,7 +4164,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: f0c96c23a1979724195b356cffd8293d, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -4182,6 +4185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc23196235e11564fb8a074a4714ddad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimLaunched: 0
   animManager: {fileID: 0}
   DesiredState: 0
 --- !u!114 &1165094714
@@ -4452,7 +4456,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8d207293f96ba8d46804e0ab5926460c, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -4473,6 +4477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc23196235e11564fb8a074a4714ddad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimLaunched: 0
   animManager: {fileID: 0}
   DesiredState: 1
 --- !u!1 &1220886813
@@ -4973,6 +4978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc23196235e11564fb8a074a4714ddad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimLaunched: 0
   animManager: {fileID: 0}
   DesiredState: 4
 --- !u!95 &1338023286
@@ -4987,7 +4993,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: f0c96c23a1979724195b356cffd8293d, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -5494,7 +5500,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1413422137}
   - component: {fileID: 1413422136}
-  - component: {fileID: 1413422135}
   - component: {fileID: 1413422134}
   m_Layer: 0
   m_Name: UILayer
@@ -5547,14 +5552,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!81 &1413422135
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1413422133}
-  m_Enabled: 1
 --- !u!20 &1413422136
 Camera:
   m_ObjectHideFlags: 0
@@ -6541,7 +6538,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1476322327}
   - component: {fileID: 1476322326}
-  - component: {fileID: 1476322325}
   - component: {fileID: 1476322324}
   m_Layer: 0
   m_Name: 3DLayer1
@@ -6594,14 +6590,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!81 &1476322325
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1476322323}
-  m_Enabled: 1
 --- !u!20 &1476322326
 Camera:
   m_ObjectHideFlags: 0
@@ -6961,7 +6949,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1528963480}
   - component: {fileID: 1528963479}
-  - component: {fileID: 1528963478}
   - component: {fileID: 1528963477}
   m_Layer: 0
   m_Name: 3DLayer2
@@ -7014,14 +7001,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!81 &1528963478
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1528963476}
-  m_Enabled: 1
 --- !u!20 &1528963479
 Camera:
   m_ObjectHideFlags: 0
@@ -7450,6 +7429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc23196235e11564fb8a074a4714ddad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimLaunched: 0
   animManager: {fileID: 0}
   DesiredState: 1
 --- !u!95 &1689772745
@@ -7464,7 +7444,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 0c1e7cfe08c153e4dbfa72de9afa1497, type: 3}
   m_Controller: {fileID: 9100000, guid: 45867ef3483a8654baae7d9afaf64d00, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -8699,7 +8679,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b7f2c98b77a7e474fbe75c009d7c4476, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -8720,6 +8700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc23196235e11564fb8a074a4714ddad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimLaunched: 0
   animManager: {fileID: 0}
   DesiredState: 4
 --- !u!1660057539 &9223372036854775807

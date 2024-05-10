@@ -38,16 +38,19 @@ public class MenuManager : MonoBehaviour
             Instance = this;
         }
 
-        SetMenu(MainMenu);
+        
 
     }
 
 
     private void Start()
     {
+       
        resolutions = Screen.resolutions;
-
-        resolutionDropdown.ClearOptions();
+        if(resolutionDropdown!= null)
+        {
+            resolutionDropdown.ClearOptions();
+        }
 
         /// on converti la  liste de resolotion en sitrng pour pouvoir  l'ajouter � la Dropdown;
         List<string> options = new();
@@ -64,10 +67,13 @@ public class MenuManager : MonoBehaviour
                 currentResolutionIndex = i;
             }
         }
+        if (resolutionDropdown != null)
+        {
+            resolutionDropdown.AddOptions(options);
+            resolutionDropdown.value = currentResolutionIndex;
+            resolutionDropdown.RefreshShownValue();
+        }
 
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.RefreshShownValue();
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;

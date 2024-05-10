@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 653264240659937868}
   - component: {fileID: 5443826156128164949}
   - component: {fileID: 5873258942572823493}
-  - component: {fileID: 6344950597077215443}
   m_Layer: 0
   m_Name: "Pens\xE9Arthur2"
   m_TagString: Untagged
@@ -104,19 +103,6 @@ MonoBehaviour:
   ActiveDialogue: {fileID: 11400000, guid: 45b7ccce55a26b64980b76de51481582, type: 2}
   CurrentDialogue: {fileID: 0}
   ChatBoxOffset: {x: 0, y: 3.24, z: 0}
---- !u!114 &6344950597077215443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2556131386966687959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76edd97a23fb4bf478b75ce86055114b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DialogueLinked: {fileID: 11400000, guid: 9eaea4bfecceb1243a044cee72dff0d5, type: 2}
 --- !u!1 &7912442763740596204
 GameObject:
   m_ObjectHideFlags: 0

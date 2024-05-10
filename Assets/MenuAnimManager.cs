@@ -23,6 +23,12 @@ public class MenuAnimManager : MonoBehaviour
     private void Awake()
     {
         MenuAnimManager_instance = this;
+        Time.timeScale = 1f;
+    }
+
+    private void Start()
+    {
+        ChangeState(MenuStates.HOME);
     }
 
     public void ChangeState(MenuStates desiredState)
