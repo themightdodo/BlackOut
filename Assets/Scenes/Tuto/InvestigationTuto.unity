@@ -160,6 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chara_Dialogue: {fileID: 11400000, guid: 9e2623af657290b4b91f4431228f5802, type: 2}
   HandVersion: {fileID: 0}
+  ItemToDestroy: {fileID: 0}
   Interrogatoire: 0
   Success: 0
   drown: 0
@@ -708,6 +709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chara_Dialogue: {fileID: 11400000, guid: 49c95e58ad5a66845b889744137b7ded, type: 2}
   HandVersion: {fileID: 0}
+  ItemToDestroy: {fileID: 0}
   Interrogatoire: 0
   Success: 0
   drown: 0
@@ -1144,6 +1146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chara_Dialogue: {fileID: 11400000, guid: 8fb9a42ffdf2ff6499b17381caf3d899, type: 2}
   HandVersion: {fileID: 0}
+  ItemToDestroy: {fileID: 0}
   Interrogatoire: 0
   Success: 0
   drown: 0
@@ -1553,6 +1556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chara_Dialogue: {fileID: 11400000, guid: 99a40942b09aa0d46a562978e15edff6, type: 2}
   HandVersion: {fileID: 0}
+  ItemToDestroy: {fileID: 0}
   Interrogatoire: 0
   Success: 0
   drown: 0
@@ -2113,10 +2117,10 @@ MonoBehaviour:
     alternate: 325
   Check:
     primary: 332
-    alternate: 323
+    alternate: 324
   Talk:
     primary: 330
-    alternate: 324
+    alternate: 323
   Cancel:
     primary: 331
     alternate: 27
@@ -2360,6 +2364,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2304345416686651959}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1439033951 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 811107945058750803, guid: e3cdaebb720aaeb45ae7d9440898ff51,
+    type: 3}
+  m_PrefabInstance: {fileID: 2304345416686651959}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1442176342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3384,6 +3400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chara_Dialogue: {fileID: 11400000, guid: b71177d9692a068409e2231332e070b0, type: 2}
   HandVersion: {fileID: 0}
+  ItemToDestroy: {fileID: 0}
   Interrogatoire: 0
   Success: 0
   drown: 0
@@ -3639,10 +3656,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 284395843092382730, guid: e3cdaebb720aaeb45ae7d9440898ff51,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1752641948}
+    - target: {fileID: 284395843092382730, guid: e3cdaebb720aaeb45ae7d9440898ff51,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
     - target: {fileID: 1394706762680364961, guid: e3cdaebb720aaeb45ae7d9440898ff51,
         type: 3}
       propertyPath: m_text
       value: Are you sure you want to leave ? you might have missed some information
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764592722105954815, guid: e3cdaebb720aaeb45ae7d9440898ff51,
+        type: 3}
+      propertyPath: FocusExaminText.Array.data[1]
+      value: 
+      objectReference: {fileID: 1439033951}
+    - target: {fileID: 1768458885260699890, guid: e3cdaebb720aaeb45ae7d9440898ff51,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1965715182153841095, guid: e3cdaebb720aaeb45ae7d9440898ff51,
         type: 3}
@@ -3728,6 +3765,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2815346558024723988, guid: e3cdaebb720aaeb45ae7d9440898ff51,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1752641948}
+    - target: {fileID: 2815346558024723988, guid: e3cdaebb720aaeb45ae7d9440898ff51,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2815346558024723988, guid: e3cdaebb720aaeb45ae7d9440898ff51,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: BeuverieTuto
       objectReference: {fileID: 0}
     - target: {fileID: 3563979972181610396, guid: e3cdaebb720aaeb45ae7d9440898ff51,
         type: 3}
@@ -3974,7 +4026,27 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8157389738839224452, guid: e3cdaebb720aaeb45ae7d9440898ff51,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1752641948}
+    - target: {fileID: 8157389738839224452, guid: e3cdaebb720aaeb45ae7d9440898ff51,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
     - target: {fileID: 8236920446421323947, guid: e3cdaebb720aaeb45ae7d9440898ff51,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8297802540973191138, guid: e3cdaebb720aaeb45ae7d9440898ff51,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346410733497768860, guid: e3cdaebb720aaeb45ae7d9440898ff51,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4004,6 +4076,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744607671505456605, guid: e3cdaebb720aaeb45ae7d9440898ff51,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1752641948}
+    - target: {fileID: 8744607671505456605, guid: e3cdaebb720aaeb45ae7d9440898ff51,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Resume
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -4320,6 +4402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chara_Dialogue: {fileID: 11400000, guid: a3644455821bcbd49801f9fba566f653, type: 2}
   HandVersion: {fileID: 0}
+  ItemToDestroy: {fileID: 0}
   Interrogatoire: 0
   Success: 0
   drown: 0

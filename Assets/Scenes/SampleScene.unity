@@ -1135,6 +1135,7 @@ GameObject:
   - component: {fileID: 309070915}
   - component: {fileID: 309070916}
   - component: {fileID: 309070917}
+  - component: {fileID: 309070918}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1302,7 +1303,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: da5c18003d18f03408d9eced456ab105, type: 3}
     volume: 0.259
     pitch: 1
-    loop: 0
+    loop: 1
     Music: 1
     SFX: 0
     source: {fileID: 0}
@@ -1414,6 +1415,19 @@ MonoBehaviour:
   - {fileID: 1173404881}
   InstanciatedObjects: []
   number: 0
+--- !u!114 &309070918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309070911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7ffc35fa52b184fa0ab9662f558aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LifeToRemain: 2
 --- !u!4 &318745756 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1990867988554266226, guid: 59bddc4963bca1445a4036caf9f7601d,

@@ -47,6 +47,7 @@ public class BoatComponents : MonoBehaviour
         BoatRigidbody.isKinematic = false;
         Player.GetComponent<CharacterController>().enabled = false;
         playerManager.MiniJeu.Invoke();
+        Player.SetActive(false);
         Camera.SetActive(false);
         BoatCam.SetActive(true);
     }
@@ -55,10 +56,16 @@ public class BoatComponents : MonoBehaviour
         boatState = BoatState.NONE;
         InstantiateObjects();
         BoatRigidbody.isKinematic = true;
+        Player.SetActive(true);
+
         Player.GetComponent<CharacterController>().enabled = true;
-        playerManager.FinMiniJeu.Invoke();
         Camera.SetActive(true);
+        Player.GetComponent<Animator>().Play("Idle");
         BoatCam.SetActive(false);
+
+        Invest_GameManager.GM_instance.CanvasManager.GetComponent<DialogueManager>().ExaminButtonPressTimer.Reset();
+        playerManager.FinMiniJeu.Invoke();
+
     }
     void InstantiateObjects()
     {

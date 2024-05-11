@@ -29,7 +29,15 @@ public class Water : MonoBehaviour
             if (Drown.Done())
             {
                 Drown.Reset();
-                Destroy(other.gameObject);
+                if (other.gameObject.GetComponent<Interactible>().ItemToDestroy)
+                {
+                    Destroy((other.gameObject.GetComponent<Interactible>().ItemToDestroy));
+                }
+                else
+                {
+                    Destroy(other.gameObject);
+                }
+                
             }
            
         }

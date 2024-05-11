@@ -6,6 +6,7 @@ public class Interactible : MonoBehaviour
 {
     public Chara_dialogue chara_Dialogue;
     public GameObject HandVersion;
+    public GameObject ItemToDestroy;
     public bool Interrogatoire;
     public bool Success;
     public bool drown;

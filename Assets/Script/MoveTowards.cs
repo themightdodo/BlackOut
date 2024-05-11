@@ -7,6 +7,7 @@ public class MoveTowards : MonoBehaviour
     public Vector3 PointA;
     public Vector3 PointB;
     public float Speed;
+    public bool NoLook;
 
     private void Start()
     {
@@ -14,7 +15,12 @@ public class MoveTowards : MonoBehaviour
     }
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, PointB,Time.deltaTime*Speed);   
+        transform.position = Vector3.MoveTowards(transform.position, PointB,Time.deltaTime*Speed);
+        if (NoLook)
+        {
+            return;
+        }
+        transform.LookAt(PointB);
     }
     private void OnDrawGizmosSelected()
     {
