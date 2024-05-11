@@ -5,6 +5,7 @@ using UnityEngine;
 public class Patrol : MonoBehaviour
 {
     public Transform[] waypoints;
+    public Animator animator;
     private int _currentWaypointIndex = 0;
     private float _speed = 2f;
 
@@ -28,10 +29,11 @@ public class Patrol : MonoBehaviour
 
         while (Vector3.Distance(transform.position, wp.position) > 0.01f)
         {
+            animator.Play("Walk");
             transform.position = Vector3.MoveTowards(transform.position, wp.position, _speed * Time.deltaTime);
             yield return null;
         }
-
+        animator.Play("Idle");
         transform.position = wp.position;
         yield return new WaitForSeconds(_waitTime);
         _currentWaypointIndex = (_currentWaypointIndex + 1) % waypoints.Length;

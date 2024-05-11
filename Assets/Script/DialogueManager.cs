@@ -40,7 +40,7 @@ public class DialogueManager : Invest_Character_State_Machine
 
     GameObject CurrentButton;
     AudioManager audioManager;
-    Timer ExaminButtonPressTimer;
+    public Timer ExaminButtonPressTimer;
     float TimeBtwLetters = 0.022f*2;
 
     bool writing;

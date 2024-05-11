@@ -38,7 +38,15 @@ public class Invest_Hand : Invest_Character_State_Machine
     {
         base.Pick();
         PickItem(pm.Current_Focus_Object.GetComponent<Interactible>().HandVersion);
-        Destroy(pm.Current_Focus_Object);
+        if (pm.Current_Focus_Object.GetComponent<Interactible>().ItemToDestroy)
+        {
+            Destroy(pm.Current_Focus_Object.GetComponent<Interactible>().ItemToDestroy);
+        }
+        else
+        {
+            Destroy(pm.Current_Focus_Object);
+        }
+        
     }
 
     void PlayAction(string layer)
