@@ -9,6 +9,7 @@ public class Interactible : MonoBehaviour
     public GameObject ItemToDestroy;
     public bool Interrogatoire;
     public bool Success;
+    public bool Loose;
     public bool drown;
     public bool noChoiceRegister;
     public int interactCount = 0;

@@ -11,6 +11,8 @@ public class Dialogue : Node
 
     public bool SuccessPoint;
 
+    public bool LoosePoint;
+
     public bool BadDialogue;
 
     public enum startType

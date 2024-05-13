@@ -534,6 +534,26 @@ public class DialogueManager : Invest_Character_State_Machine
             }
         }
     }
+    void GiveLoose()
+    {
+        if (CurrentDialogue.LoosePoint)
+        {
+            if (pm.Current_Focus_Object != null && CurrentButton != null)
+            {
+                pm.Current_Focus_Object = null;
+            }
+            if (pm.Current_Focus_Object != null)
+            {
+                pm.Current_Focus_Object.GetComponent<Interactible>().Loose = true;
+                pm.Current_Focus_Object.GetComponent<Interactible>().interactCount = 2;
+            }
+            if (CurrentButton != null)
+            {
+                CurrentButton.GetComponent<PhoneInteractible>().Loose = true;
+                pm.Current_Focus_Object.GetComponent<PhoneInteractible>().InteractCount = 2;
+            }
+        }
+    }
 
     void PersonTalkingColor()
     {
