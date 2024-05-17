@@ -167,8 +167,8 @@ public class MenuManager : MonoBehaviour
 
     private void Update()
     {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Confined;
+/*        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;*/
         /*        if (GameManager.GM_instance.IsTrainingMode)
                 {
                     LancerPartie.SetActive(false) ;

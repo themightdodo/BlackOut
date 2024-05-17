@@ -38,6 +38,7 @@ public class Dialogue : Node
     public List<Choix> choixHand;
 
     public IndiceItem IndiceToHave;
+    public IndiceItem IndiceToHave2;
     [Output(dynamicPortList = true)]
     public List<Choix> choixIndice;
 

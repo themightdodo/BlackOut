@@ -8,7 +8,8 @@ public class Invest_Hand : Invest_Character_State_Machine
     public GameObject Hand;
     public Vector3 ThrowPos;
     AudioManager audioManager;
-
+    GameObject instantiated;
+    public int ThrowForce;
 
     protected override void Start()
     {
@@ -52,7 +53,7 @@ public class Invest_Hand : Invest_Character_State_Machine
     void PlayAction(string layer)
     {
         Debug.Log(item);
-        if (input.Check.PressedDown()&&item!=null)
+        if (input.Talk.PressedDown()&&item!=null)
         {
             
             item.Action.Invoke(layer);
@@ -65,7 +66,7 @@ public class Invest_Hand : Invest_Character_State_Machine
         if(item != null)
         {
             Instantiate(item.GetComponent<Item_Manager>().BaseItem, transform.position + transform.rotation * ThrowPos, transform.rotation);
-            
+           
             Destroy(item.gameObject);
             item = null;
             pm.ItemInHand = null;
@@ -79,9 +80,16 @@ public class Invest_Hand : Invest_Character_State_Machine
     
     public void throwItem()
     {
-        if(input.Talk.PressedDown() && pm.Current_Focus_Object == null && item != null)
+        
+        if(input.Check.PressedDown() && pm.Current_Focus_Object == null && item != null)
         {
-            Instantiate(item.GetComponent<Item_Manager>().BaseItem,transform.position + transform.rotation * ThrowPos, transform.rotation);
+
+            instantiated = Instantiate(item.GetComponent<Item_Manager>().BaseItem,transform.position + transform.rotation * ThrowPos, transform.rotation);
+            if (instantiated.GetComponent<Rigidbody>() != null)
+            {
+                instantiated.GetComponent<Rigidbody>().AddForce(instantiated.transform.forward * ThrowForce);
+            }
+            
             audioManager.Play(item.GetComponent<Item_Manager>().ThrowSound);
             Destroy(item.gameObject);
             item = null;

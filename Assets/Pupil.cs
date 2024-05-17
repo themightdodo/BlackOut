@@ -6,11 +6,22 @@ public class Pupil : MonoBehaviour
 {
     public GameObject pupil;
     Beuverie_GameManager gm;
-    GameObject Player;
+    Invest_GameManager gmInvest;
+    public GameObject Player;
     private void Start()
     {
         gm = Beuverie_GameManager.GM_instance;
-        Player = gm.playerManager.gameObject;
+        if(gm == null)
+        {
+            gmInvest = Invest_GameManager.GM_instance;
+            Player = gmInvest.playerManager.gameObject;
+        }
+        else
+        {
+            Player = gm.playerManager.gameObject;
+        }
+
+       
     }
     private void LateUpdate()
     {

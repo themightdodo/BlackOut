@@ -5,7 +5,7 @@ using UnityEngine;
 public class MenuAnimManager : MonoBehaviour
 {
     public static MenuAnimManager MenuAnimManager_instance { get; private set; }
-
+    public bool ingame;
     [System.Serializable]
     public enum MenuStates
     {
@@ -28,7 +28,11 @@ public class MenuAnimManager : MonoBehaviour
 
     private void Start()
     {
-        ChangeState(MenuStates.HOME);
+        if (!ingame)
+        {
+            ChangeState(MenuStates.HOME);
+        }
+        
     }
 
     public void ChangeState(MenuStates desiredState)
@@ -40,7 +44,25 @@ public class MenuAnimManager : MonoBehaviour
     {
         if (UnityEngine.Input.GetButtonDown("Cancel")&&(menuStates ==  MenuStates.SETTINGS|| menuStates == MenuStates.CHAPTERS))
         {
+            if (ingame)
+            {
+                ChangeState(MenuStates.GAME);
+            }
+            else
+            {
+                ChangeState(MenuStates.HOME);
+            }
+            return;
+        }
+        if (UnityEngine.Input.GetButtonDown("Cancel") && (menuStates == MenuStates.GAME))
+        {
             ChangeState(MenuStates.HOME);
+            return;
+        }
+        if (UnityEngine.Input.GetButtonDown("Cancel") && (menuStates == MenuStates.HOME)&&ingame)
+        {
+            ChangeState(MenuStates.GAME);
+            return;
         }
     }
 
@@ -48,7 +70,25 @@ public class MenuAnimManager : MonoBehaviour
     {
         if (UnityEngine.Input.GetButtonDown("Cancel") && (menuStates == MenuStates.SETTINGS || menuStates == MenuStates.CHAPTERS))
         {
+            if (ingame)
+            {
+                ChangeState(MenuStates.GAME);
+            }
+            else
+            {
+                ChangeState(MenuStates.HOME);
+            }
+            return;
+        }
+        if (UnityEngine.Input.GetButtonDown("Cancel") && (menuStates == MenuStates.GAME))
+        {
             ChangeState(MenuStates.HOME);
+            return;
+        }
+        if (UnityEngine.Input.GetButtonDown("Cancel") && (menuStates == MenuStates.HOME))
+        {
+            ChangeState(MenuStates.GAME);
+            return;
         }
     }
 }

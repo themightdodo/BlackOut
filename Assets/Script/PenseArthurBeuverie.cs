@@ -178,7 +178,6 @@ public class PenseArthurBeuverie : MonoBehaviour
                 Destroy(gm.CurrentlyThinking);
             }
             gm.CurrentlyThinking = gameObject;
-            Debug.Log(InteractCount);
             if (InteractCount == 0)
             {
                 FindDialogue(Dialogue.startType.Talk, out CurrentDialogue);

@@ -23,9 +23,13 @@ public class Cinematique : MonoBehaviour
     InputManager input;
 
     public GameObject NextDialogue;
+    bool writing;
+    float TimeBtwLetters = 0.022f * 2;
+    string currentsentence;
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
         sentences = new Queue<string>();
         audioManager = GetComponent<AudioManager>();
         input = GetComponent<InputManager>();
@@ -37,7 +41,18 @@ public class Cinematique : MonoBehaviour
     {
         if (input.Check.PressedDown() || input.Talk.PressedDown())
         {
-            DisplayNextSentence();
+            if (writing)
+            {
+                StopAllCoroutines();
+                text.text = currentsentence;
+                NextDialogue.SetActive(true);
+                writing = false;
+            }
+            else
+            {
+                DisplayNextSentence();
+            }
+                
         }
     }
 
@@ -85,6 +100,8 @@ public class Cinematique : MonoBehaviour
 
         string sentence = (string)sentences.Dequeue();
         text.text = sentence;
+        currentsentence = text.text;
+        writing = true;
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
@@ -171,10 +188,11 @@ public class Cinematique : MonoBehaviour
             DialogueSound();
             if (i == sentence.ToCharArray().Length)
             {
+                writing = false;
                 NextDialogue.SetActive(true);
             }
             i++;
-            yield return null;
+            yield return new WaitForSeconds(TimeBtwLetters);
         }
     }
 }

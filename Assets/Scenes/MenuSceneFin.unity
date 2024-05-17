@@ -294,6 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31132b3646e54c846b489252b4e05e56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingame: 0
   menuStates: 2
 --- !u!114 &101898427
 MonoBehaviour:
@@ -2021,7 +2022,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1150056889}
   m_Direction: 0
   m_MinValue: -80
-  m_MaxValue: 0
+  m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -3380,7 +3381,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 365126005}
   m_Direction: 0
   m_MinValue: -80
-  m_MaxValue: 0
+  m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -3737,7 +3738,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Alpha Ver.0.2.1
+  m_text: Alpha Ver.0.3.0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4003,7 +4004,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1119880615}
   m_Direction: 0
   m_MinValue: -80
-  m_MaxValue: 0
+  m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:

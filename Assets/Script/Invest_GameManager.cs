@@ -12,6 +12,7 @@ public class Invest_GameManager : MonoBehaviour
     public PhoneManager PhoneManager;
     public UnityEvent<Sprite,string,string,bool> InvestigationDone;
     public PauseMenu menuManager;
+    public bool GameIsPaused;
 
     public string NextSceneWin;
     public string NextSceneLose;

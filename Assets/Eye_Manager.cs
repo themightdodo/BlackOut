@@ -25,7 +25,6 @@ public class Eye_Manager : Beuverie_Character_StateMachine
         {
             return;
         }
-        Debug.Log(number);
         number = (pm.TauxAlcool.BoissonTaken() * basePositionCount) / pm.TauxAlcool.MaxBoisson;
         if (number < 1 && pm.TauxAlcool.BoissonTaken() != 0)
         {

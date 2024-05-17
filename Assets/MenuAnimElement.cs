@@ -12,7 +12,11 @@ public class MenuAnimElement : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        animManager = MenuAnimManager.MenuAnimManager_instance;
+        if(animManager == null)
+        {
+            animManager = MenuAnimManager.MenuAnimManager_instance;
+        }
+       
     }
     private void Update()
     {

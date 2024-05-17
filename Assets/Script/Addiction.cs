@@ -26,7 +26,6 @@ public class Addiction : Beuverie_Character_StateMachine
             return;
         }
         Addiction_timer.Refresh();
-        Debug.Log(Addiction_timer.Done());
         pm.Addiction_timer_done = Addiction_timer.Done();
         currentAddictionTime = Addiction_timer.CurrentValue;
 
@@ -42,14 +41,12 @@ public class Addiction : Beuverie_Character_StateMachine
     }
     void ActivityStatus()
     {
-        Debug.Log("Activity");
         Addiction_timer.CurrentValue = pm.currentActivityData.currentValue.CurrentValue;
         pm.currentActivityData.desaturate( Addiction_timer.CurrentValue/ pm.currentActivityData.currentValue.StartValue);
         AddictionPersoAnim.Play("Addiction", -1, 1 - (Addiction_timer.CurrentValue / pm.currentActivityData.currentValue.StartValue));
     }
     public void ActivityLeave()
     {
-        Debug.Log("leave");
         Addiction_timer.Remove(pm.currentActivityData.currentValue.CurrentValue-Addiction_timer.StartValue);
 
     }

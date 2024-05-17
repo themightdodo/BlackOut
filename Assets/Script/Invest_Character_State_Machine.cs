@@ -47,6 +47,10 @@ public class Invest_Character_State_Machine : MonoBehaviour
         {
             return;
         }
+        if (gm.GameIsPaused)
+        {
+            return;
+        }
         PhoneClose.Refresh();
         switch (state_)
         {
