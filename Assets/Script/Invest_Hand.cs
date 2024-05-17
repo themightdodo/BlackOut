@@ -74,7 +74,14 @@ public class Invest_Hand : Invest_Character_State_Machine
           
         }
         item = Instantiate(itemPicked, Hand.transform).GetComponent<Item_Manager>();
-        audioManager.Play(item.GetComponent<Item_Manager>().PickSound);
+        if (item.GetComponent<Item_Manager>().PickSound != "")
+        {
+            audioManager.Play(item.GetComponent<Item_Manager>().PickSound);
+        }
+        else
+        {
+            audioManager.Play("Grab");
+        }
         pm.ItemInHand = item.gameObject;
     }
     
@@ -89,8 +96,15 @@ public class Invest_Hand : Invest_Character_State_Machine
             {
                 instantiated.GetComponent<Rigidbody>().AddForce(instantiated.transform.forward * ThrowForce);
             }
-            
-            audioManager.Play(item.GetComponent<Item_Manager>().ThrowSound);
+            if (item.GetComponent<Item_Manager>().ThrowSound != "")
+            {
+                audioManager.Play(item.GetComponent<Item_Manager>().ThrowSound);
+            }
+            else
+            {
+                audioManager.Play("Throw");
+            }
+                
             Destroy(item.gameObject);
             item = null;
             pm.ItemInHand = null;

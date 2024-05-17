@@ -1134,6 +1134,7 @@ GameObject:
   - component: {fileID: 309070916}
   - component: {fileID: 309070917}
   - component: {fileID: 309070918}
+  - component: {fileID: 309070919}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1267,7 +1268,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Pas
     clip: {fileID: 8300000, guid: 342055db2a4f25e42a3046fd2e92fedc, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 1
     Music: 0
@@ -1457,6 +1458,19 @@ MonoBehaviour:
   - {fileID: 73514231}
   InstanciatedObjects: []
   number: 0
+--- !u!114 &309070919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309070911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c0fe198c122854ba920a626d7fccce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "Soir\xE9eNum\xE9ro": 2
 --- !u!1 &326226668
 GameObject:
   m_ObjectHideFlags: 0
@@ -5733,13 +5747,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9139066995379096181, guid: b496003cfad89af4d8bc7d3f373822df,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139066995379096181, guid: b496003cfad89af4d8bc7d3f373822df,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1936209356}
+      objectReference: {fileID: 1936209357}
     - target: {fileID: 9139066995379096181, guid: b496003cfad89af4d8bc7d3f373822df,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
+      value: LoadLastSoire
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139066995379096181, guid: b496003cfad89af4d8bc7d3f373822df,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9139066995379096181, guid: b496003cfad89af4d8bc7d3f373822df,
         type: 3}

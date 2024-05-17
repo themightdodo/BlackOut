@@ -1312,6 +1312,7 @@ GameObject:
   - component: {fileID: 309070916}
   - component: {fileID: 309070917}
   - component: {fileID: 309070918}
+  - component: {fileID: 309070919}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1604,6 +1605,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LifeToRemain: 2
+--- !u!114 &309070919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309070911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c0fe198c122854ba920a626d7fccce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "Soir\xE9eNum\xE9ro": 1
 --- !u!4 &318745756 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1990867988554266226, guid: 59bddc4963bca1445a4036caf9f7601d,
@@ -11895,9 +11909,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9139066995379096181, guid: b496003cfad89af4d8bc7d3f373822df,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139066995379096181, guid: b496003cfad89af4d8bc7d3f373822df,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1936209356}
+      objectReference: {fileID: 1936209357}
+    - target: {fileID: 9139066995379096181, guid: b496003cfad89af4d8bc7d3f373822df,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLastSoire
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139066995379096181, guid: b496003cfad89af4d8bc7d3f373822df,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

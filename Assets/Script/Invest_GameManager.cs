@@ -21,4 +21,8 @@ public class Invest_GameManager : MonoBehaviour
     {
         GM_instance = this;
     }
+    private void Start()
+    {
+        GetComponent<AudioManager>().Play("Reveille");
+    }
 }

@@ -860,6 +860,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3621720843494326302}
+        m_TargetAssemblyTypeName: SoundButtons, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &9182443409962275536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2086,6 +2098,7 @@ GameObject:
   - component: {fileID: 4229063863756012435}
   - component: {fileID: 3153334766482886720}
   - component: {fileID: 6494087196715946193}
+  - component: {fileID: 3621720843494326302}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2366,6 +2379,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingame: 1
   menuStates: 2
+--- !u!114 &3621720843494326302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063106492756270181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5af01fa5749174d982c2b72cf04163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1084960227297242159
 GameObject:
   m_ObjectHideFlags: 0
@@ -4810,6 +4835,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4958227243903716130}
   - component: {fileID: 7120455874660508890}
+  - component: {fileID: 9210958697244445010}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -4902,6 +4928,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &9210958697244445010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787326602675943042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a960b5596bce4c943a0bef773eb736b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parameter: InvestMaster
+  BeuverieMaster: {fileID: 24100000, guid: e68a3b44c773cba47b72af6e480e33c1, type: 2}
+  InvestigationMaster: {fileID: 24100000, guid: ec11d8c0160c0bd429049b1d122e07c9,
+    type: 2}
 --- !u!1 &1829176551601835579
 GameObject:
   m_ObjectHideFlags: 0
@@ -5155,6 +5197,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3621720843494326302}
+        m_TargetAssemblyTypeName: SoundButtons, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2468205876211377662
@@ -7143,6 +7197,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3621720843494326302}
+        m_TargetAssemblyTypeName: SoundButtons, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &7263469242182006168
@@ -10795,6 +10861,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3621720843494326302}
+        m_TargetAssemblyTypeName: SoundButtons, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5849325516640443266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13494,6 +13572,7 @@ GameObject:
   m_Component:
   - component: {fileID: 815680869387435808}
   - component: {fileID: 9142219156387077336}
+  - component: {fileID: 187014072640194092}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -13586,6 +13665,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &187014072640194092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4553849140823285710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a960b5596bce4c943a0bef773eb736b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parameter: Music
+  BeuverieMaster: {fileID: 24100000, guid: e68a3b44c773cba47b72af6e480e33c1, type: 2}
+  InvestigationMaster: {fileID: 24100000, guid: ec11d8c0160c0bd429049b1d122e07c9,
+    type: 2}
 --- !u!1 &4627214922093333808
 GameObject:
   m_ObjectHideFlags: 0
@@ -15005,6 +15100,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3621720843494326302}
+        m_TargetAssemblyTypeName: SoundButtons, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6831300598362820164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15536,6 +15643,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3621720843494326302}
+        m_TargetAssemblyTypeName: SoundButtons, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &4532665041353947556
@@ -18035,6 +18154,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3621720843494326302}
+        m_TargetAssemblyTypeName: SoundButtons, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3757057945638761760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18186,6 +18317,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3621720843494326302}
+        m_TargetAssemblyTypeName: SoundButtons, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &5829222927112269413
@@ -18386,6 +18529,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3621720843494326302}
+        m_TargetAssemblyTypeName: SoundButtons, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &4822222993109869355
@@ -18974,6 +19129,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3621720843494326302}
+        m_TargetAssemblyTypeName: SoundButtons, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4986098371812766669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19272,6 +19439,7 @@ GameObject:
   - component: {fileID: 5977297619899878958}
   - component: {fileID: 8773014462353170610}
   - component: {fileID: 4779610079487130257}
+  - component: {fileID: 5646374870026275343}
   m_Layer: 5
   m_Name: Popup
   m_TagString: Untagged
@@ -19364,6 +19532,19 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!114 &5646374870026275343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6187461306596833324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b6343d53e99ee4c8b65d81dbb45ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundToPlay: notification
 --- !u!1 &6197783120867622220
 GameObject:
   m_ObjectHideFlags: 0
@@ -19599,6 +19780,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3621720843494326302}
+        m_TargetAssemblyTypeName: SoundButtons, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &7850226355482530817
@@ -20234,6 +20427,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3621720843494326302}
+        m_TargetAssemblyTypeName: SoundButtons, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &5908812506468928834
@@ -23447,6 +23652,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3621720843494326302}
+        m_TargetAssemblyTypeName: SoundButtons, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4195910412562429568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24431,6 +24648,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3621720843494326302}
+        m_TargetAssemblyTypeName: SoundButtons, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &5700146609997575916
@@ -25881,6 +26110,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3621720843494326302}
+        m_TargetAssemblyTypeName: SoundButtons, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &7924092806017471933
@@ -27883,6 +28124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9031795573439614374}
   - component: {fileID: 9067853750643607923}
+  - component: {fileID: 4769119070065275821}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -27975,6 +28217,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4769119070065275821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8437453661102353588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a960b5596bce4c943a0bef773eb736b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parameter: SFX
+  BeuverieMaster: {fileID: 24100000, guid: e68a3b44c773cba47b72af6e480e33c1, type: 2}
+  InvestigationMaster: {fileID: 24100000, guid: ec11d8c0160c0bd429049b1d122e07c9,
+    type: 2}
 --- !u!1 &8531685666927652924
 GameObject:
   m_ObjectHideFlags: 0
@@ -28618,6 +28876,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3621720843494326302}
+        m_TargetAssemblyTypeName: SoundButtons, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &8013982370368754618

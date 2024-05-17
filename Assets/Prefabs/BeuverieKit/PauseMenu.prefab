@@ -578,6 +578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 216785772327224006}
   - component: {fileID: 3818482867709951713}
+  - component: {fileID: 2844892272495814214}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -670,6 +671,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2844892272495814214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3220053606590253699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a960b5596bce4c943a0bef773eb736b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parameter: Music
+  BeuverieMaster: {fileID: 24100000, guid: e68a3b44c773cba47b72af6e480e33c1, type: 2}
+  InvestigationMaster: {fileID: 24100000, guid: ec11d8c0160c0bd429049b1d122e07c9,
+    type: 2}
 --- !u!1 &3707022088304821642
 GameObject:
   m_ObjectHideFlags: 0
@@ -1732,6 +1749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7846919476085044391}
   - component: {fileID: 6183817142957883443}
+  - component: {fileID: 87542713170336911}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -1824,6 +1842,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &87542713170336911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5866698782368690726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a960b5596bce4c943a0bef773eb736b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parameter: SFX
+  BeuverieMaster: {fileID: 24100000, guid: e68a3b44c773cba47b72af6e480e33c1, type: 2}
+  InvestigationMaster: {fileID: 24100000, guid: ec11d8c0160c0bd429049b1d122e07c9,
+    type: 2}
 --- !u!1 &5942230976582141468
 GameObject:
   m_ObjectHideFlags: 0
@@ -2320,6 +2354,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4735261769081611740}
   - component: {fileID: 1189946784174499351}
+  - component: {fileID: 2206489445794122576}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -2412,6 +2447,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2206489445794122576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7182246221041848283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a960b5596bce4c943a0bef773eb736b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parameter: InvestMaster
+  BeuverieMaster: {fileID: 24100000, guid: e68a3b44c773cba47b72af6e480e33c1, type: 2}
+  InvestigationMaster: {fileID: 24100000, guid: ec11d8c0160c0bd429049b1d122e07c9,
+    type: 2}
 --- !u!1 &7191265244811835053
 GameObject:
   m_ObjectHideFlags: 0

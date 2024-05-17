@@ -138,8 +138,9 @@ public class DialogueManager : Invest_Character_State_Machine
     protected override void Phone_state()
     {
         gm.DialogueManager.ProfilPicture.gameObject.SetActive(false);
-        if (input.Cancel.Pressed())
+        if (input.Cancel.Pressed()||input.Phone.PressedDown())
         {
+            PhoneClose.Reset();
             state_ = stateBuffer_;
             closeDialogue();
         }

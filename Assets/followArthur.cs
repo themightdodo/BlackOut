@@ -7,6 +7,7 @@ public class followArthur : MonoBehaviour
 {
     NavMeshAgent agent;
     GameObject Player;
+    public Animator animator;
     Beuverie_PlayerManager pm;
     public Vector3 offset;
     public float BuffDistance;
@@ -28,6 +29,7 @@ public class followArthur : MonoBehaviour
         agent.SetDestination(Player.transform.position + offset);
         if (Vector3.Distance(transform.position, Player.transform.position) < BuffDistance)
         {
+            animator.Play("Idle");
             if(BaseGreen < 0.3f)
             {
                 BaseGreen += 0.001f;
@@ -38,8 +40,9 @@ public class followArthur : MonoBehaviour
             
         }
         else 
-        { 
-            if(BaseGreen > 0.1372549f)
+        {
+            animator.Play("Walk");
+            if (BaseGreen > 0.1372549f)
             {
                 BaseGreen -= 0.001f;
                 color = new Color(0.09019608f, BaseGreen, 0.2901961f);

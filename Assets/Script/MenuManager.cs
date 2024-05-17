@@ -124,6 +124,27 @@ public class MenuManager : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
     }
+    public void LoadLastSoire()
+    {
+
+        Time.timeScale = 1f;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+        SceneManager.LoadScene(PlayerPrefs.GetString("Soire" + PlayerPrefs.GetInt("SoireSave")));
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+    public void LoadLastSoireDelayed()
+    {
+
+        Time.timeScale = 1f;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+        scenenamebuffer = PlayerPrefs.GetString("Soire" + PlayerPrefs.GetInt("SoireSave"));
+        this.Invoke("LoadSceneAsync", 3f);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
     public void LoadSceneAsync()
     {
 
