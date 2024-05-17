@@ -9,6 +9,13 @@ public class Invest_Ambiance : MonoBehaviour
     void Start()
     {
         audioManager = Invest_GameManager.GM_instance.GetComponent<AudioManager>();
+        Invoke("PlayMusic", 20f);
+    }
+
+
+
+    void PlayMusic()
+    {
         audioManager.Play("MusicIntrigue");
     }
 

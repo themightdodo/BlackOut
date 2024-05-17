@@ -94,7 +94,7 @@ public class DialogueManager : Invest_Character_State_Machine
             ActiveDialogue = null;
         }
         
-        if(dialogue_State == Dialogue_State.STATE_SHOWING)
+        if(dialogue_State == Dialogue_State.STATE_SHOWING&&!gm.GameIsPaused)
         {
             if ((input.Check.PressedDown() || input.Talk.PressedDown())&&ExaminButtonPressTimer.Done())
             {
@@ -138,8 +138,9 @@ public class DialogueManager : Invest_Character_State_Machine
     protected override void Phone_state()
     {
         gm.DialogueManager.ProfilPicture.gameObject.SetActive(false);
-        if (input.Cancel.Pressed())
+        if (input.Cancel.Pressed()||input.Phone.PressedDown())
         {
+            PhoneClose.Reset();
             state_ = stateBuffer_;
             closeDialogue();
         }
@@ -217,11 +218,12 @@ public class DialogueManager : Invest_Character_State_Machine
                 Dialogue item;
                 FindDialogue(Dialogue.startType.Examin, out item);
                 CurrentDialogue = item;
-                if(pm.ItemInHand != null && pm.ItemInHand.GetComponent<Item_Manager>().itemType == CurrentDialogue.ItemToHaveInHand)
+                if(pm.ItemInHand != null && pm.ItemInHand.GetComponent<Item_Manager>().itemType == CurrentDialogue.ItemToHaveInHand && pm.ItemInHand.GetComponent<Item_Manager>().itemType != Item_Manager.ItemType.None)
                 {
                     CurrentDialogue = (Dialogue)CurrentDialogue.GetOutputPort("choixHand" + " " + 0).Connection.node;
 
                 }
+
                 StartDialogue(CurrentDialogue);
                 state_ = State.STATE_EXAMIN;
             }
@@ -415,7 +417,7 @@ public class DialogueManager : Invest_Character_State_Machine
             StartDialogue(CurrentDialogue);
             return;
         }
-        if (CurrentDialogue != null && CurrentDialogue.startType_ == Dialogue.startType.Talk&& CurrentDialogue.choices.Count == 1)
+        if (CurrentDialogue != null && CurrentDialogue.startType_ == Dialogue.startType.Talk&& CurrentDialogue.choices.Count == 1&&CurrentDialogue.choixIndice.Count == 0)
         {
             Debug.Log("SKIP");
             CurrentDialogue = (Dialogue)CurrentDialogue.GetOutputPort("choices" + " " + 0).Connection.node;
@@ -457,16 +459,25 @@ public class DialogueManager : Invest_Character_State_Machine
                 currentsButtons.Add(button);
             }
         }
-        if (CurrentDialogue != null && pm.GetComponent<Invest_Inventory>().CurrentIndices.Count !=0 && pm.GetComponent<Invest_Inventory>().CurrentIndices.Contains(CurrentDialogue.IndiceToHave))
+        if (CurrentDialogue != null && pm.GetComponent<Invest_Inventory>().CurrentIndices.Count != 0 && pm.GetComponent<Invest_Inventory>().CurrentIndices.Contains(CurrentDialogue.IndiceToHave2))
         {
-            for (int i = 0; i < CurrentDialogue.choixIndice.Count; i++)
-            {
-                Choix choix = CurrentDialogue.choixIndice[i];
+
+                Choix choix = CurrentDialogue.choixIndice[1];
                 var button = Instantiate(ButtonPrefab, ButtonPanel.transform);
                 button.GetComponentInChildren<TextMeshProUGUI>().text = choix.text;
-                button.GetComponent<ChoixButton>().dialogue = (Dialogue)CurrentDialogue.GetOutputPort("choixIndice" + " " + i).Connection.node;
+                button.GetComponent<ChoixButton>().dialogue = (Dialogue)CurrentDialogue.GetOutputPort("choixIndice" + " " + 1).Connection.node;
                 currentsButtons.Add(button);
-            }
+            
+        }
+        if (CurrentDialogue != null && pm.GetComponent<Invest_Inventory>().CurrentIndices.Count !=0 && pm.GetComponent<Invest_Inventory>().CurrentIndices.Contains(CurrentDialogue.IndiceToHave))
+        {
+
+                Choix choix = CurrentDialogue.choixIndice[0];
+                var button = Instantiate(ButtonPrefab, ButtonPanel.transform);
+                button.GetComponentInChildren<TextMeshProUGUI>().text = choix.text;
+                button.GetComponent<ChoixButton>().dialogue = (Dialogue)CurrentDialogue.GetOutputPort("choixIndice" + " " + 0).Connection.node;
+                currentsButtons.Add(button);
+            
         }
         else if (input.Check.PressedDown() || input.Talk.Pressed())
         {
@@ -531,6 +542,26 @@ public class DialogueManager : Invest_Character_State_Machine
             if(CurrentButton != null)
             {
                 CurrentButton.GetComponent<PhoneInteractible>().Success = true;
+            }
+        }
+    }
+    void GiveLoose()
+    {
+        if (CurrentDialogue.LoosePoint)
+        {
+            if (pm.Current_Focus_Object != null && CurrentButton != null)
+            {
+                pm.Current_Focus_Object = null;
+            }
+            if (pm.Current_Focus_Object != null)
+            {
+                pm.Current_Focus_Object.GetComponent<Interactible>().Loose = true;
+                pm.Current_Focus_Object.GetComponent<Interactible>().interactCount = 2;
+            }
+            if (CurrentButton != null)
+            {
+                CurrentButton.GetComponent<PhoneInteractible>().Loose = true;
+                pm.Current_Focus_Object.GetComponent<PhoneInteractible>().InteractCount = 2;
             }
         }
     }

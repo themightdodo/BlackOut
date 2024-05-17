@@ -88,11 +88,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -103,9 +108,11 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &-9151065103837883392
 MonoBehaviour:
@@ -182,11 +189,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -198,8 +210,241 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices: []
+--- !u!114 &-8563518855047837853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 152, y: -1512}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    - choices 0
+    values:
+    - _fieldName: choix
+      _node: {fileID: -8563518855047837853}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choixIndice 0
+        node: {fileID: 890425159148616494}
+        reroutePoints: []
+      - fieldName: choixIndice 0
+        node: {fileID: -6069806794569603526}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: -8563518855047837853}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: -8563518855047837853}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: -8563518855047837853}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: -8563518855047837853}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: -8563518855047837853}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: -6320560215588364526}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
+  startType_: 6
+  PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - ' I don''t know if it could help us locate me. '
+  - "But it\u2019s quite funny.\r\n"
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  unlimitedEvent: 0
+  EventToCreate: {fileID: 0}
+  choices:
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+--- !u!114 &-6320560215588364526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 520, y: -1432}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    - choices 0
+    values:
+    - _fieldName: choix
+      _node: {fileID: -6320560215588364526}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: -8563518855047837853}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: -6320560215588364526}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: -6320560215588364526}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: -6320560215588364526}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: -6320560215588364526}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: -6320560215588364526}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: -5295899272588963819}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
+  startType_: 6
+  PersonTalking: {fileID: 11400000, guid: fc2a7c9c4fab77a4d94ded133518c46e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - "Isn\u2019t that Peter\u2019s underpants ?\r\n"
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  unlimitedEvent: 0
+  EventToCreate: {fileID: 0}
+  choices:
+  - pasbien: 0
+    text: 
+    InterrogatoireValue: 0
 --- !u!114 &-6163191348737807765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,11 +546,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: fc2a7c9c4fab77a4d94ded133518c46e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -319,11 +569,14 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: "Chlo\xE9 ?"
+  - pasbien: 0
+    text: "Chlo\xE9 ?"
     InterrogatoireValue: 0
-  - text: LISA ?
+  - pasbien: 0
+    text: LISA ?
     InterrogatoireValue: 0
 --- !u!114 &-6160549043489550064
 MonoBehaviour:
@@ -416,11 +669,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc2a7c9c4fab77a4d94ded133518c46e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -436,9 +694,11 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 7729c1e2532d74345886878469443c2a, type: 2}
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &-6069806794569603526
 MonoBehaviour:
@@ -453,7 +713,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -520, y: -216}
+  position: {x: -600, y: -328}
   ports:
     keys:
     - choix
@@ -462,6 +722,7 @@ MonoBehaviour:
     - indicesToShow
     - choices
     - choices 0
+    - choixIndice 0
     values:
     - _fieldName: choix
       _node: {fileID: -6069806794569603526}
@@ -524,25 +785,163 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
+    - _fieldName: choixIndice 0
+      _node: {fileID: -6069806794569603526}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: -8563518855047837853}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 2
   PersonTalking: {fileID: 11400000, guid: fc2a7c9c4fab77a4d94ded133518c46e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
-  IndiceToHave: {fileID: 0}
-  choixIndice: []
+  IndiceToHave: {fileID: 11400000, guid: 88ca9fec4bebf7c4fbb6f902cdedd8e5, type: 2}
+  choixIndice:
+  - pasbien: 0
+    text: "Look what I just found\u2026"
+    InterrogatoireValue: 0
   sentences:
   - ...
   indicesToShow: []
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 'Hi Louis, I''m calling you about last night. '
+  - pasbien: 0
+    text: 'Hi Louis, I''m calling you about last night. '
+    InterrogatoireValue: 0
+--- !u!114 &-5295899272588963819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 824, y: -1752}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    - choices 0
+    values:
+    - _fieldName: choix
+      _node: {fileID: -5295899272588963819}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: -6320560215588364526}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: -5295899272588963819}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: -5295899272588963819}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: -5295899272588963819}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: -5295899272588963819}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: -5295899272588963819}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: 572880700437487736}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
+  startType_: 6
+  PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - 'Is it ? '
+  - "I mean how would you know ? \u2026"
+  - "Nevermind, I think I don\u2019t want to hear that story.\r\n"
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  unlimitedEvent: 0
+  EventToCreate: {fileID: 0}
+  choices:
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &-5210465352530797444
 MonoBehaviour:
@@ -632,11 +1031,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -647,9 +1051,11 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &-4275977834194355339
 MonoBehaviour:
@@ -752,11 +1158,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: fc2a7c9c4fab77a4d94ded133518c46e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -770,11 +1181,14 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 'Act annoyed '
+  - pasbien: 0
+    text: 'Act annoyed '
     InterrogatoireValue: 0
-  - text: 'Ask what you did '
+  - pasbien: 0
+    text: 'Ask what you did '
     InterrogatoireValue: 0
 --- !u!114 &-4124110756906517295
 MonoBehaviour:
@@ -864,11 +1278,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc2a7c9c4fab77a4d94ded133518c46e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -884,9 +1303,11 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &-3953405645352042137
 MonoBehaviour:
@@ -989,11 +1410,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: fc2a7c9c4fab77a4d94ded133518c46e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1007,11 +1433,14 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 'Ask about the girl '
+  - pasbien: 0
+    text: 'Ask about the girl '
     InterrogatoireValue: 0
-  - text: 'Play along '
+  - pasbien: 0
+    text: 'Play along '
     InterrogatoireValue: 0
 --- !u!114 &-1678386812886492066
 MonoBehaviour:
@@ -1101,11 +1530,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1116,9 +1550,11 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &-1576078055532881419
 MonoBehaviour:
@@ -1208,11 +1644,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1223,9 +1664,11 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &-1010156761500728482
 MonoBehaviour:
@@ -1315,11 +1758,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1331,9 +1779,11 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &-425003769415392494
 MonoBehaviour:
@@ -1410,11 +1860,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1425,6 +1880,7 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices: []
 --- !u!114 &11400000
@@ -1464,6 +1920,11 @@ MonoBehaviour:
   - {fileID: 4240590627097944354}
   - {fileID: -9151065103837883392}
   - {fileID: -1678386812886492066}
+  - {fileID: 890425159148616494}
+  - {fileID: -8563518855047837853}
+  - {fileID: -6320560215588364526}
+  - {fileID: -5295899272588963819}
+  - {fileID: 572880700437487736}
   PersonInteractedWith: {fileID: 11400000, guid: fc2a7c9c4fab77a4d94ded133518c46e,
     type: 2}
 --- !u!114 &396090641885099695
@@ -1541,11 +2002,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: fc2a7c9c4fab77a4d94ded133518c46e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1558,6 +2024,219 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
+  EventToCreate: {fileID: 0}
+  choices: []
+--- !u!114 &572880700437487736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1224, y: -1512}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    values:
+    - _fieldName: choix
+      _node: {fileID: 572880700437487736}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: -5295899272588963819}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: 572880700437487736}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: 572880700437487736}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: 572880700437487736}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: 572880700437487736}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
+  startType_: 0
+  PersonTalking: {fileID: 11400000, guid: fc2a7c9c4fab77a4d94ded133518c46e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 0}
+  choixIndice: []
+  sentences:
+  - "It\u2019s not what you think, this is his \u201Clucky charm\u201D he always
+    takes it to parties."
+  - "You really don\u2019t want to know the backstory behind it tho\u2026\r\n"
+  indicesToShow: []
+  indicesGiven:
+  - item: {fileID: 11400000, guid: c81518dfd9313db41be2077fe0678e0c, type: 2}
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  unlimitedEvent: 0
+  EventToCreate: {fileID: 0}
+  choices: []
+--- !u!114 &890425159148616494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534dd346414b1c04aab756fa76fac07e, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -424, y: -1272}
+  ports:
+    keys:
+    - choix
+    - choixHand
+    - choixIndice
+    - indicesToShow
+    - choices
+    - choixIndice 0
+    values:
+    - _fieldName: choix
+      _node: {fileID: 890425159148616494}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixHand
+      _node: {fileID: 890425159148616494}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice
+      _node: {fileID: 890425159148616494}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: indicesToShow
+      _node: {fileID: 890425159148616494}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Indice, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices
+      _node: {fileID: 890425159148616494}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Choix, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choixIndice 0
+      _node: {fileID: 890425159148616494}
+      _typeQualifiedName: Choix, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: choix
+        node: {fileID: -8563518855047837853}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  choix:
+    pasbien: 0
+    text: 
+    InterrogatoireValue: 0
+  SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
+  startType_: 3
+  PersonTalking: {fileID: 11400000, guid: fc2a7c9c4fab77a4d94ded133518c46e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
+  ItemToHaveInHand: 0
+  choixHand: []
+  IndiceToHave: {fileID: 11400000, guid: 88ca9fec4bebf7c4fbb6f902cdedd8e5, type: 2}
+  choixIndice:
+  - pasbien: 0
+    text: "Look what I just found\u2026"
+    InterrogatoireValue: 0
+  sentences:
+  - ...
+  indicesToShow: []
+  indicesGiven: []
+  GiveItem: {fileID: 0}
+  DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices: []
 --- !u!114 &1053031151211966449
@@ -1648,11 +2327,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc2a7c9c4fab77a4d94ded133518c46e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1663,9 +2347,11 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &1526877864806863032
 MonoBehaviour:
@@ -1755,11 +2441,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1770,9 +2461,11 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &2162357303427304787
 MonoBehaviour:
@@ -1862,11 +2555,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc2a7c9c4fab77a4d94ded133518c46e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1878,9 +2576,11 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &2854833935188803151
 MonoBehaviour:
@@ -1970,11 +2670,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -1985,9 +2690,11 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &4240590627097944354
 MonoBehaviour:
@@ -2077,11 +2784,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -2092,9 +2804,11 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
 --- !u!114 &6319556209682393713
 MonoBehaviour:
@@ -2197,11 +2911,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: fc2a7c9c4fab77a4d94ded133518c46e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -2214,11 +2933,14 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 'Act annoyed '
+  - pasbien: 0
+    text: 'Act annoyed '
     InterrogatoireValue: 0
-  - text: 'Ask what you did '
+  - pasbien: 0
+    text: 'Ask what you did '
     InterrogatoireValue: 0
 --- !u!114 &7346271709654515909
 MonoBehaviour:
@@ -2321,11 +3043,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc2a7c9c4fab77a4d94ded133518c46e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -2337,11 +3064,14 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0
-  - text: 'Yes ! Actually, I''m lost in the forest, and I was wondering if you could
+  - pasbien: 0
+    text: 'Yes ! Actually, I''m lost in the forest, and I was wondering if you could
       pick me up? '
     InterrogatoireValue: 0
 --- !u!114 &8860138260335636156
@@ -2445,11 +3175,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: fc2a7c9c4fab77a4d94ded133518c46e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -2461,11 +3196,14 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 'Ask about your wrongdoings '
+  - pasbien: 0
+    text: 'Ask about your wrongdoings '
     InterrogatoireValue: 0
-  - text: 'Act shy '
+  - pasbien: 0
+    text: 'Act shy '
     InterrogatoireValue: 0
 --- !u!114 &8934160023228867117
 MonoBehaviour:
@@ -2542,11 +3280,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 0
   PersonTalking: {fileID: 11400000, guid: fc2a7c9c4fab77a4d94ded133518c46e, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -2560,6 +3303,7 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 7729c1e2532d74345886878469443c2a, type: 2}
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices: []
 --- !u!114 &8991925456555206566
@@ -2650,11 +3394,16 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
   choix:
+    pasbien: 0
     text: 
     InterrogatoireValue: 0
   SuccessPoint: 0
+  LoosePoint: 0
+  BadDialogue: 0
   startType_: 6
   PersonTalking: {fileID: 11400000, guid: fc7c256ce5f974740b4f5e52d0732dcf, type: 2}
+  AnimToPlay: 
+  timeBtwLetter: 0.044
   ItemToHaveInHand: 0
   choixHand: []
   IndiceToHave: {fileID: 0}
@@ -2665,7 +3414,9 @@ MonoBehaviour:
   indicesGiven: []
   GiveItem: {fileID: 0}
   DestroyWhenGive: 0
+  unlimitedEvent: 0
   EventToCreate: {fileID: 0}
   choices:
-  - text: 
+  - pasbien: 0
+    text: 
     InterrogatoireValue: 0

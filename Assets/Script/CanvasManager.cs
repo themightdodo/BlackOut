@@ -147,7 +147,15 @@ public class CanvasManager : Invest_Character_State_Machine
         {
             Debug.Log("AAAAAAAAAAAAAAAAAAAs%QIJZDQZ");
             FocusPanelAlt.SetActive(true);
-            FocusPanelAlt.transform.GetChild(0).gameObject.SetActive(true);
+            if ((pm.Current_Focus_Object.GetComponent<Interactible>().chara_Dialogue != null))
+            {
+                FocusPanelAlt.transform.GetChild(0).gameObject.SetActive(true);
+            }
+            else
+            {
+                FocusPanelAlt.transform.GetChild(0).gameObject.SetActive(false);
+            }
+              
             FocusPanelAlt.transform.GetChild(1).gameObject.SetActive(true);
             FocusPanel.SetActive(false);
             return;
@@ -162,6 +170,7 @@ public class CanvasManager : Invest_Character_State_Machine
         else
         {
             FocusPanelAlt.SetActive(true);
+            FocusPanelAlt.transform.GetChild(0).gameObject.SetActive(true);
             FocusPanelAlt.transform.GetChild(1).gameObject.SetActive(false);
             FocusPanel.SetActive(false);
             return;

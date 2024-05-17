@@ -65,7 +65,7 @@ public class PauseMenu : Invest_Character_State_Machine
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.Confined;
         }
-
+        PauseCondition();
     }
     public void endMenuAsk(Sprite image, string text, string nextScene, bool noPopup)
     {
@@ -80,14 +80,19 @@ public class PauseMenu : Invest_Character_State_Machine
         
         ContinueButton.GetComponent<Button>().onClick.AddListener(() => { LoadScene(nextScene); });
         Pause();
-        pauseMenuUI.SetActive(false);
+      
     }
     public void NoEndMenu()
     {
         EndMenuPopup.SetActive(false);
         Resume();
     }
-
+/*
+    protected override void Phone_state()
+    {
+        base.Phone_state();
+        
+    }
     protected override void Idle_state()
     {
         base.Idle_state();
@@ -98,16 +103,29 @@ public class PauseMenu : Invest_Character_State_Machine
         base.Walk_state();
         PauseCondition();
     }
+    protected override void Talk_state()
+    {
+        base.Talk_state();
+        PauseCondition();
+    }
+    protected override void Examin_state()
+    {
+        base.Examin_state();
+        PauseCondition();
+    }*/
     public void PauseCondition()
     {
         if (UnityEngine.Input.GetButtonDown("Cancel")&&!Endbool)
         {
             if (GameIsPaused)
             {
+                
                 Resume();
             }
             else
             {
+
+             
                 Pause();
             }
 
@@ -125,6 +143,7 @@ public class PauseMenu : Invest_Character_State_Machine
             eventSystem.SetSelectedGameObject(null);
             eventSystem.SetSelectedGameObject(OverFirst);
             GameIsPaused = true;
+            Invest_GameManager.GM_instance.GameIsPaused = true;
             Time.timeScale = 0f;
             
         }
@@ -133,9 +152,9 @@ public class PauseMenu : Invest_Character_State_Machine
     public void Resume()
     {
         /*AnimPause.Play("Enter");*/
-        pauseMenuUI.SetActive(false);
 
 
+        Invest_GameManager.GM_instance.GameIsPaused = false;
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -145,16 +164,18 @@ public class PauseMenu : Invest_Character_State_Machine
         Cursor.lockState = CursorLockMode.Confined;
         eventSystem.SetSelectedGameObject(null);
         eventSystem.SetSelectedGameObject(PauseFirst);
-        pauseMenuUI.SetActive(true);
+        Debug.Log("PAUSEPAUSEPAUSE");
         /*AnimPause.Play("VraiEnter");*/
         Time.timeScale = 0f;
         GameIsPaused = true;
+        Invest_GameManager.GM_instance.GameIsPaused = true;
     }
     public void LoadScene(string SceneName)
     {
         Resume();
         Time.timeScale = 1f;
         GameIsPaused = false;
+        Invest_GameManager.GM_instance.GameIsPaused = false;
         SceneManager.LoadScene(SceneName);
   
     }
@@ -167,13 +188,13 @@ public class PauseMenu : Invest_Character_State_Machine
 
         Winscreen.SetActive(true);
         GameOverUI.SetActive(false);
-        pauseMenuUI.SetActive(false);
+
         eventSystem.SetSelectedGameObject(null);
         eventSystem.SetSelectedGameObject(WinFirst);
         Winscreen.GetComponent<Animator>().Play("VraiEnter");
         Time.timeScale = 0f;
         GameIsPaused = true;
-
+        Invest_GameManager.GM_instance.GameIsPaused = true;
     }
 
 }

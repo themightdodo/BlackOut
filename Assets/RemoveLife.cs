@@ -23,6 +23,10 @@ public class RemoveLife : MonoBehaviour
     {
         PlayerPrefs.SetInt("LifeRemaining", PlayerPrefs.GetInt("LifeRemaining") - 1);
         Lifes[0].GetComponent<Animator>().Play("Tombe");
+        if(PlayerPrefs.GetInt("LifeRemaining") == 0)
+        {
+            NextScene = "GameOver";
+        }
         Invoke("Scene", 3f);
 
     }

@@ -16,6 +16,7 @@ public class Item_Manager : MonoBehaviour
         Filled_Resceptacle,
         Person,
         Key,
+        Drink,
     }
     public ItemType itemType;
 

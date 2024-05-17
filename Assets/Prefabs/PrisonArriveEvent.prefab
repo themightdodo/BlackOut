@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 2209860153199243709}
   - component: {fileID: 6454585089179048455}
   - component: {fileID: 1396577091231960703}
+  - component: {fileID: 8038568670336947425}
   m_Layer: 0
   m_Name: Cube.089 (1)
   m_TagString: Untagged
@@ -371,6 +372,19 @@ MonoBehaviour:
   PointB: {x: 5.402592, y: -9.416, z: 23.1}
   Speed: 20
   NoLook: 1
+--- !u!114 &8038568670336947425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7152023992059705346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b6343d53e99ee4c8b65d81dbb45ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundToPlay: PrisonDoorOpening
 --- !u!1001 &3008631516558241909
 PrefabInstance:
   m_ObjectHideFlags: 0

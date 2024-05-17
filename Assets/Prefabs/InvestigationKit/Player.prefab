@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6064750228999622734}
   - component: {fileID: 3218269099764540647}
-  - component: {fileID: 8478461140095093287}
   - component: {fileID: 1274033409509407660}
   m_Layer: 0
   m_Name: UILayer
@@ -117,14 +116,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &8478461140095093287
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1015862402778445126}
-  m_Enabled: 1
 --- !u!114 &1274033409509407660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1958,6 +1949,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8864948269272577443}
+        m_TargetAssemblyTypeName: SoundButtons, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1534326033297518387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2112,6 +2115,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8864948269272577443}
+        m_TargetAssemblyTypeName: SoundButtons, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Click
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2268691710377003009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2200,7 +2215,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -2863,7 +2878,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.0001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0.53}
 --- !u!114 &8576449862281872969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2901,7 +2916,8 @@ MonoBehaviour:
   stateBuffer_: 0
   triggerDialogue: 0
   Hand: {fileID: 49479787247650370}
-  ThrowPos: {x: 0, y: 3.4, z: 2.07}
+  ThrowPos: {x: 0, y: 1.08, z: 1.93}
+  ThrowForce: 200
 --- !u!114 &7103224402975836896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7452,3 +7468,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8864948269272577443 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3621720843494326302, guid: 4054f29c7d102d446a4531d39bb66d59,
+    type: 3}
+  m_PrefabInstance: {fileID: 5279468428542817725}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5af01fa5749174d982c2b72cf04163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

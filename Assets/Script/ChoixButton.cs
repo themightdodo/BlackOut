@@ -50,7 +50,10 @@ public class ChoixButton : MonoBehaviour
         {
             GetComponent<Animator>().Play("Fail");
             Invoke("StartDialogue", 0.5f);
-            delay.Reset();
+            foreach (var item in dm.currentsButtons)
+            {
+                item.GetComponent<ChoixButton>().delay.Reset();
+            }
         }
         else
         {

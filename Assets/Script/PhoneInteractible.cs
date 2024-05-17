@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PhoneInteractible : MonoBehaviour
 {
-     int InteractCount = -2;
+    public int InteractCount = -2;
     public bool Success;
+    public bool Loose;
     PhoneManager phoneManager;
 
     private void Start()
